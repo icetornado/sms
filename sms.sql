@@ -1,3 +1,4 @@
+/*db*/
 DROP TABLE IF EXISTS `questions`;
 CREATE TABLE `questions` (
     `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
