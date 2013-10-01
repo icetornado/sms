@@ -126,7 +126,7 @@ class QuizzesController extends AppController
         if(!is_array($otherMail))
             $otherMail = array();
         
-        $subject('Beat you - From ' . $this->request->data['Quiz']['yourname']);
+        $subject = 'Beat you - From ' . $this->request->data['Quiz']['yourname'];
         
         $Email->to($this->request->data['Quiz']['email']);
         $Email->subject($subject);
