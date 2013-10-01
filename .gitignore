@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # OS generated files #
 ######################
 .DS_Store
@@ -11,3 +12,5 @@ Thumbs.db
 #ignore folders#
 plugins/
 vendors/
+app/webroot/img
+
