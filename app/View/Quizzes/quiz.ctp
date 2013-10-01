@@ -82,6 +82,7 @@ echo '</div>';
         'hiddenField' => false
         )); 
     ?>
+    <?php echo $this->Form->input('emailother', array('id' => 'emailother', 'label' => 'Mail to Others:')); ?><br />
     <?php echo $this->Form->input('yourname', array('id' => 'yourname')); ?><br />
     <?php echo $this->Form->input('score', array('type' => 'hidden', 'id' => 'brag_score', 'value' => '')); ?>
     <?php echo $this->Form->input('level', array('type' => 'hidden', 'id' => 'brag_level', 'value' => $level)); ?>
@@ -106,7 +107,6 @@ $(document).ready(function () {
     
     function loadQuestion($q)
     {
-        console.log('len: ' + $("#question_" + $q).length);
         if($("#question_" + $q).length > 0)
         {
             $totalQ ++;
@@ -121,7 +121,6 @@ $(document).ready(function () {
                 format: 'S',
                 onExpiry: function()
                 {
-                    console.log('exxx');
                     $(this).countdown('destroy');
                     
                     var $res = {
@@ -153,14 +152,13 @@ $(document).ready(function () {
             $("#quiz_content").hide();
             
             saveResults($responses);
-            
-            console.log($responses);
-            
+      
             for($i = 0; $i < $responses.length; $i++)
             {
                 var $answerTxt = ($responses[$i].correct == 1 ? 'Correct' : 'Incorrect') + ' - Score: ' + $responses[$i].score;
                 $("#answer_correct_" + $i).html($answerTxt);
             }
+            
             $("#brag_score").val($accumulateScore);
             $("#brag_correct").val($totalCorrect + "/" + $totalQ);
             $("#results_display").show();

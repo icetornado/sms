@@ -2,7 +2,11 @@
 
 class QuizzesController extends AppController
 {
-    public $components = array('RequestHandler', 'Security');
+    public $components = array(
+        'RequestHandler', 
+        'Security'
+    );
+    
     public $uses = array(
         'Quiz',
         //'Question',
@@ -107,20 +111,36 @@ class QuizzesController extends AppController
     
     public function brag()
     {
-        echo '<pre>';
+        /*echo '<pre>';
         print_r($this->request->data);
-        echo '</pre>';
+        print_r(explode(',', $this->request->data['Quiz']['emailother']));
+        echo '</pre>';*/
+        //exit;
         
         App::uses('CakeEmail', 'Network/Email');
         
         $Email = new CakeEmail();
         $Email->from(array('me@example.com' => 'My Site'));
+        $otherMail = explode(',', $this->request->data['Quiz']['emailother']);
+        
+        if(!is_array($otherMail))
+            $otherMail = array();
+        
+        $subject = 'Beat you - From ' . $this->request->data['Quiz']['yourname'];
         
         $Email->to($this->request->data['Quiz']['email']);
-        $Email->subject('Beat you');
+        $Email->subject($subject);
         $body = 'My message is: my score is ' . $this->request->data['Quiz']['score'] . ' at level ' . $this->request->data['Quiz']['level'];
         $Email->send($body);
         
+        foreach($otherMail as $om)
+        {
+            $Email->to($om);
+            $Email->subject($subject);
+            $body = 'My message is: my score is ' . $this->request->data['Quiz']['score'] . ' at level ' . $this->request->data['Quiz']['level'];
+            $Email->send($body);
+        
+        }
         $this->set('body', $body);
     }
     
