@@ -1,4 +1,3 @@
-<h1>SMS Hall of Fame</h1>
 <div id="tabs">
     <ul>
         <?php foreach($data as $level => $d): ?>
@@ -50,8 +49,3 @@
     <?php endforeach; ?>
 </div> <!-- end of div tabs -->
 
-<script>
-    $(document).ready(function () {
-        $("#tabs").tabs();
-    });
-</script>

@@ -3,6 +3,7 @@
 // app/Controller/UsersController.php
 class ScoreboardsController extends AppController
 {
+    public $components = array('RequestHandler');
     public $uses = array(
         'Scoreboard',
         'Boss'
@@ -10,24 +11,44 @@ class ScoreboardsController extends AppController
     
     public function index()
     {
+        $data = $this->getScoreboardData();
+        $this->set('data', $data);
+    }
+    
+    public function scoreboard()
+    {
+        $data = $this->getScoreboardData();
+        $this->set('data', $data);
+    }
+    
+    private function getScoreboardData()
+    {
+        $data = array();
         
-        $data = $this->Scoreboard->find('all', 
-            array(
-                'order' => array('level', 'score desc'))
-            );
-        $bosses = $this->Boss->find('all', array('order' => array('lastname', 'firstname')));
-        $scoreboards = array();
-        foreach($data as $d)
+        $scoreboard = $this->Scoreboard->find('all', array('order' => array('level', 'score desc')));
+        $bosses = $this->Boss->find('all');
+        
+        foreach($scoreboard as $sc)
         {
-            if(!isset($scoreboards[$d['Scoreboard']['level']]))
-                $scoreboards[$d['Scoreboard']['level']] = array();
+            if(!isset($data[$sc['Scoreboard']['level']]))
+            {
+                $data[$sc['Scoreboard']['level']] = array('score' => array());
+            }
             
-            $scoreboards[$d['Scoreboard']['level']][] = $d['Scoreboard'];
+           $data[$sc['Scoreboard']['level']]['score'][] = $sc['Scoreboard']; 
         }
         
-        $this->set('scoreboards', $scoreboards);
-        $this->set('bosses', $bosses);
-                    
+        foreach($bosses as $b)
+        {
+            if(!isset($data[$b['Boss']['level']]))
+            {
+                $data[$b['Boss']['level']] = array('boss' => array());
+            }
+            
+            $data[$b['Boss']['level']]['boss'][] = $b['Boss']; 
+        }
+        
+        return $data;
     }
 }
 ?>
