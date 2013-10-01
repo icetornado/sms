@@ -28,10 +28,10 @@ foreach($quizzes as $q)
     echo '<ul>';
     foreach($q['Answer'] as $a)
     {
-        echo '<li><p>';
+        echo '<li class="answer_choices a_'  . $q['Quiz']['id'] . '">';
         echo '<input type="radio" name="a_' . $q['Quiz']['id'] . '" value="' . $a['id'] . '" class="answer_radio" question_ord="' . $cn . '" question_id="' . $q['Quiz']['id']. '" correct="' . $a['correct'] . '" />';
         echo $a['title'] . '&nbsp;&nbsp;&mdash;&nbsp;&nbsp;' . $a['body'];
-        echo '</p></li>';
+        echo '</li>';
     }
     echo '</ul>';
     
@@ -62,11 +62,12 @@ echo '</div>';
     }
 
  ?>
-    Enter "Hall of Fame": <input type="text" name="initial" value="AAA" maxlength="3" id="initial" />
+    <div id="initial_div">Enter "Hall of Fame": <input type="text" name="initial" value="AAA" maxlength="3" id="initial" /></div>
     <input type="button" name="enter" value="Enter" id="enter_btn" />
     <input type="button" name="brag" value="Brag" id="brag_btn" />
     <input type="hidden" name="ajaxURL" value="<?php echo $this->Html->url(array('controller' => 'quizzes', 'action' => 'save')) . '.json'; ?>" id="ajax_url">
     <input type="hidden" name="scoreURL" value="<?php echo $this->Html->url(array('controller' => 'quizzes', 'action' => 'scoreboard')) . '.json'; ?>" id="scoreboard_url">
+    <input type="hidden" name="fameURL" value="<?php echo $this->Html->url(array('controller' => 'scoreboards', 'action' => 'scoreboard')) . '.json'; ?>" id="fame_url">
 </div>
 <!-- end of results area -->
 
@@ -89,6 +90,10 @@ echo '</div>';
     <?php echo $this->Form->end(); ?>
 </div>
 <!-- end of area -->
+
+<!-- hall of fame -->
+<div id="scoreboard"></div>
+<!-- end of fame --->
  <script>
 $(document).ready(function () {
     var $maxScore = 620;
@@ -190,6 +195,29 @@ $(document).ready(function () {
             dataType: 'html',
             success: function(response){
                 console.log(response);
+                console.log($("#fame_url").val());
+                $.ajax({
+                    //$("#scoreboard").html(data);
+                    //console.log('hello');
+                    //$("#scoreboard").dialog('open');
+                    type: "GET",
+                    url: $("#fame_url").val(),
+                    async: false,
+                    dataType: 'html',
+                    success: function(feedback){
+                        console.log(feedback);
+                        $("#scoreboard").html(feedback);
+                        $("#scoreboard").dialog({
+                            close: function(event, ui) {
+                                $("#initial_div").remove();
+                                $("#enter_btn").remove();
+                                $("#brag_btn").remove();
+                            }
+                        });
+                        $("#tabs").tabs({active: parseInt(<?php echo $level; ?>) -1});
+                        $("#scoreboard").dialog('open');
+                    }
+                });
             }
         });
     }
@@ -217,7 +245,8 @@ $(document).ready(function () {
             $res.score = $counter;
             $accumulateScore += $counter;
             $("#accu").html($accumulateScore);
-            $("#correct").html('Light');
+            $("#correct").html('Right');
+            $(this).parent().addClass('correct');
             $totalCorrect ++;
         }
         else
@@ -225,7 +254,22 @@ $(document).ready(function () {
             $res.correct = 0;
             $res.score = 0;
             $("#remaining_score").html(0);
-            $("#correct").html('Wong');
+            $("#correct").html('Wrong');
+            console.log($(".a_" + $(this).attr('question_id')));
+            $(this).parent().addClass('incorrect');
+            
+            $(".a_" + $(this).attr('question_id')).each(function(){
+                console.log(parseInt($(this).children().attr('correct')));
+                
+                if(parseInt($(this).children().attr('correct')) == 1)
+                {
+                    console.log('if if');
+                    $(this).addClass('correct');
+                }
+                /*console.log($(".a_" + $(this).attr('question_id')).children(".input"));
+                if($(".a_" + $(this).attr('question_id')).children(".input").attr('correct') == '1')
+                    $(this).addClass('correct');*/
+            });
         }
         $responses.push($res);
     });

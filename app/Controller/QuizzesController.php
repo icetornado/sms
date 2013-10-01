@@ -123,5 +123,7 @@ class QuizzesController extends AppController
         
         $this->set('body', $body);
     }
+    
+    
 }
 ?>

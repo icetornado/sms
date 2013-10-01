@@ -1,3 +1,4 @@
+/*db*/
 DROP TABLE IF EXISTS `questions`;
 CREATE TABLE `questions` (
     `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
@@ -103,3 +104,64 @@ INSERT INTO answers(title, body, correct, question_id, ord) VALUES ('b', 'False'
 INSERT INTO questions (title, body, level) VALUES('Q10', 'The Safety Management System will not impact the content of Academy courses.', 1);
 INSERT INTO answers(title, body, correct, question_id, ord) VALUES ('a', 'True', 0, 10, 1);
 INSERT INTO answers(title, body, correct, question_id, ord) VALUES ('b', 'False', 1, 10, 2);
+
+/*level 2*/
+INSERT INTO questions (title, body, level) VALUES('Q1', 'Safety experts have long studied Heinrich&#39;s Triangle because it is analogous to the Bermuda Triangle except it is:', 2);
+INSERT INTO answers(title, body, correct, question_id, ord) VALUES ('a', 'In the Bering Sea between the Aleutian Islands and Kamchatsky, Russia', 0, 11, 1);
+INSERT INTO answers(title, body, correct, question_id, ord) VALUES ('b', 'Off the coasts of Venezuela, Aruba and Grenada', 0, 11, 2);
+INSERT INTO answers(title, body, correct, question_id, ord) VALUES ('c', 'A magnetic dead zone in the Sea of Cortez', 0, 11, 3);
+INSERT INTO answers(title, body, correct, question_id, ord) VALUES ('d', 'The statement is false they are not analogous', 1, 11, 4);
+
+INSERT INTO questions (title, body, level) VALUES('Q2', 'Technical Operations Safety Action Program is:', 2);
+INSERT INTO answers(title, body, correct, question_id, ord) VALUES ('a', 'A proactive safety life-cycle replacement plan for VORs', 0, 12, 1);
+INSERT INTO answers(title, body, correct, question_id, ord) VALUES ('b', 'A proactive, non-punitive evaluation action plan for SupCom', 0, 12, 2);
+INSERT INTO answers(title, body, correct, question_id, ord) VALUES ('c', 'A non-punitive, voluntary reporting program for Tech Ops', 1, 12, 3);
+INSERT INTO answers(title, body, correct, question_id, ord) VALUES ('d', 'A proactive safety plan to improve pilot - Tech Ops communications', 0, 12, 4);
+
+INSERT INTO questions (title, body, level) VALUES('Q3', 'Which one does not belong?', 2);
+INSERT INTO answers(title, body, correct, question_id, ord) VALUES ('a', 'Safety Quality Reporting', 1, 13, 1);
+INSERT INTO answers(title, body, correct, question_id, ord) VALUES ('b', 'Safety Assurance', 0, 13, 2);
+INSERT INTO answers(title, body, correct, question_id, ord) VALUES ('c', 'Safety Risk Management', 0, 13, 3);
+INSERT INTO answers(title, body, correct, question_id, ord) VALUES ('d', 'Safety Promotion', 0, 13, 4);
+
+INSERT INTO questions (title, body, level) VALUES('Q4', 'A Safety Management System does the following:', 2);
+INSERT INTO answers(title, body, correct, question_id, ord) VALUES ('a', 'Provides visibility into complex systems', 1, 14, 1);
+INSERT INTO answers(title, body, correct, question_id, ord) VALUES ('b', 'Give safety experts definitions for aviation hazards', 0, 14, 2);
+INSERT INTO answers(title, body, correct, question_id, ord) VALUES ('c', 'Allows global air traffic to navigate with ADS-B', 0, 14, 3);
+INSERT INTO answers(title, body, correct, question_id, ord) VALUES ('d', 'Allows pilots to manage communication with controllers from the cockpit', 0, 14, 4);
+
+INSERT INTO questions (title, body, level) VALUES('Q5', 'Partnership for Safety requires:', 2);
+INSERT INTO answers(title, body, correct, question_id, ord) VALUES ('a', 'At least one controller and one management representative to form a safety committee at a facility', 1, 15, 1);
+INSERT INTO answers(title, body, correct, question_id, ord) VALUES ('b', 'Monthly meetings with the Director of Safety and the Director of Technical Training', 0, 15, 2);
+INSERT INTO answers(title, body, correct, question_id, ord) VALUES ('c', 'An ATSAP form be completed before a safety meeting can take place', 0, 15, 3);
+INSERT INTO answers(title, body, correct, question_id, ord) VALUES ('d', 'Controllers to take part in Flight Deck Training', 0, 15, 4);
+
+INSERT INTO questions (title, body, level) VALUES('Q6', 'RAP or Risk Analysis Process does the following:', 2);
+INSERT INTO answers(title, body, correct, question_id, ord) VALUES ('a', 'Meets 2 times each month to review all ATSAP reports', 0, 16, 1);
+INSERT INTO answers(title, body, correct, question_id, ord) VALUES ('b', 'Analyzes safety data to determine the most serious hazards in the NAS and develops the Top 5', 1, 16, 2);
+INSERT INTO answers(title, body, correct, question_id, ord) VALUES ('c', 'Makes risk-to-costs recommendations to the FAA Airports office for runway construction projects', 0, 16, 3);
+INSERT INTO answers(title, body, correct, question_id, ord) VALUES ('d', 'Determines the risks associated with deploying NextGen technology', 0, 16, 4);
+
+INSERT INTO questions (title, body, level) VALUES('Q7', 'The Safety Management System or SMS is', 2);
+INSERT INTO answers(title, body, correct, question_id, ord) VALUES ('a', 'A global standard for managing aviation risks', 1, 17, 1);
+INSERT INTO answers(title, body, correct, question_id, ord) VALUES ('b', 'A global system for coordinating aircraft hand-offs between international controllers', 0, 17, 2);
+INSERT INTO answers(title, body, correct, question_id, ord) VALUES ('c', 'A aviation management system used by the U.S. to share data with Euro-Control and NAV Canada', 0, 17, 3);
+INSERT INTO answers(title, body, correct, question_id, ord) VALUES ('d', 'A global safety system that requires aircraft to digitally communicate with ground Radar and GPS satellites', 0, 17, 4);
+
+INSERT INTO questions (title, body, level) VALUES('Q8', 'According to the NTSB which factor DID NOT contributed to the safe outcome of US Airways Flight 1549?', 2);
+INSERT INTO answers(title, body, correct, question_id, ord) VALUES ('a', 'Airbus&#39; Safety Management System had the airplane properly equipped for a water ditching', 0, 18, 1);
+INSERT INTO answers(title, body, correct, question_id, ord) VALUES ('b', 'The decisions and performance of the flight and cabin crews reflected a proactive Safety Management System within U.S. Airways', 0, 18, 2);
+INSERT INTO answers(title, body, correct, question_id, ord) VALUES ('c', 'The decisions and crew resource management of the flight crew', 0, 18, 3);
+INSERT INTO answers(title, body, correct, question_id, ord) VALUES ('d', 'The FAA&#39;s Safety Management System has pre-identified the Hudson River as a ditching zone', 1, 18, 4);
+
+INSERT INTO questions (title, body, level) VALUES('Q9', 'The Confidential Information Share Program or CISP does the following:', 2);
+INSERT INTO answers(title, body, correct, question_id, ord) VALUES ('a', 'Allows controllers to anonymously report safety problems', 0, 19, 1);
+INSERT INTO answers(title, body, correct, question_id, ord) VALUES ('b', 'Allows the FAA and commercial carriers share safety data', 1, 19, 2);
+INSERT INTO answers(title, body, correct, question_id, ord) VALUES ('c', 'Allows pilots to meet with the NTSB with no fear reprisals', 0, 19, 3);
+INSERT INTO answers(title, body, correct, question_id, ord) VALUES ('d', 'Allows controllers and managers meet in a confidential forum', 0, 19, 4);
+
+INSERT INTO questions (title, body, level) VALUES('Q10', 'ATO leadership committed to the following to enable the SMS process to work', 2);
+INSERT INTO answers(title, body, correct, question_id, ord) VALUES ('a', 'Value the contributions and expertise of employees', 0, 20, 1);
+INSERT INTO answers(title, body, correct, question_id, ord) VALUES ('b', 'Invest in technology and processes to better gather and analyze data', 0, 20, 2);
+INSERT INTO answers(title, body, correct, question_id, ord) VALUES ('c', 'Embrace change to mitigate risk', 0, 20, 3);
+INSERT INTO answers(title, body, correct, question_id, ord) VALUES ('d', 'All of the above', 1, 20, 4);
