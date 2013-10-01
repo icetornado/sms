@@ -27,7 +27,7 @@
  * to use (in this case, /app/View/Pages/home.ctp)...
  */
         Router::parseExtensions();
-	Router::connect('/', array('controller' => 'main', 'action' => 'index', 'home'));
+	Router::connect('/', array('controller' => 'splash', 'action' => 'index', 'home'));
 /**
  * ...and connect the rest of 'Pages' controller's urls.
  */
