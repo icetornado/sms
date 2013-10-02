@@ -97,13 +97,14 @@ echo '</div>';
 <!-- end of fame --->
  <script>
 $(document).ready(function () {
-    var $maxScore = 620;
+    var $maxScore = 640;
     var $currentQuestion = 0;
     var $accumulateScore = 0;
     var $counter = 0;
     var $totalQ = 0;
     var $totalCorrect = 0;
     var $responses = [];
+    var $stepdown = 40;
     
     function loadQuestion($q)
     {
@@ -117,11 +118,11 @@ $(document).ready(function () {
             //start counter
             $counter = $maxScore;
             $("#countdown_" + $q).countdown({
-                until: +30, 
+                until: +9, 
                 format: 'S',
                 onExpiry: function()
                 {
-                    $(this).countdown('destroy');
+                    //$(this).countdown('destroy');
                     
                     var $res = {
                         question_order: $q,
@@ -131,13 +132,17 @@ $(document).ready(function () {
                     };
                     $responses.push($res);
                     
-                    $("#question_" + $q).remove();
-                    loadQuestion($q + 1);
+                    //$("#question_" + $q).remove();
+                    //loadQuestion($q + 1);
                 },
                 onTick: function()
                 {
-                    $counter -= 20;
+                    $counter -= $stepdown;
                     $("#remaining_score").html($counter);
+                    
+                    console.log('tick: ' + $counter);
+                    
+                    
                 }
             });
         }
@@ -192,12 +197,7 @@ $(document).ready(function () {
             data: {'total': $total, 'initial': $initial, 'level': <?php echo $level; ?>},
             dataType: 'html',
             success: function(response){
-                console.log(response);
-                console.log($("#fame_url").val());
                 $.ajax({
-                    //$("#scoreboard").html(data);
-                    //console.log('hello');
-                    //$("#scoreboard").dialog('open');
                     type: "GET",
                     url: $("#fame_url").val(),
                     async: false,
@@ -225,7 +225,7 @@ $(document).ready(function () {
         var $qOrder = $(this).attr('question_ord');
         $("#select_" + $qOrder).removeAttr('disabled');
         $(".answer_radio").attr('disabled', 'disabled');
-        $("#countdown_" + $qOrder).countdown('pause');
+        $("#countdown_" + $qOrder).countdown('destroy');
         console.log('R/W: ' + $(this).attr('correct'));
         console.log('counter: ' + $counter);
         console.log('accu: ' + $accumulateScore);
@@ -241,8 +241,9 @@ $(document).ready(function () {
         {
             $res.correct = 1;
             $res.score = $counter;
-            $accumulateScore += $counter;
+            $accumulateScore += $counter ;
             $("#accu").html($accumulateScore);
+            $("#remaining_score").html($counter);
             $("#correct").html('Right');
             $(this).parent().addClass('correct');
             $totalCorrect ++;
@@ -253,41 +254,32 @@ $(document).ready(function () {
             $res.score = 0;
             $("#remaining_score").html(0);
             $("#correct").html('Wrong');
-            console.log($(".a_" + $(this).attr('question_id')));
+            
             $(this).parent().addClass('incorrect');
             
             $(".a_" + $(this).attr('question_id')).each(function(){
-                console.log(parseInt($(this).children().attr('correct')));
-                
                 if(parseInt($(this).children().attr('correct')) == 1)
                 {
-                    console.log('if if');
                     $(this).addClass('correct');
                 }
-                /*console.log($(".a_" + $(this).attr('question_id')).children(".input"));
-                if($(".a_" + $(this).attr('question_id')).children(".input").attr('correct') == '1')
-                    $(this).addClass('correct');*/
             });
         }
         $responses.push($res);
     });
     
     $(".next_btn").click(function(){
-        //$accumulateScore = parseInt($("#remaining_score").html());
         $("#remaining_score").html('');
         var $qOrder = parseInt($(this).attr('question_ord'));
+        //$("#countdown_" + $qOrder).countdown('destroy');
         $("#question_" + $qOrder).remove();
         loadQuestion($qOrder + 1);
     });
     
     $("#enter_btn").click(function(){
-        console.log('enter');
         scoreboard();
-        
     });
     
     $("#brag_btn").click(function(){
-        console.log('brag');
         $("#quiz_results").hide();
         $("#brag").show();
     });
