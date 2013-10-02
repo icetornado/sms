@@ -1,3 +1,49 @@
+<style>
+    .countdown_hide {
+        display:none;
+    }
+    .block {
+        background:transparent url(../img/smst_answer_bg.png) repeat-x scroll left center;
+        list-style-type:none;
+        position:relative;
+        padding:12px 0;
+        margin:0;
+        cursor:pointer;
+    }
+    .block:before {
+        content: '';
+        display: inline-block;
+        height: 100%; 
+        vertical-align: middle;
+    }
+    .centered {
+        display: inline-block;
+        vertical-align: middle;
+        padding: 0 0 0 44px;
+        min-height:30px;
+        font-weight:16px;
+        line-height:16px;
+        position:relative;
+        left:-22px;
+    }
+    .centered.a {
+        background:transparent url(../img/smst_icon_a.png) no-repeat scroll left center;
+    }
+
+    .centered.b {
+        background:transparent url(../img/smst_icon_a.png) no-repeat scroll left center;
+    }
+
+    .centered.c {
+        background:transparent url(../img/smst_icon_a.png) no-repeat scroll left center;
+    }
+
+    .centered.d {
+        background:transparent url(../img/smst_icon_a.png) no-repeat scroll left center;
+    }
+</style>
+
+
 <?php
 
 echo $this->Html->css('jquery.countdown');
@@ -6,32 +52,67 @@ $this->Html->addCrumb('Quizzes', '/quizzes');
 //echo $this->fetch('meta');
 echo $this->fetch('css');
 echo $this->fetch('script');
+?>
+<div class="splashTop" style="height:63px;width:100%;position:relative;z-index:75;text-align:center;color:#d6dfe1;">
+    <div class="row">
+        <div style="float:left;width:30%;text-align:left;height:63px;overflow:hidden;">
+            <div style="line-height:14px;font-size:18px;font-weight:bold;padding:16px 0 0 13px;"> 
+                <span style="color:#edf7f9;">QUIZ <?php echo $level; ?></span><br />
+                #<span id="qNum">0</span> of <span id="qTotal"><?php echo count($quizzes); ?></span>
+            </div>
+        </div>
+        <div id="remaining_score" style="float:left;width:40%;text-align:center;font-weight:bold;height:63px;font-size:48px;padding:7px 0 0 0;color:#edf7f9;">
+            <!-- Score Timer -->
+        </div>
+        <div style="float:left;width:30%;text-align:right;height:63px;overflow:hidden;">
+            <div style="line-height:14px;font-size:18px;font-weight:bold;padding:16px 13px 0 0;">
+                <span id="accu">0</span><br />
+                <span style="color:#edf7f9;">SCORE</span>
+            </div>
+        </div>
+        <div style="position:absolute;bottom:0;" id="remaining_score"></div>
+    </div>
+</div>
 
+<?
 
-echo "<h2> Quiz level: " . $level . '</h2>';
+/*echo "<h2> Quiz level: " . $level . '</h2>';
 echo '<div id="quiz_content">';
 echo '<div id="panel">';
 echo '<h3 id="remaining_score"></h3>';
 echo '<h4>Total score: <span id="accu"></span></h4>';
 echo '<h4>Light/Wong?: <span id="correct"></span></h4>';
-echo '</div>';
+echo '</div>';*/
+
+echo '<div class="splashBottom" style="background:rgba(51,82,102,0.35);width:100%;position:relative;">';
 
 $cn = 0;
 foreach($quizzes as $q)
 {
-    echo '<div id="question_' . $cn . '" style="border-color: #ccc; border-style:solid;margin: 10px 0 0 10px;' . 
+    /*echo '<div id="question_' . $cn . '" style="border-color: #ccc; border-style:solid;margin: 10px 0 0 10px;' . 
           ($cn == 0 ? '' : 'display:none;') .'" question_id="' . $q['Quiz']['id']. '">';
     echo '<div id="countdown_' . $cn . '"></div>';
     
     echo '<p>'. $q['Quiz']['title'] . '&nbsp;&nbsp;&mdash;&nbsp;&nbsp;' . $q['Quiz']['body'] . '</p>';
     
-    echo '<ul>';
+    echo '<ul>';*/
+    echo '<div id="question_' . $cn . ($cn == 0 ? '' : '" style="display:none;"') .'" question_id="' . $q['Quiz']['id']. '">';
+    echo '<div id="countdown_' . $cn . '" class="countdown_hide"></div>';
+    
+    echo '<div style="padding:20px 22px;font-size:18px;">'. $q['Quiz']['body'] . '</div>';
+    
+    echo '<ul style="margin:0;padding:0 22px;">';
+
+    $charCounter = 97;
     foreach($q['Answer'] as $a)
     {
-        echo '<li class="answer_choices a_'  . $q['Quiz']['id'] . '">';
-        echo '<input type="radio" name="a_' . $q['Quiz']['id'] . '" value="' . $a['id'] . '" class="answer_radio" question_ord="' . $cn . '" question_id="' . $q['Quiz']['id']. '" correct="' . $a['correct'] . '" />';
-        echo $a['title'] . '&nbsp;&nbsp;&mdash;&nbsp;&nbsp;' . $a['body'];
+        echo '<li class="block answer_li answer_choices a_'  . $q['Quiz']['id'] . '" question_ord="' . $cn . '" question_id="' . $q['Quiz']['id']. '" correct="' . $a['correct'] . '" answer_val="' . $a['id'] . '">';
+//        echo '<input type="radio" name="a_' . $q['Quiz']['id'] . '" value="' . $a['id'] . '" class="answer_radio" question_ord="' . $cn . '" question_id="' . $q['Quiz']['id']. '" correct="' . $a['correct'] . '" />';
+//        echo '<div style="background:#dddddd;font-size:37px;font-weight:bold;text-transform:uppercase;width:44px;text-align:center;">' . $a['title'] . '</div>' . '<div style="background:#cccccc;">' . $a['body'] . '</div>';
+        echo '<div class="centered ' . chr($charCounter) . '">' . $a['body'] . '</div>';
         echo '</li>';
+
+        $charCounter ++;
     }
     echo '</ul>';
     
@@ -97,19 +178,26 @@ echo '</div>';
 <!-- end of fame --->
  <script>
 $(document).ready(function () {
-    var $maxScore = 640;
+    var $maxScore = 620;
     var $currentQuestion = 0;
     var $accumulateScore = 0;
     var $counter = 0;
     var $totalQ = 0;
     var $totalCorrect = 0;
     var $responses = [];
-    var $stepdown = 40;
+    var $stepdown = 20;
     
     function loadQuestion($q)
     {
         if($("#question_" + $q).length > 0)
         {
+            
+            var $qNum = parseInt($q) + 1;
+            
+            //if($qNum <= $("#question_" + $q).length)
+            //    $qNum += 1;
+            
+            $("#qNum").html($qNum);
             $totalQ ++;
             $(".answer_radio").removeAttr('disabled');
             $("#question_" + $q).show();
@@ -118,12 +206,10 @@ $(document).ready(function () {
             //start counter
             $counter = $maxScore;
             $("#countdown_" + $q).countdown({
-                until: +9, 
+                until: +20, 
                 format: 'S',
                 onExpiry: function()
                 {
-                    //$(this).countdown('destroy');
-                    
                     var $res = {
                         question_order: $q,
                         question_id: $("#question_" + $q).attr('question_id'),
@@ -139,10 +225,7 @@ $(document).ready(function () {
                 {
                     $counter -= $stepdown;
                     $("#remaining_score").html($counter);
-                    
                     console.log('tick: ' + $counter);
-                    
-                    
                 }
             });
         }
@@ -220,11 +303,15 @@ $(document).ready(function () {
         });
     }
     //---- events --------
-    $(".answer_radio").click(function(){
-        console.log($(this).val());
+    $(".answer_li").click(function(){
+        var $answer_val = $(this).attr('answer_val');
+                
         var $qOrder = $(this).attr('question_ord');
         $("#select_" + $qOrder).removeAttr('disabled');
-        $(".answer_radio").attr('disabled', 'disabled');
+        
+       
+        //$(".answer_radio").attr('disabled', 'disabled');
+        
         $("#countdown_" + $qOrder).countdown('destroy');
         console.log('R/W: ' + $(this).attr('correct'));
         console.log('counter: ' + $counter);
@@ -245,7 +332,7 @@ $(document).ready(function () {
             $("#accu").html($accumulateScore);
             $("#remaining_score").html($counter);
             $("#correct").html('Right');
-            $(this).parent().addClass('correct');
+            $($(this).children('div')).addClass('correct');
             $totalCorrect ++;
         }
         else
@@ -255,16 +342,25 @@ $(document).ready(function () {
             $("#remaining_score").html(0);
             $("#correct").html('Wrong');
             
-            $(this).parent().addClass('incorrect');
+            
             
             $(".a_" + $(this).attr('question_id')).each(function(){
-                if(parseInt($(this).children().attr('correct')) == 1)
+                if(parseInt($(this).attr('correct')) == 1)
                 {
-                    $(this).addClass('correct');
+                    $(this).children('div').addClass('correct');
+                }
+                else
+                {
+                    $(this).children('div').addClass('others');
                 }
             });
+            $($(this).children('div')).removeClass('others');
+            $($(this).children('div')).addClass('incorrect');
         }
         $responses.push($res);
+        
+        $(this).unbind('click');
+        $(this).siblings().unbind('click');
     });
     
     $(".next_btn").click(function(){
