@@ -1,3 +1,9 @@
+<?php
+
+$this->set('title_for_layout', 'SMS Training'); 
+
+?>
+
 <script>
     $(document).ready(function(){
 		$('.splashBottom').css({'height':($(window).height())-'158'+'px'});
@@ -6,10 +12,6 @@
 		});
 	});
 </script>
-
-<?php
-
-?>
 
 <div class="splashTop" style="height:113px;width:100%;position:relative;z-index:75;text-align:center;">
     <div style="width:194px;margin:0 auto;">
@@ -26,5 +28,5 @@
 </div>
 
 <div style="position:fixed;z-index:51;left:0;bottom:0;width:100%;text-align:center;">
-    <img width="120px" height="22px" src="img/smst_btn_boards@2x.png" alt="" />
-</div>
+    <a href="<?php echo $this->Html->url(array('controller' => 'scoreboards')) ; ?>"><img width="120px" height="22px" src="img/smst_btn_boards@2x.png" alt="" /></a>
+</div> 

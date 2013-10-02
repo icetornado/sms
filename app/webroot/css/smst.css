@@ -185,3 +185,14 @@ ul, ol {
     width:46px;
     height:45px;
 }
+.top-bar-section ul li.active > a {
+    background: rgba(0,0,0,0.15);
+    color: #99d538;
+}
+.top-bar-section ul li > a:hover {
+    background: rgba(0,0,0,0.15);
+}
+.top-bar-section ul li > a {
+    font-weight:300;
+    font-size:0.85em;
+}
