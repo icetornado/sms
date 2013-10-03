@@ -44,6 +44,11 @@ class QuizzesController extends AppController
             
             $bosses = $this->Boss->find('all');
             
+            $bossmax = $this->Boss->find('all', array(
+                'conditions' => array('level' => $level),
+                'fields' => array('MAX(Boss.score) as maxscore'),
+            ));
+            
             $bossArr = array();
             
             foreach($bosses as $boss)
@@ -52,6 +57,7 @@ class QuizzesController extends AppController
             }
             
             $this->set('bosses', $bossArr);
+            $this->set('bossmax', $bossmax[0][0]['maxscore']);
             $this->set('level', $level);
             $this->set('quizzes', $this->Quiz->findAllByLevel($level));
             $this->set('title_for_layout','SMS Quiz Level ' . $level);
@@ -133,14 +139,20 @@ class QuizzesController extends AppController
         $body = 'My message is: my score is ' . $this->request->data['Quiz']['score'] . ' at level ' . $this->request->data['Quiz']['level'];
         $Email->send($body);
         
-        foreach($otherMail as $om)
+        if(!empty($otherMail))
         {
-            $Email->to($om);
-            $Email->subject($subject);
-            $body = 'My message is: my score is ' . $this->request->data['Quiz']['score'] . ' at level ' . $this->request->data['Quiz']['level'];
-            $Email->send($body);
-        
+            foreach($otherMail as $om)
+            {
+                if(!empty($om))
+                {
+                    $Email->to($om);
+                    $Email->subject($subject);
+                    $body = 'My message is: my score is ' . $this->request->data['Quiz']['score'] . ' at level ' . $this->request->data['Quiz']['level'];
+                    $Email->send($body);
+                }
+            }
         }
+        
         $this->set('body', $body);
     }
     
