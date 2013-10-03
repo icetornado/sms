@@ -27,20 +27,52 @@
         left:-22px;
     }
     .centered.a {
-        background:transparent url(../img/smst_icon_a.png) no-repeat scroll left center;
+        background:transparent url(../img/smst_icon_a@2x.png) no-repeat scroll left center;
+        background-size:44px 44px;
     }
 
     .centered.b {
-        background:transparent url(../img/smst_icon_a.png) no-repeat scroll left center;
+        background:transparent url(../img/smst_icon_b@2x.png) no-repeat scroll left center;
+        background-size:44px 44px;
     }
 
     .centered.c {
-        background:transparent url(../img/smst_icon_a.png) no-repeat scroll left center;
+        background:transparent url(../img/smst_icon_c@2x.png) no-repeat scroll left center;
+        background-size:44px 44px;
     }
 
     .centered.d {
-        background:transparent url(../img/smst_icon_a.png) no-repeat scroll left center;
+        background:transparent url(../img/smst_icon_d@2x.png) no-repeat scroll left center;
+        background-size:44px 44px;
     }
+    .centered.correct {
+        background:transparent url(../img/smst_icon_check@2x.png) no-repeat scroll left center;
+        background-size:44px 44px;
+        color:#99d538;
+    }
+    .centered.incorrect {
+        background:transparent url(../img/smst_icon_x@2x.png) no-repeat scroll left center;
+        background-size:44px 44px;
+        color:#ff5c37;
+    }
+    .centered.others {
+        background-image:none;
+    }
+    .next_btn {
+        color:#99d538;
+        background:transparent url(../img/smst_btn_bg.png) repeat-y scroll center top;
+        padding:10px 22px;
+        font-size:1em;
+        border:none;
+        cursor:pointer;
+        margin:22px;
+        font-weight:bold;
+        border-radius:0;
+    }
+    .next_btn:disabled {
+        cursor:default;
+        color:#edf7f9;
+    }    
 </style>
 
 
@@ -123,32 +155,53 @@ foreach($quizzes as $q)
 echo '</div>';
 ?>
 <!-- display score -->
-<div id="results_display" style="display: none;">
-<h3>Results</h3>
-<h4>Correct: <span id="quiz_correct"></span> - Total Score: <span id="quiz_score"></span></h4>
+<div class="splashTop" style="height:63px;width:100%;position:relative;z-index:75;text-align:center;">
+    <div style="width:159px;margin:0 auto;">
+        <div style="position:absolute;bottom:-28px;"><img width="159px" height="55px" src="../img/smst_header_lvl1@2x.png" alt="" /></div>
+    </div>
 </div>
-<!----->
+<div class="splashBottom" style="background:rgba(51,82,102,0.35);width:100%;position:relative;">
+    <div id="results_display" style="text-align:center;padding:63px 22px 20px 22px;">
+        <div style="font-weight:bold;font-size:30px;color:#99D538;text-transform:uppercase;margin-bottom:14px;">Success!</div>
+        <div>You scored high enough to make the Hall of Fame.</div>
+        <div style="margin:18px 0 22px 0;">
+            <input type="button" name="" value="Enter Initials" class="next_btn" style="margin:4px 0 0 0;" />
+            <input type="button" name="" value="Brag" class="next_btn" style="margin:4px 0 0 0;" />
+        </div>
+        <div style="font-weight:bold;font-size:30px;color:#FF5C37;text-transform:uppercase;margin-bottom:14px;">Sorry!</div>
+        <div>You didn't score high enough to make the Hall of Fame.</div>
+        <div style="margin:18px 0 32px 0;">
+            <input type="button" name="" value="Try Again" class="next_btn" style="margin:4px 0 0 0;" />
+            <input type="button" name="" value="Hall of Fame" class="next_btn" style="margin:4px 0 0 0;" />
+        </div>
+        <div style="font-size:20px;font-weight:bold;text-align:left;">Correct: <span id="quiz_correct">9/10</span></div>
+        <div style="font-size:20px;font-weight:bold;text-align:left;">Points: <span id="quiz_score">4500</span></div>
+    </div>
+    <!----->
 
-<!-- results area -->
-<div id="quiz_results" style="display:none;">
-    
-<?php
-    $cn = 0;
-    foreach($quizzes as $q)
-    {
-        echo '<div class="quiz_answers"><p>'. $q['Quiz']['title'] . '&nbsp;&nbsp;&mdash;&nbsp;&nbsp;' . $q['Quiz']['body'] . '</p>';
-        echo '<div id="answer_correct_'. $cn . '"></div>';
-        echo '</div>';
-        $cn ++;
-    }
+    <!-- results area -->
+    <div id="quiz_results" style="display:block;padding:0 15px;">
+        
+    <?php
+        $cn = 0;
+        foreach($quizzes as $q)
+        {
+            echo '<div class="quiz_answers correct" style="margin-bottom:22px;background:transparent url(../img/smst_icon_check@2x.png) no-repeat scroll left center;background-size:44px 44px;color:#99d538;padding-left:44px;min-height:44px;">';
+            echo '  <div>' . $q['Quiz']['title'] . ': ' . $q['Quiz']['body'] . '</div>';
+            echo '  <div id="answer_correct_'. $cn . '"></div>';
+            echo '</div>';
+            $cn ++;
+        }
 
- ?>
-    <div id="initial_div">Enter "Hall of Fame": <input type="text" name="initial" value="AAA" maxlength="3" id="initial" /></div>
-    <input type="button" name="enter" value="Enter" id="enter_btn" />
-    <input type="button" name="brag" value="Brag" id="brag_btn" />
-    <input type="hidden" name="ajaxURL" value="<?php echo $this->Html->url(array('controller' => 'quizzes', 'action' => 'save')) . '.json'; ?>" id="ajax_url">
-    <input type="hidden" name="scoreURL" value="<?php echo $this->Html->url(array('controller' => 'quizzes', 'action' => 'scoreboard')) . '.json'; ?>" id="scoreboard_url">
-    <input type="hidden" name="fameURL" value="<?php echo $this->Html->url(array('controller' => 'scoreboards', 'action' => 'scoreboard')) . '.json'; ?>" id="fame_url">
+     ?>
+        <div id="initial_div">Enter "Hall of Fame": <input type="text" name="initial" value="AAA" maxlength="3" id="initial" /></div>
+        <input type="button" name="enter" value="Enter" id="enter_btn" />
+        <input type="button" name="brag" value="Brag" id="brag_btn" />
+        <input type="hidden" name="ajaxURL" value="<?php echo $this->Html->url(array('controller' => 'quizzes', 'action' => 'save')) . '.json'; ?>" id="ajax_url">
+        <input type="hidden" name="scoreURL" value="<?php echo $this->Html->url(array('controller' => 'quizzes', 'action' => 'scoreboard')) . '.json'; ?>" id="scoreboard_url">
+        <input type="hidden" name="fameURL" value="<?php echo $this->Html->url(array('controller' => 'scoreboards', 'action' => 'scoreboard')) . '.json'; ?>" id="fame_url">
+    </div>
+
 </div>
 <!-- end of results area -->
 
@@ -342,7 +395,7 @@ $(document).ready(function () {
                     $(this).children('div').addClass('others');
                 }
             });
-            //$($(this).children('div')).addClass('correct');
+            
             $totalCorrect ++;
         }
         else
@@ -362,9 +415,10 @@ $(document).ready(function () {
                     $(this).children('div').addClass('others');
                 }
             });
-            $(this).children('div').removeClass('others');
-            $(this).children('div').addClass('incorrect');
+            $($(this).children('div')).removeClass('others');
+            $($(this).children('div')).addClass('incorrect');
         }
+        
         $responses.push($res);
         
         $(this).unbind('click');

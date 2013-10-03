@@ -12,3 +12,4 @@ Thumbs.db
 plugins/
 vendors/
 app/webroot/img
+app/tmp

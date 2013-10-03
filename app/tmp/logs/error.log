@@ -1205,3 +1205,2632 @@ Stack Trace:
 #10 /Users/trieutran/Sites/sms/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(ScoreboardsController), Object(CakeRequest), Object(CakeResponse))
 #11 /Users/trieutran/Sites/sms/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #12 {main}
+2013-09-30 08:46:47 Error: [MissingConnectionException] Database connection "Mysql" is missing, or could not be created.
+Exception Attributes: array (
+  'class' => 'Mysql',
+  'message' => 'SQLSTATE[28000] [1045] Access denied for user \'root\'@\'localhost\' (using password: NO)',
+  'enabled' => true,
+)
+Request URL: /mobile/sms_trieu/quizzes/quiz?level=1
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_trieu/lib/Cake/Model/Datasource/DboSource.php(262): Mysql->connect()
+#1 /home1/infinasa/public_html/mobile/sms_trieu/lib/Cake/Model/ConnectionManager.php(107): DboSource->__construct(Array)
+#2 /home1/infinasa/public_html/mobile/sms_trieu/lib/Cake/Model/Model.php(3288): ConnectionManager::getDataSource('default')
+#3 /home1/infinasa/public_html/mobile/sms_trieu/lib/Cake/Model/Model.php(1107): Model->setDataSource('default')
+#4 /home1/infinasa/public_html/mobile/sms_trieu/lib/Cake/Model/Model.php(3310): Model->setSource('bosses')
+#5 /home1/infinasa/public_html/mobile/sms_trieu/lib/Cake/Model/Model.php(2750): Model->getDataSource()
+#6 /home1/infinasa/public_html/mobile/sms_trieu/lib/Cake/Model/Model.php(2722): Model->_readDataSource('all', Array)
+#7 /home1/infinasa/public_html/mobile/sms_trieu/app/Controller/QuizzesController.php(41): Model->find('all')
+#8 [internal function]: QuizzesController->quiz()
+#9 /home1/infinasa/public_html/mobile/sms_trieu/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(QuizzesController), Array)
+#10 /home1/infinasa/public_html/mobile/sms_trieu/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#11 /home1/infinasa/public_html/mobile/sms_trieu/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(QuizzesController), Object(CakeRequest), Object(CakeResponse))
+#12 /home1/infinasa/public_html/mobile/sms_trieu/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#13 {main}
+2013-09-30 08:48:49 Error: [MissingTableException] Table bosses for model Boss was not found in datasource default.
+Exception Attributes: array (
+  'table' => 'bosses',
+  'class' => 'Boss',
+  'ds' => 'default',
+)
+Request URL: /mobile/sms_trieu/quizzes/quiz?level=1
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_trieu/lib/Cake/Model/Model.php(3310): Model->setSource('bosses')
+#1 /home1/infinasa/public_html/mobile/sms_trieu/lib/Cake/Model/Model.php(2750): Model->getDataSource()
+#2 /home1/infinasa/public_html/mobile/sms_trieu/lib/Cake/Model/Model.php(2722): Model->_readDataSource('all', Array)
+#3 /home1/infinasa/public_html/mobile/sms_trieu/app/Controller/QuizzesController.php(41): Model->find('all')
+#4 [internal function]: QuizzesController->quiz()
+#5 /home1/infinasa/public_html/mobile/sms_trieu/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(QuizzesController), Array)
+#6 /home1/infinasa/public_html/mobile/sms_trieu/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#7 /home1/infinasa/public_html/mobile/sms_trieu/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(QuizzesController), Object(CakeRequest), Object(CakeResponse))
+#8 /home1/infinasa/public_html/mobile/sms_trieu/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#9 {main}
+2013-09-30 11:00:59 Error: [SocketException] Invalid email: "wkuykendall@infina.net,ttran@infina.net"
+Request URL: /mobile/sms_trieu/quizzes/brag
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_trieu/lib/Cake/Network/Email/CakeEmail.php(438): CakeEmail->_setEmail('_to', 'wkuykendall@inf...', NULL)
+#1 /home1/infinasa/public_html/mobile/sms_trieu/app/Controller/QuizzesController.php(119): CakeEmail->to('wkuykendall@inf...')
+#2 [internal function]: QuizzesController->brag()
+#3 /home1/infinasa/public_html/mobile/sms_trieu/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(QuizzesController), Array)
+#4 /home1/infinasa/public_html/mobile/sms_trieu/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#5 /home1/infinasa/public_html/mobile/sms_trieu/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(QuizzesController), Object(CakeRequest), Object(CakeResponse))
+#6 /home1/infinasa/public_html/mobile/sms_trieu/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#7 {main}
+2013-09-30 11:02:57 Error: [SocketException] Invalid email: "wkuykendall@infina.net;ttran@infina.net"
+Request URL: /mobile/sms_trieu/quizzes/brag
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_trieu/lib/Cake/Network/Email/CakeEmail.php(438): CakeEmail->_setEmail('_to', 'wkuykendall@inf...', NULL)
+#1 /home1/infinasa/public_html/mobile/sms_trieu/app/Controller/QuizzesController.php(119): CakeEmail->to('wkuykendall@inf...')
+#2 [internal function]: QuizzesController->brag()
+#3 /home1/infinasa/public_html/mobile/sms_trieu/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(QuizzesController), Array)
+#4 /home1/infinasa/public_html/mobile/sms_trieu/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#5 /home1/infinasa/public_html/mobile/sms_trieu/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(QuizzesController), Object(CakeRequest), Object(CakeResponse))
+#6 /home1/infinasa/public_html/mobile/sms_trieu/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#7 {main}
+2013-09-30 11:04:21 Error: [BadRequestException] The request has been black-holed
+Request URL: /mobile/sms_trieu/quizzes/brag
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_trieu/lib/Cake/Controller/Component/SecurityComponent.php(244): SecurityComponent->blackHole(Object(QuizzesController), 'csrf')
+#1 [internal function]: SecurityComponent->startup(Object(QuizzesController))
+#2 /home1/infinasa/public_html/mobile/sms_trieu/lib/Cake/Utility/ObjectCollection.php(132): call_user_func_array(Array, Array)
+#3 [internal function]: ObjectCollection->trigger(Object(CakeEvent))
+#4 /home1/infinasa/public_html/mobile/sms_trieu/lib/Cake/Event/CakeEventManager.php(248): call_user_func(Array, Object(CakeEvent))
+#5 /home1/infinasa/public_html/mobile/sms_trieu/lib/Cake/Controller/Controller.php(675): CakeEventManager->dispatch(Object(CakeEvent))
+#6 /home1/infinasa/public_html/mobile/sms_trieu/lib/Cake/Routing/Dispatcher.php(184): Controller->startupProcess()
+#7 /home1/infinasa/public_html/mobile/sms_trieu/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(QuizzesController), Object(CakeRequest), Object(CakeResponse))
+#8 /home1/infinasa/public_html/mobile/sms_trieu/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#9 {main}
+2013-09-30 11:04:32 Error: [BadRequestException] The request has been black-holed
+Request URL: /mobile/sms_trieu/quizzes/brag
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_trieu/lib/Cake/Controller/Component/SecurityComponent.php(244): SecurityComponent->blackHole(Object(QuizzesController), 'csrf')
+#1 [internal function]: SecurityComponent->startup(Object(QuizzesController))
+#2 /home1/infinasa/public_html/mobile/sms_trieu/lib/Cake/Utility/ObjectCollection.php(132): call_user_func_array(Array, Array)
+#3 [internal function]: ObjectCollection->trigger(Object(CakeEvent))
+#4 /home1/infinasa/public_html/mobile/sms_trieu/lib/Cake/Event/CakeEventManager.php(248): call_user_func(Array, Object(CakeEvent))
+#5 /home1/infinasa/public_html/mobile/sms_trieu/lib/Cake/Controller/Controller.php(675): CakeEventManager->dispatch(Object(CakeEvent))
+#6 /home1/infinasa/public_html/mobile/sms_trieu/lib/Cake/Routing/Dispatcher.php(184): Controller->startupProcess()
+#7 /home1/infinasa/public_html/mobile/sms_trieu/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(QuizzesController), Object(CakeRequest), Object(CakeResponse))
+#8 /home1/infinasa/public_html/mobile/sms_trieu/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#9 {main}
+2013-09-30 13:03:13 Error: [MissingControllerException] Controller class SplashController could not be found.
+Exception Attributes: array (
+  'class' => 'SplashController',
+  'plugin' => NULL,
+)
+Request URL: /mobile/sms_will/splash/
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_will/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-10-01 07:33:51 Error: [NotFoundException] Not Found
+Request URL: /mobile/sms_will/quizzes/quiz
+Stack Trace:
+#0 [internal function]: QuizzesController->quiz()
+#1 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(QuizzesController), Array)
+#2 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#3 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(QuizzesController), Object(CakeRequest), Object(CakeResponse))
+#4 /home1/infinasa/public_html/mobile/sms_will/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2013-10-01 07:33:51 Error: [MissingActionException] Action QuizzesController::css() could not be found.
+Exception Attributes: array (
+  'controller' => 'QuizzesController',
+  'action' => 'css',
+)
+Request URL: /mobile/sms_will/quizzes/css/foundation.css
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(QuizzesController), Object(CakeRequest), Object(CakeResponse))
+#2 /home1/infinasa/public_html/mobile/sms_will/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2013-10-01 07:33:51 Error: [MissingActionException] Action QuizzesController::js() could not be found.
+Exception Attributes: array (
+  'controller' => 'QuizzesController',
+  'action' => 'js',
+)
+Request URL: /mobile/sms_will/quizzes/js/vendor/custom.modernizr.js
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(QuizzesController), Object(CakeRequest), Object(CakeResponse))
+#2 /home1/infinasa/public_html/mobile/sms_will/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2013-10-01 07:33:51 Error: [MissingActionException] Action QuizzesController::js() could not be found.
+Exception Attributes: array (
+  'controller' => 'QuizzesController',
+  'action' => 'js',
+)
+Request URL: /mobile/sms_will/quizzes/js/foundation.min.js
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(QuizzesController), Object(CakeRequest), Object(CakeResponse))
+#2 /home1/infinasa/public_html/mobile/sms_will/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2013-10-01 07:33:51 Error: [MissingActionException] Action QuizzesController::img() could not be found.
+Exception Attributes: array (
+  'controller' => 'QuizzesController',
+  'action' => 'img',
+)
+Request URL: /mobile/sms_will/quizzes/img/smst_menu@2x.png
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(QuizzesController), Object(CakeRequest), Object(CakeResponse))
+#2 /home1/infinasa/public_html/mobile/sms_will/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2013-10-01 07:33:51 Error: [MissingActionException] Action QuizzesController::img() could not be found.
+Exception Attributes: array (
+  'controller' => 'QuizzesController',
+  'action' => 'img',
+)
+Request URL: /mobile/sms_will/quizzes/img/smst_logo@2x.png
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(QuizzesController), Object(CakeRequest), Object(CakeResponse))
+#2 /home1/infinasa/public_html/mobile/sms_will/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2013-10-01 07:33:51 Error: [MissingActionException] Action QuizzesController::img() could not be found.
+Exception Attributes: array (
+  'controller' => 'QuizzesController',
+  'action' => 'img',
+)
+Request URL: /mobile/sms_will/quizzes/img/smst_bg.jpg
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(QuizzesController), Object(CakeRequest), Object(CakeResponse))
+#2 /home1/infinasa/public_html/mobile/sms_will/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2013-10-01 07:33:51 Error: [MissingActionException] Action QuizzesController::js() could not be found.
+Exception Attributes: array (
+  'controller' => 'QuizzesController',
+  'action' => 'js',
+)
+Request URL: /mobile/sms_will/quizzes/js/vendor/zepto.js
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(QuizzesController), Object(CakeRequest), Object(CakeResponse))
+#2 /home1/infinasa/public_html/mobile/sms_will/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2013-10-01 07:33:52 Error: [MissingActionException] Action QuizzesController::js() could not be found.
+Exception Attributes: array (
+  'controller' => 'QuizzesController',
+  'action' => 'js',
+)
+Request URL: /mobile/sms_will/quizzes/js/foundation.min.js
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(QuizzesController), Object(CakeRequest), Object(CakeResponse))
+#2 /home1/infinasa/public_html/mobile/sms_will/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2013-10-01 07:50:51 Error: [MissingControllerException] Controller class ImgController could not be found.
+Exception Attributes: array (
+  'class' => 'ImgController',
+  'plugin' => NULL,
+)
+Request URL: /mobile/sms_will/img/smst_aystyb@2x.png
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_will/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-10-01 07:57:46 Error: [MissingActionException] Action QuizzesController::css() could not be found.
+Exception Attributes: array (
+  'controller' => 'QuizzesController',
+  'action' => 'css',
+)
+Request URL: /mobile/sms_will/quizzes/css/foundation.css
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(QuizzesController), Object(CakeRequest), Object(CakeResponse))
+#2 /home1/infinasa/public_html/mobile/sms_will/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2013-10-01 07:57:46 Error: [MissingActionException] Action QuizzesController::js() could not be found.
+Exception Attributes: array (
+  'controller' => 'QuizzesController',
+  'action' => 'js',
+)
+Request URL: /mobile/sms_will/quizzes/js/vendor/custom.modernizr.js
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(QuizzesController), Object(CakeRequest), Object(CakeResponse))
+#2 /home1/infinasa/public_html/mobile/sms_will/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2013-10-01 07:57:47 Error: [MissingActionException] Action QuizzesController::img() could not be found.
+Exception Attributes: array (
+  'controller' => 'QuizzesController',
+  'action' => 'img',
+)
+Request URL: /mobile/sms_will/quizzes/img/smst_logo@2x.png
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(QuizzesController), Object(CakeRequest), Object(CakeResponse))
+#2 /home1/infinasa/public_html/mobile/sms_will/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2013-10-01 07:57:47 Error: [MissingActionException] Action QuizzesController::js() could not be found.
+Exception Attributes: array (
+  'controller' => 'QuizzesController',
+  'action' => 'js',
+)
+Request URL: /mobile/sms_will/quizzes/js/vendor/zepto.js
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(QuizzesController), Object(CakeRequest), Object(CakeResponse))
+#2 /home1/infinasa/public_html/mobile/sms_will/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2013-10-01 07:57:47 Error: [MissingActionException] Action QuizzesController::img() could not be found.
+Exception Attributes: array (
+  'controller' => 'QuizzesController',
+  'action' => 'img',
+)
+Request URL: /mobile/sms_will/quizzes/img/smst_btn_boards@2x.png
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(QuizzesController), Object(CakeRequest), Object(CakeResponse))
+#2 /home1/infinasa/public_html/mobile/sms_will/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2013-10-01 07:57:47 Error: [MissingActionException] Action QuizzesController::img() could not be found.
+Exception Attributes: array (
+  'controller' => 'QuizzesController',
+  'action' => 'img',
+)
+Request URL: /mobile/sms_will/quizzes/img/smst_header_quiz@2x.png
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(QuizzesController), Object(CakeRequest), Object(CakeResponse))
+#2 /home1/infinasa/public_html/mobile/sms_will/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2013-10-01 07:57:47 Error: [MissingActionException] Action QuizzesController::js() could not be found.
+Exception Attributes: array (
+  'controller' => 'QuizzesController',
+  'action' => 'js',
+)
+Request URL: /mobile/sms_will/quizzes/js/foundation.min.js
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(QuizzesController), Object(CakeRequest), Object(CakeResponse))
+#2 /home1/infinasa/public_html/mobile/sms_will/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2013-10-01 07:57:47 Error: [MissingActionException] Action QuizzesController::img() could not be found.
+Exception Attributes: array (
+  'controller' => 'QuizzesController',
+  'action' => 'img',
+)
+Request URL: /mobile/sms_will/quizzes/img/smst_bg.jpg
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(QuizzesController), Object(CakeRequest), Object(CakeResponse))
+#2 /home1/infinasa/public_html/mobile/sms_will/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2013-10-01 07:57:47 Error: [MissingActionException] Action QuizzesController::img() could not be found.
+Exception Attributes: array (
+  'controller' => 'QuizzesController',
+  'action' => 'img',
+)
+Request URL: /mobile/sms_will/quizzes/img/smst_menu@2x.png
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(QuizzesController), Object(CakeRequest), Object(CakeResponse))
+#2 /home1/infinasa/public_html/mobile/sms_will/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2013-10-01 07:59:18 Error: [MissingControllerException] Controller class QController could not be found.
+Exception Attributes: array (
+  'class' => 'QController',
+  'plugin' => NULL,
+)
+Request URL: /mobile/sms_will/q
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_will/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-10-01 08:04:50 Error: [MissingControllerException] Controller class UndefinedController could not be found.
+Exception Attributes: array (
+  'class' => 'UndefinedController',
+  'plugin' => NULL,
+)
+Request URL: /mobile/sms_will/undefined
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_will/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-10-01 08:06:02 Error: Fatal Error (4): syntax error, unexpected ';', expecting ')' in [/home1/infinasa/public_html/mobile/sms_will/app/View/Splash/index.ctp, line 21]
+2013-10-01 08:06:02 Error: [FatalErrorException] syntax error, unexpected ';', expecting ')'
+Request URL: /mobile/sms_will/
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Error/ErrorHandler.php(205): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/home1/infinasa...', 21)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/home1/infinasa...', 21, Array)
+#2 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/home1/infinasa...', 21, Array)
+#3 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2013-10-01 08:06:12 Error: Fatal Error (4): syntax error, unexpected ';', expecting ')' in [/home1/infinasa/public_html/mobile/sms_will/app/View/Splash/index.ctp, line 21]
+2013-10-01 08:06:12 Error: [FatalErrorException] syntax error, unexpected ';', expecting ')'
+Request URL: /mobile/sms_will/
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Error/ErrorHandler.php(205): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/home1/infinasa...', 21)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/home1/infinasa...', 21, Array)
+#2 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/home1/infinasa...', 21, Array)
+#3 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2013-10-01 08:06:18 Error: Fatal Error (4): syntax error, unexpected '?>', expecting ')' in [/home1/infinasa/public_html/mobile/sms_will/app/View/Splash/index.ctp, line 21]
+2013-10-01 08:06:18 Error: [FatalErrorException] syntax error, unexpected '?>', expecting ')'
+Request URL: /mobile/sms_will/
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Error/ErrorHandler.php(205): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/home1/infinasa...', 21)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/home1/infinasa...', 21, Array)
+#2 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/home1/infinasa...', 21, Array)
+#3 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2013-10-01 08:06:31 Error: Fatal Error (4): syntax error, unexpected '?>', expecting ')' in [/home1/infinasa/public_html/mobile/sms_will/app/View/Splash/index.ctp, line 21]
+2013-10-01 08:06:31 Error: [FatalErrorException] syntax error, unexpected '?>', expecting ')'
+Request URL: /mobile/sms_will/
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Error/ErrorHandler.php(205): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/home1/infinasa...', 21)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/home1/infinasa...', 21, Array)
+#2 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/home1/infinasa...', 21, Array)
+#3 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2013-10-01 08:06:44 Error: [MissingControllerException] Controller class UndefinedController could not be found.
+Exception Attributes: array (
+  'class' => 'UndefinedController',
+  'plugin' => NULL,
+)
+Request URL: /mobile/sms_will/undefined
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_will/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-10-01 08:07:23 Error: [MissingControllerException] Controller class UndefinedController could not be found.
+Exception Attributes: array (
+  'class' => 'UndefinedController',
+  'plugin' => NULL,
+)
+Request URL: /mobile/sms_will/undefined
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_will/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-10-01 08:08:48 Error: [MissingControllerException] Controller class UndefinedController could not be found.
+Exception Attributes: array (
+  'class' => 'UndefinedController',
+  'plugin' => NULL,
+)
+Request URL: /mobile/sms_will/undefined
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_will/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-10-01 08:09:07 Error: [MissingControllerException] Controller class UndefinedController could not be found.
+Exception Attributes: array (
+  'class' => 'UndefinedController',
+  'plugin' => NULL,
+)
+Request URL: /mobile/sms_will/undefined
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_will/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-10-01 08:09:32 Error: [MissingControllerException] Controller class UndefinedController could not be found.
+Exception Attributes: array (
+  'class' => 'UndefinedController',
+  'plugin' => NULL,
+)
+Request URL: /mobile/sms_will/undefined
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_will/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-10-01 08:15:32 Error: [MissingControllerException] Controller class UndefinedController could not be found.
+Exception Attributes: array (
+  'class' => 'UndefinedController',
+  'plugin' => NULL,
+)
+Request URL: /mobile/sms_will/undefined
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_will/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-10-01 08:16:47 Error: [MissingControllerException] Controller class UndefinedController could not be found.
+Exception Attributes: array (
+  'class' => 'UndefinedController',
+  'plugin' => NULL,
+)
+Request URL: /mobile/sms_will/undefined
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_will/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-10-01 08:19:44 Error: [MissingControllerException] Controller class UndefinedController could not be found.
+Exception Attributes: array (
+  'class' => 'UndefinedController',
+  'plugin' => NULL,
+)
+Request URL: /mobile/sms_will/undefined
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_will/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-10-01 08:20:09 Error: [MissingControllerException] Controller class UndefinedController could not be found.
+Exception Attributes: array (
+  'class' => 'UndefinedController',
+  'plugin' => NULL,
+)
+Request URL: /mobile/sms_will/undefined
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_will/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-10-01 08:20:30 Error: [MissingControllerException] Controller class UndefinedController could not be found.
+Exception Attributes: array (
+  'class' => 'UndefinedController',
+  'plugin' => NULL,
+)
+Request URL: /mobile/sms_will/undefined
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_will/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-10-01 08:20:48 Error: [MissingControllerException] Controller class UndefinedController could not be found.
+Exception Attributes: array (
+  'class' => 'UndefinedController',
+  'plugin' => NULL,
+)
+Request URL: /mobile/sms_will/undefined
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_will/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-10-01 08:21:03 Error: [MissingControllerException] Controller class UndefinedController could not be found.
+Exception Attributes: array (
+  'class' => 'UndefinedController',
+  'plugin' => NULL,
+)
+Request URL: /mobile/sms_will/undefined
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_will/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-10-01 08:21:43 Error: [MissingControllerException] Controller class UndefinedController could not be found.
+Exception Attributes: array (
+  'class' => 'UndefinedController',
+  'plugin' => NULL,
+)
+Request URL: /mobile/sms_will/undefined
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_will/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-10-01 08:22:05 Error: [MissingActionException] Action QuizzesController::css() could not be found.
+Exception Attributes: array (
+  'controller' => 'QuizzesController',
+  'action' => 'css',
+)
+Request URL: /mobile/sms_will/quizzes/css/foundation.css
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(QuizzesController), Object(CakeRequest), Object(CakeResponse))
+#2 /home1/infinasa/public_html/mobile/sms_will/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2013-10-01 08:22:05 Error: [MissingActionException] Action QuizzesController::js() could not be found.
+Exception Attributes: array (
+  'controller' => 'QuizzesController',
+  'action' => 'js',
+)
+Request URL: /mobile/sms_will/quizzes/js/vendor/custom.modernizr.js
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(QuizzesController), Object(CakeRequest), Object(CakeResponse))
+#2 /home1/infinasa/public_html/mobile/sms_will/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2013-10-01 08:22:05 Error: [MissingActionException] Action QuizzesController::js() could not be found.
+Exception Attributes: array (
+  'controller' => 'QuizzesController',
+  'action' => 'js',
+)
+Request URL: /mobile/sms_will/quizzes/js/foundation.min.js
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(QuizzesController), Object(CakeRequest), Object(CakeResponse))
+#2 /home1/infinasa/public_html/mobile/sms_will/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2013-10-01 08:22:05 Error: [MissingActionException] Action QuizzesController::img() could not be found.
+Exception Attributes: array (
+  'controller' => 'QuizzesController',
+  'action' => 'img',
+)
+Request URL: /mobile/sms_will/quizzes/img/smst_bg.jpg
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(QuizzesController), Object(CakeRequest), Object(CakeResponse))
+#2 /home1/infinasa/public_html/mobile/sms_will/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2013-10-01 08:22:05 Error: [MissingActionException] Action QuizzesController::img() could not be found.
+Exception Attributes: array (
+  'controller' => 'QuizzesController',
+  'action' => 'img',
+)
+Request URL: /mobile/sms_will/quizzes/img/smst_logo@2x.png
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(QuizzesController), Object(CakeRequest), Object(CakeResponse))
+#2 /home1/infinasa/public_html/mobile/sms_will/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2013-10-01 08:22:05 Error: [MissingActionException] Action QuizzesController::js() could not be found.
+Exception Attributes: array (
+  'controller' => 'QuizzesController',
+  'action' => 'js',
+)
+Request URL: /mobile/sms_will/quizzes/js/vendor/zepto.js
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(QuizzesController), Object(CakeRequest), Object(CakeResponse))
+#2 /home1/infinasa/public_html/mobile/sms_will/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2013-10-01 08:22:05 Error: [MissingActionException] Action QuizzesController::img() could not be found.
+Exception Attributes: array (
+  'controller' => 'QuizzesController',
+  'action' => 'img',
+)
+Request URL: /mobile/sms_will/quizzes/img/smst_menu@2x.png
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(QuizzesController), Object(CakeRequest), Object(CakeResponse))
+#2 /home1/infinasa/public_html/mobile/sms_will/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2013-10-01 08:22:05 Error: [MissingActionException] Action QuizzesController::js() could not be found.
+Exception Attributes: array (
+  'controller' => 'QuizzesController',
+  'action' => 'js',
+)
+Request URL: /mobile/sms_will/quizzes/js/foundation.min.js
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(QuizzesController), Object(CakeRequest), Object(CakeResponse))
+#2 /home1/infinasa/public_html/mobile/sms_will/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2013-10-01 08:22:46 Error: [MissingActionException] Action QuizzesController::js() could not be found.
+Exception Attributes: array (
+  'controller' => 'QuizzesController',
+  'action' => 'js',
+)
+Request URL: /mobile/sms_will/quizzes/js/vendor/custom.modernizr.js
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(QuizzesController), Object(CakeRequest), Object(CakeResponse))
+#2 /home1/infinasa/public_html/mobile/sms_will/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2013-10-01 08:22:46 Error: [MissingActionException] Action QuizzesController::css() could not be found.
+Exception Attributes: array (
+  'controller' => 'QuizzesController',
+  'action' => 'css',
+)
+Request URL: /mobile/sms_will/quizzes/css/foundation.css
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(QuizzesController), Object(CakeRequest), Object(CakeResponse))
+#2 /home1/infinasa/public_html/mobile/sms_will/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2013-10-01 08:22:46 Error: [MissingActionException] Action QuizzesController::js() could not be found.
+Exception Attributes: array (
+  'controller' => 'QuizzesController',
+  'action' => 'js',
+)
+Request URL: /mobile/sms_will/quizzes/js/foundation.min.js
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(QuizzesController), Object(CakeRequest), Object(CakeResponse))
+#2 /home1/infinasa/public_html/mobile/sms_will/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2013-10-01 08:22:46 Error: [MissingActionException] Action QuizzesController::img() could not be found.
+Exception Attributes: array (
+  'controller' => 'QuizzesController',
+  'action' => 'img',
+)
+Request URL: /mobile/sms_will/quizzes/img/smst_btn_boards@2x.png
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(QuizzesController), Object(CakeRequest), Object(CakeResponse))
+#2 /home1/infinasa/public_html/mobile/sms_will/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2013-10-01 08:22:46 Error: [MissingActionException] Action QuizzesController::img() could not be found.
+Exception Attributes: array (
+  'controller' => 'QuizzesController',
+  'action' => 'img',
+)
+Request URL: /mobile/sms_will/quizzes/img/smst_header_quiz@2x.png
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(QuizzesController), Object(CakeRequest), Object(CakeResponse))
+#2 /home1/infinasa/public_html/mobile/sms_will/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2013-10-01 08:22:46 Error: [MissingActionException] Action QuizzesController::img() could not be found.
+Exception Attributes: array (
+  'controller' => 'QuizzesController',
+  'action' => 'img',
+)
+Request URL: /mobile/sms_will/quizzes/img/smst_bg.jpg
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(QuizzesController), Object(CakeRequest), Object(CakeResponse))
+#2 /home1/infinasa/public_html/mobile/sms_will/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2013-10-01 08:22:46 Error: [MissingActionException] Action QuizzesController::img() could not be found.
+Exception Attributes: array (
+  'controller' => 'QuizzesController',
+  'action' => 'img',
+)
+Request URL: /mobile/sms_will/quizzes/img/smst_logo@2x.png
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(QuizzesController), Object(CakeRequest), Object(CakeResponse))
+#2 /home1/infinasa/public_html/mobile/sms_will/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2013-10-01 08:22:46 Error: [MissingActionException] Action QuizzesController::js() could not be found.
+Exception Attributes: array (
+  'controller' => 'QuizzesController',
+  'action' => 'js',
+)
+Request URL: /mobile/sms_will/quizzes/js/vendor/zepto.js
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(QuizzesController), Object(CakeRequest), Object(CakeResponse))
+#2 /home1/infinasa/public_html/mobile/sms_will/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2013-10-01 08:22:46 Error: [MissingActionException] Action QuizzesController::img() could not be found.
+Exception Attributes: array (
+  'controller' => 'QuizzesController',
+  'action' => 'img',
+)
+Request URL: /mobile/sms_will/quizzes/img/smst_menu@2x.png
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(QuizzesController), Object(CakeRequest), Object(CakeResponse))
+#2 /home1/infinasa/public_html/mobile/sms_will/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2013-10-01 08:22:47 Error: [MissingActionException] Action QuizzesController::js() could not be found.
+Exception Attributes: array (
+  'controller' => 'QuizzesController',
+  'action' => 'js',
+)
+Request URL: /mobile/sms_will/quizzes/js/foundation.min.js
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(QuizzesController), Object(CakeRequest), Object(CakeResponse))
+#2 /home1/infinasa/public_html/mobile/sms_will/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2013-10-01 08:23:05 Error: [MissingActionException] Action QuizzesController::css() could not be found.
+Exception Attributes: array (
+  'controller' => 'QuizzesController',
+  'action' => 'css',
+)
+Request URL: /mobile/sms_will/quizzes/css/foundation.css
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(QuizzesController), Object(CakeRequest), Object(CakeResponse))
+#2 /home1/infinasa/public_html/mobile/sms_will/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2013-10-01 08:23:05 Error: [MissingActionException] Action QuizzesController::js() could not be found.
+Exception Attributes: array (
+  'controller' => 'QuizzesController',
+  'action' => 'js',
+)
+Request URL: /mobile/sms_will/quizzes/js/vendor/custom.modernizr.js
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(QuizzesController), Object(CakeRequest), Object(CakeResponse))
+#2 /home1/infinasa/public_html/mobile/sms_will/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2013-10-01 08:23:05 Error: [MissingActionException] Action QuizzesController::js() could not be found.
+Exception Attributes: array (
+  'controller' => 'QuizzesController',
+  'action' => 'js',
+)
+Request URL: /mobile/sms_will/quizzes/js/foundation.min.js
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(QuizzesController), Object(CakeRequest), Object(CakeResponse))
+#2 /home1/infinasa/public_html/mobile/sms_will/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2013-10-01 08:23:05 Error: [MissingActionException] Action QuizzesController::img() could not be found.
+Exception Attributes: array (
+  'controller' => 'QuizzesController',
+  'action' => 'img',
+)
+Request URL: /mobile/sms_will/quizzes/img/smst_btn_boards@2x.png
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(QuizzesController), Object(CakeRequest), Object(CakeResponse))
+#2 /home1/infinasa/public_html/mobile/sms_will/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2013-10-01 08:23:05 Error: [MissingActionException] Action QuizzesController::img() could not be found.
+Exception Attributes: array (
+  'controller' => 'QuizzesController',
+  'action' => 'img',
+)
+Request URL: /mobile/sms_will/quizzes/img/smst_header_quiz@2x.png
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(QuizzesController), Object(CakeRequest), Object(CakeResponse))
+#2 /home1/infinasa/public_html/mobile/sms_will/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2013-10-01 08:23:06 Error: [MissingActionException] Action QuizzesController::img() could not be found.
+Exception Attributes: array (
+  'controller' => 'QuizzesController',
+  'action' => 'img',
+)
+Request URL: /mobile/sms_will/quizzes/img/smst_bg.jpg
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(QuizzesController), Object(CakeRequest), Object(CakeResponse))
+#2 /home1/infinasa/public_html/mobile/sms_will/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2013-10-01 08:23:06 Error: [MissingActionException] Action QuizzesController::img() could not be found.
+Exception Attributes: array (
+  'controller' => 'QuizzesController',
+  'action' => 'img',
+)
+Request URL: /mobile/sms_will/quizzes/img/smst_menu@2x.png
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(QuizzesController), Object(CakeRequest), Object(CakeResponse))
+#2 /home1/infinasa/public_html/mobile/sms_will/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2013-10-01 08:23:06 Error: [MissingActionException] Action QuizzesController::img() could not be found.
+Exception Attributes: array (
+  'controller' => 'QuizzesController',
+  'action' => 'img',
+)
+Request URL: /mobile/sms_will/quizzes/img/smst_header_quiz@2x.png
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(QuizzesController), Object(CakeRequest), Object(CakeResponse))
+#2 /home1/infinasa/public_html/mobile/sms_will/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2013-10-01 08:23:06 Error: [MissingActionException] Action QuizzesController::img() could not be found.
+Exception Attributes: array (
+  'controller' => 'QuizzesController',
+  'action' => 'img',
+)
+Request URL: /mobile/sms_will/quizzes/img/smst_logo@2x.png
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(QuizzesController), Object(CakeRequest), Object(CakeResponse))
+#2 /home1/infinasa/public_html/mobile/sms_will/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2013-10-01 08:23:06 Error: [MissingActionException] Action QuizzesController::img() could not be found.
+Exception Attributes: array (
+  'controller' => 'QuizzesController',
+  'action' => 'img',
+)
+Request URL: /mobile/sms_will/quizzes/img/smst_btn_boards@2x.png
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(QuizzesController), Object(CakeRequest), Object(CakeResponse))
+#2 /home1/infinasa/public_html/mobile/sms_will/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2013-10-01 08:23:06 Error: [MissingActionException] Action QuizzesController::js() could not be found.
+Exception Attributes: array (
+  'controller' => 'QuizzesController',
+  'action' => 'js',
+)
+Request URL: /mobile/sms_will/quizzes/js/vendor/zepto.js
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(QuizzesController), Object(CakeRequest), Object(CakeResponse))
+#2 /home1/infinasa/public_html/mobile/sms_will/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2013-10-01 08:23:50 Error: [MissingActionException] Action AppController::Controller() could not be found.
+Exception Attributes: array (
+  'controller' => 'AppController',
+  'action' => 'Controller',
+)
+Request URL: /mobile/sms_will/app/Controller/Quizzes/QuizzesController.php
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(AppController), Object(CakeRequest), Object(CakeResponse))
+#2 /home1/infinasa/public_html/mobile/sms_will/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2013-10-01 08:23:50 Error: [MissingActionException] Action AppController::Controller() could not be found.
+Exception Attributes: array (
+  'controller' => 'AppController',
+  'action' => 'Controller',
+)
+Request URL: /mobile/sms_will/app/Controller/Quizzes/js/vendor/custom.modernizr.js
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(AppController), Object(CakeRequest), Object(CakeResponse))
+#2 /home1/infinasa/public_html/mobile/sms_will/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2013-10-01 08:23:50 Error: [MissingActionException] Action AppController::Controller() could not be found.
+Exception Attributes: array (
+  'controller' => 'AppController',
+  'action' => 'Controller',
+)
+Request URL: /mobile/sms_will/app/Controller/Quizzes/css/foundation.css
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(AppController), Object(CakeRequest), Object(CakeResponse))
+#2 /home1/infinasa/public_html/mobile/sms_will/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2013-10-01 08:23:50 Error: [MissingActionException] Action AppController::Controller() could not be found.
+Exception Attributes: array (
+  'controller' => 'AppController',
+  'action' => 'Controller',
+)
+Request URL: /mobile/sms_will/app/Controller/Quizzes/js/foundation.min.js
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(AppController), Object(CakeRequest), Object(CakeResponse))
+#2 /home1/infinasa/public_html/mobile/sms_will/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2013-10-01 08:23:50 Error: [MissingActionException] Action AppController::Controller() could not be found.
+Exception Attributes: array (
+  'controller' => 'AppController',
+  'action' => 'Controller',
+)
+Request URL: /mobile/sms_will/app/Controller/Quizzes/img/smst_logo@2x.png
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(AppController), Object(CakeRequest), Object(CakeResponse))
+#2 /home1/infinasa/public_html/mobile/sms_will/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2013-10-01 08:23:50 Error: [MissingActionException] Action AppController::Controller() could not be found.
+Exception Attributes: array (
+  'controller' => 'AppController',
+  'action' => 'Controller',
+)
+Request URL: /mobile/sms_will/app/Controller/Quizzes/img/smst_menu@2x.png
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(AppController), Object(CakeRequest), Object(CakeResponse))
+#2 /home1/infinasa/public_html/mobile/sms_will/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2013-10-01 08:23:50 Error: [MissingActionException] Action AppController::Controller() could not be found.
+Exception Attributes: array (
+  'controller' => 'AppController',
+  'action' => 'Controller',
+)
+Request URL: /mobile/sms_will/app/Controller/Quizzes/js/vendor/zepto.js
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(AppController), Object(CakeRequest), Object(CakeResponse))
+#2 /home1/infinasa/public_html/mobile/sms_will/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2013-10-01 08:23:50 Error: [MissingActionException] Action AppController::Controller() could not be found.
+Exception Attributes: array (
+  'controller' => 'AppController',
+  'action' => 'Controller',
+)
+Request URL: /mobile/sms_will/app/Controller/Quizzes/img/smst_bg.jpg
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(AppController), Object(CakeRequest), Object(CakeResponse))
+#2 /home1/infinasa/public_html/mobile/sms_will/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2013-10-01 08:23:50 Error: [MissingActionException] Action AppController::Controller() could not be found.
+Exception Attributes: array (
+  'controller' => 'AppController',
+  'action' => 'Controller',
+)
+Request URL: /mobile/sms_will/app/Controller/Quizzes/js/foundation.min.js
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(AppController), Object(CakeRequest), Object(CakeResponse))
+#2 /home1/infinasa/public_html/mobile/sms_will/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2013-10-01 08:24:42 Error: [MissingActionException] Action AppController::Controller() could not be found.
+Exception Attributes: array (
+  'controller' => 'AppController',
+  'action' => 'Controller',
+)
+Request URL: /mobile/sms_will/app/Controller/Quizzes/QuizzesController.php
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(AppController), Object(CakeRequest), Object(CakeResponse))
+#2 /home1/infinasa/public_html/mobile/sms_will/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2013-10-01 08:24:42 Error: [MissingActionException] Action AppController::Controller() could not be found.
+Exception Attributes: array (
+  'controller' => 'AppController',
+  'action' => 'Controller',
+)
+Request URL: /mobile/sms_will/app/Controller/Quizzes/css/foundation.css
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(AppController), Object(CakeRequest), Object(CakeResponse))
+#2 /home1/infinasa/public_html/mobile/sms_will/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2013-10-01 08:24:42 Error: [MissingActionException] Action AppController::Controller() could not be found.
+Exception Attributes: array (
+  'controller' => 'AppController',
+  'action' => 'Controller',
+)
+Request URL: /mobile/sms_will/app/Controller/Quizzes/js/vendor/custom.modernizr.js
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(AppController), Object(CakeRequest), Object(CakeResponse))
+#2 /home1/infinasa/public_html/mobile/sms_will/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2013-10-01 08:24:42 Error: [MissingActionException] Action AppController::Controller() could not be found.
+Exception Attributes: array (
+  'controller' => 'AppController',
+  'action' => 'Controller',
+)
+Request URL: /mobile/sms_will/app/Controller/Quizzes/js/foundation.min.js
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(AppController), Object(CakeRequest), Object(CakeResponse))
+#2 /home1/infinasa/public_html/mobile/sms_will/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2013-10-01 08:24:42 Error: [MissingActionException] Action AppController::Controller() could not be found.
+Exception Attributes: array (
+  'controller' => 'AppController',
+  'action' => 'Controller',
+)
+Request URL: /mobile/sms_will/app/Controller/Quizzes/js/vendor/zepto.js
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(AppController), Object(CakeRequest), Object(CakeResponse))
+#2 /home1/infinasa/public_html/mobile/sms_will/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2013-10-01 08:24:42 Error: [MissingActionException] Action AppController::Controller() could not be found.
+Exception Attributes: array (
+  'controller' => 'AppController',
+  'action' => 'Controller',
+)
+Request URL: /mobile/sms_will/app/Controller/Quizzes/img/smst_logo@2x.png
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(AppController), Object(CakeRequest), Object(CakeResponse))
+#2 /home1/infinasa/public_html/mobile/sms_will/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2013-10-01 08:24:42 Error: [MissingActionException] Action AppController::Controller() could not be found.
+Exception Attributes: array (
+  'controller' => 'AppController',
+  'action' => 'Controller',
+)
+Request URL: /mobile/sms_will/app/Controller/Quizzes/img/smst_bg.jpg
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(AppController), Object(CakeRequest), Object(CakeResponse))
+#2 /home1/infinasa/public_html/mobile/sms_will/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2013-10-01 08:24:42 Error: [MissingActionException] Action AppController::Controller() could not be found.
+Exception Attributes: array (
+  'controller' => 'AppController',
+  'action' => 'Controller',
+)
+Request URL: /mobile/sms_will/app/Controller/Quizzes/img/smst_menu@2x.png
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(AppController), Object(CakeRequest), Object(CakeResponse))
+#2 /home1/infinasa/public_html/mobile/sms_will/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2013-10-01 08:24:43 Error: [MissingActionException] Action AppController::Controller() could not be found.
+Exception Attributes: array (
+  'controller' => 'AppController',
+  'action' => 'Controller',
+)
+Request URL: /mobile/sms_will/app/Controller/Quizzes/js/foundation.min.js
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(AppController), Object(CakeRequest), Object(CakeResponse))
+#2 /home1/infinasa/public_html/mobile/sms_will/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2013-10-01 09:52:35 Error: [MissingActionException] Action QuizzesController::css() could not be found.
+Exception Attributes: array (
+  'controller' => 'QuizzesController',
+  'action' => 'css',
+)
+Request URL: /mobile/sms_will/quizzes/css/foundation.css
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(QuizzesController), Object(CakeRequest), Object(CakeResponse))
+#2 /home1/infinasa/public_html/mobile/sms_will/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2013-10-01 09:52:35 Error: [MissingActionException] Action QuizzesController::js() could not be found.
+Exception Attributes: array (
+  'controller' => 'QuizzesController',
+  'action' => 'js',
+)
+Request URL: /mobile/sms_will/quizzes/js/vendor/custom.modernizr.js
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(QuizzesController), Object(CakeRequest), Object(CakeResponse))
+#2 /home1/infinasa/public_html/mobile/sms_will/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2013-10-01 09:52:36 Error: [MissingActionException] Action QuizzesController::js() could not be found.
+Exception Attributes: array (
+  'controller' => 'QuizzesController',
+  'action' => 'js',
+)
+Request URL: /mobile/sms_will/quizzes/js/foundation.min.js
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(QuizzesController), Object(CakeRequest), Object(CakeResponse))
+#2 /home1/infinasa/public_html/mobile/sms_will/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2013-10-01 09:52:36 Error: [MissingActionException] Action QuizzesController::img() could not be found.
+Exception Attributes: array (
+  'controller' => 'QuizzesController',
+  'action' => 'img',
+)
+Request URL: /mobile/sms_will/quizzes/img/smst_logo@2x.png
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(QuizzesController), Object(CakeRequest), Object(CakeResponse))
+#2 /home1/infinasa/public_html/mobile/sms_will/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2013-10-01 09:52:36 Error: [MissingActionException] Action QuizzesController::img() could not be found.
+Exception Attributes: array (
+  'controller' => 'QuizzesController',
+  'action' => 'img',
+)
+Request URL: /mobile/sms_will/quizzes/img/smst_bg.jpg
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(QuizzesController), Object(CakeRequest), Object(CakeResponse))
+#2 /home1/infinasa/public_html/mobile/sms_will/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2013-10-01 09:52:36 Error: [MissingActionException] Action QuizzesController::img() could not be found.
+Exception Attributes: array (
+  'controller' => 'QuizzesController',
+  'action' => 'img',
+)
+Request URL: /mobile/sms_will/quizzes/img/smst_menu@2x.png
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(QuizzesController), Object(CakeRequest), Object(CakeResponse))
+#2 /home1/infinasa/public_html/mobile/sms_will/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2013-10-01 09:52:36 Error: [MissingActionException] Action QuizzesController::js() could not be found.
+Exception Attributes: array (
+  'controller' => 'QuizzesController',
+  'action' => 'js',
+)
+Request URL: /mobile/sms_will/quizzes/js/vendor/zepto.js
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(QuizzesController), Object(CakeRequest), Object(CakeResponse))
+#2 /home1/infinasa/public_html/mobile/sms_will/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2013-10-01 09:52:36 Error: [MissingActionException] Action QuizzesController::js() could not be found.
+Exception Attributes: array (
+  'controller' => 'QuizzesController',
+  'action' => 'js',
+)
+Request URL: /mobile/sms_will/quizzes/js/foundation.min.js
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(QuizzesController), Object(CakeRequest), Object(CakeResponse))
+#2 /home1/infinasa/public_html/mobile/sms_will/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2013-10-01 09:53:25 Error: [MissingActionException] Action QuizzesController::css() could not be found.
+Exception Attributes: array (
+  'controller' => 'QuizzesController',
+  'action' => 'css',
+)
+Request URL: /mobile/sms_will/quizzes/css/foundation.css
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(QuizzesController), Object(CakeRequest), Object(CakeResponse))
+#2 /home1/infinasa/public_html/mobile/sms_will/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2013-10-01 09:53:25 Error: [MissingActionException] Action QuizzesController::js() could not be found.
+Exception Attributes: array (
+  'controller' => 'QuizzesController',
+  'action' => 'js',
+)
+Request URL: /mobile/sms_will/quizzes/js/vendor/custom.modernizr.js
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(QuizzesController), Object(CakeRequest), Object(CakeResponse))
+#2 /home1/infinasa/public_html/mobile/sms_will/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2013-10-01 09:53:25 Error: [MissingActionException] Action QuizzesController::js() could not be found.
+Exception Attributes: array (
+  'controller' => 'QuizzesController',
+  'action' => 'js',
+)
+Request URL: /mobile/sms_will/quizzes/js/foundation.min.js
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(QuizzesController), Object(CakeRequest), Object(CakeResponse))
+#2 /home1/infinasa/public_html/mobile/sms_will/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2013-10-01 09:53:25 Error: [MissingActionException] Action QuizzesController::img() could not be found.
+Exception Attributes: array (
+  'controller' => 'QuizzesController',
+  'action' => 'img',
+)
+Request URL: /mobile/sms_will/quizzes/img/smst_bg.jpg
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(QuizzesController), Object(CakeRequest), Object(CakeResponse))
+#2 /home1/infinasa/public_html/mobile/sms_will/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2013-10-01 09:53:25 Error: [MissingActionException] Action QuizzesController::js() could not be found.
+Exception Attributes: array (
+  'controller' => 'QuizzesController',
+  'action' => 'js',
+)
+Request URL: /mobile/sms_will/quizzes/js/vendor/zepto.js
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(QuizzesController), Object(CakeRequest), Object(CakeResponse))
+#2 /home1/infinasa/public_html/mobile/sms_will/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2013-10-01 09:53:25 Error: [MissingActionException] Action QuizzesController::img() could not be found.
+Exception Attributes: array (
+  'controller' => 'QuizzesController',
+  'action' => 'img',
+)
+Request URL: /mobile/sms_will/quizzes/img/smst_menu@2x.png
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(QuizzesController), Object(CakeRequest), Object(CakeResponse))
+#2 /home1/infinasa/public_html/mobile/sms_will/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2013-10-01 09:53:25 Error: [MissingActionException] Action QuizzesController::img() could not be found.
+Exception Attributes: array (
+  'controller' => 'QuizzesController',
+  'action' => 'img',
+)
+Request URL: /mobile/sms_will/quizzes/img/smst_logo@2x.png
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(QuizzesController), Object(CakeRequest), Object(CakeResponse))
+#2 /home1/infinasa/public_html/mobile/sms_will/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2013-10-01 09:53:26 Error: [MissingActionException] Action QuizzesController::js() could not be found.
+Exception Attributes: array (
+  'controller' => 'QuizzesController',
+  'action' => 'js',
+)
+Request URL: /mobile/sms_will/quizzes/js/foundation.min.js
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(QuizzesController), Object(CakeRequest), Object(CakeResponse))
+#2 /home1/infinasa/public_html/mobile/sms_will/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2013-10-01 09:53:51 Error: [MissingActionException] Action QuizzesController::css() could not be found.
+Exception Attributes: array (
+  'controller' => 'QuizzesController',
+  'action' => 'css',
+)
+Request URL: /mobile/sms_will/quizzes/css/foundation.css
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(QuizzesController), Object(CakeRequest), Object(CakeResponse))
+#2 /home1/infinasa/public_html/mobile/sms_will/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2013-10-01 09:53:51 Error: [MissingActionException] Action QuizzesController::js() could not be found.
+Exception Attributes: array (
+  'controller' => 'QuizzesController',
+  'action' => 'js',
+)
+Request URL: /mobile/sms_will/quizzes/js/vendor/custom.modernizr.js
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(QuizzesController), Object(CakeRequest), Object(CakeResponse))
+#2 /home1/infinasa/public_html/mobile/sms_will/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2013-10-01 09:53:51 Error: [MissingActionException] Action QuizzesController::js() could not be found.
+Exception Attributes: array (
+  'controller' => 'QuizzesController',
+  'action' => 'js',
+)
+Request URL: /mobile/sms_will/quizzes/js/foundation.min.js
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(QuizzesController), Object(CakeRequest), Object(CakeResponse))
+#2 /home1/infinasa/public_html/mobile/sms_will/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2013-10-01 09:53:51 Error: [MissingActionException] Action QuizzesController::img() could not be found.
+Exception Attributes: array (
+  'controller' => 'QuizzesController',
+  'action' => 'img',
+)
+Request URL: /mobile/sms_will/quizzes/img/smst_bg.jpg
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(QuizzesController), Object(CakeRequest), Object(CakeResponse))
+#2 /home1/infinasa/public_html/mobile/sms_will/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2013-10-01 09:53:51 Error: [MissingActionException] Action QuizzesController::img() could not be found.
+Exception Attributes: array (
+  'controller' => 'QuizzesController',
+  'action' => 'img',
+)
+Request URL: /mobile/sms_will/quizzes/img/smst_menu@2x.png
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(QuizzesController), Object(CakeRequest), Object(CakeResponse))
+#2 /home1/infinasa/public_html/mobile/sms_will/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2013-10-01 09:53:51 Error: [MissingActionException] Action QuizzesController::img() could not be found.
+Exception Attributes: array (
+  'controller' => 'QuizzesController',
+  'action' => 'img',
+)
+Request URL: /mobile/sms_will/quizzes/img/smst_logo@2x.png
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(QuizzesController), Object(CakeRequest), Object(CakeResponse))
+#2 /home1/infinasa/public_html/mobile/sms_will/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2013-10-01 09:53:51 Error: [MissingActionException] Action QuizzesController::js() could not be found.
+Exception Attributes: array (
+  'controller' => 'QuizzesController',
+  'action' => 'js',
+)
+Request URL: /mobile/sms_will/quizzes/js/vendor/zepto.js
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(QuizzesController), Object(CakeRequest), Object(CakeResponse))
+#2 /home1/infinasa/public_html/mobile/sms_will/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2013-10-01 09:53:52 Error: [MissingActionException] Action QuizzesController::js() could not be found.
+Exception Attributes: array (
+  'controller' => 'QuizzesController',
+  'action' => 'js',
+)
+Request URL: /mobile/sms_will/quizzes/js/foundation.min.js
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(QuizzesController), Object(CakeRequest), Object(CakeResponse))
+#2 /home1/infinasa/public_html/mobile/sms_will/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2013-10-01 10:00:45 Error: [MissingActionException] Action QuizzesController::css() could not be found.
+Exception Attributes: array (
+  'controller' => 'QuizzesController',
+  'action' => 'css',
+)
+Request URL: /mobile/sms_will/quizzes/css/foundation.css
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(QuizzesController), Object(CakeRequest), Object(CakeResponse))
+#2 /home1/infinasa/public_html/mobile/sms_will/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2013-10-01 10:00:45 Error: [MissingActionException] Action QuizzesController::js() could not be found.
+Exception Attributes: array (
+  'controller' => 'QuizzesController',
+  'action' => 'js',
+)
+Request URL: /mobile/sms_will/quizzes/js/foundation.min.js
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(QuizzesController), Object(CakeRequest), Object(CakeResponse))
+#2 /home1/infinasa/public_html/mobile/sms_will/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2013-10-01 10:00:45 Error: [MissingActionException] Action QuizzesController::js() could not be found.
+Exception Attributes: array (
+  'controller' => 'QuizzesController',
+  'action' => 'js',
+)
+Request URL: /mobile/sms_will/quizzes/js/vendor/custom.modernizr.js
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(QuizzesController), Object(CakeRequest), Object(CakeResponse))
+#2 /home1/infinasa/public_html/mobile/sms_will/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2013-10-01 10:00:45 Error: [MissingActionException] Action QuizzesController::img() could not be found.
+Exception Attributes: array (
+  'controller' => 'QuizzesController',
+  'action' => 'img',
+)
+Request URL: /mobile/sms_will/quizzes/img/smst_menu@2x.png
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(QuizzesController), Object(CakeRequest), Object(CakeResponse))
+#2 /home1/infinasa/public_html/mobile/sms_will/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2013-10-01 10:00:45 Error: [MissingActionException] Action QuizzesController::img() could not be found.
+Exception Attributes: array (
+  'controller' => 'QuizzesController',
+  'action' => 'img',
+)
+Request URL: /mobile/sms_will/quizzes/img/smst_logo@2x.png
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(QuizzesController), Object(CakeRequest), Object(CakeResponse))
+#2 /home1/infinasa/public_html/mobile/sms_will/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2013-10-01 10:00:45 Error: [MissingActionException] Action QuizzesController::img() could not be found.
+Exception Attributes: array (
+  'controller' => 'QuizzesController',
+  'action' => 'img',
+)
+Request URL: /mobile/sms_will/quizzes/img/smst_bg.jpg
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(QuizzesController), Object(CakeRequest), Object(CakeResponse))
+#2 /home1/infinasa/public_html/mobile/sms_will/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2013-10-01 10:00:46 Error: [MissingActionException] Action QuizzesController::js() could not be found.
+Exception Attributes: array (
+  'controller' => 'QuizzesController',
+  'action' => 'js',
+)
+Request URL: /mobile/sms_will/quizzes/js/vendor/jquery.js
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(QuizzesController), Object(CakeRequest), Object(CakeResponse))
+#2 /home1/infinasa/public_html/mobile/sms_will/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2013-10-01 11:04:35 Error: [MissingActionException] Action QuizzesController::css() could not be found.
+Exception Attributes: array (
+  'controller' => 'QuizzesController',
+  'action' => 'css',
+)
+Request URL: /mobile/sms_will/quizzes/css/foundation.css
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(QuizzesController), Object(CakeRequest), Object(CakeResponse))
+#2 /home1/infinasa/public_html/mobile/sms_will/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2013-10-01 11:04:35 Error: [MissingActionException] Action QuizzesController::js() could not be found.
+Exception Attributes: array (
+  'controller' => 'QuizzesController',
+  'action' => 'js',
+)
+Request URL: /mobile/sms_will/quizzes/js/vendor/custom.modernizr.js
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(QuizzesController), Object(CakeRequest), Object(CakeResponse))
+#2 /home1/infinasa/public_html/mobile/sms_will/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2013-10-01 11:04:35 Error: [MissingActionException] Action QuizzesController::js() could not be found.
+Exception Attributes: array (
+  'controller' => 'QuizzesController',
+  'action' => 'js',
+)
+Request URL: /mobile/sms_will/quizzes/js/foundation.min.js
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(QuizzesController), Object(CakeRequest), Object(CakeResponse))
+#2 /home1/infinasa/public_html/mobile/sms_will/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2013-10-01 11:04:35 Error: [MissingActionException] Action QuizzesController::img() could not be found.
+Exception Attributes: array (
+  'controller' => 'QuizzesController',
+  'action' => 'img',
+)
+Request URL: /mobile/sms_will/quizzes/img/smst_bg.jpg
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(QuizzesController), Object(CakeRequest), Object(CakeResponse))
+#2 /home1/infinasa/public_html/mobile/sms_will/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2013-10-01 11:04:35 Error: [MissingActionException] Action QuizzesController::img() could not be found.
+Exception Attributes: array (
+  'controller' => 'QuizzesController',
+  'action' => 'img',
+)
+Request URL: /mobile/sms_will/quizzes/img/smst_logo@2x.png
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(QuizzesController), Object(CakeRequest), Object(CakeResponse))
+#2 /home1/infinasa/public_html/mobile/sms_will/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2013-10-01 11:04:35 Error: [MissingActionException] Action QuizzesController::img() could not be found.
+Exception Attributes: array (
+  'controller' => 'QuizzesController',
+  'action' => 'img',
+)
+Request URL: /mobile/sms_will/quizzes/img/smst_menu@2x.png
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(QuizzesController), Object(CakeRequest), Object(CakeResponse))
+#2 /home1/infinasa/public_html/mobile/sms_will/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2013-10-01 11:04:35 Error: [MissingActionException] Action QuizzesController::js() could not be found.
+Exception Attributes: array (
+  'controller' => 'QuizzesController',
+  'action' => 'js',
+)
+Request URL: /mobile/sms_will/quizzes/js/vendor/zepto.js
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(QuizzesController), Object(CakeRequest), Object(CakeResponse))
+#2 /home1/infinasa/public_html/mobile/sms_will/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2013-10-01 11:04:35 Error: [MissingActionException] Action QuizzesController::js() could not be found.
+Exception Attributes: array (
+  'controller' => 'QuizzesController',
+  'action' => 'js',
+)
+Request URL: /mobile/sms_will/quizzes/js/foundation.min.js
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(QuizzesController), Object(CakeRequest), Object(CakeResponse))
+#2 /home1/infinasa/public_html/mobile/sms_will/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2013-10-01 11:13:12 Error: [MissingActionException] Action QuizzesController::css() could not be found.
+Exception Attributes: array (
+  'controller' => 'QuizzesController',
+  'action' => 'css',
+)
+Request URL: /mobile/sms_will/quizzes/css/foundation.css
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(QuizzesController), Object(CakeRequest), Object(CakeResponse))
+#2 /home1/infinasa/public_html/mobile/sms_will/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2013-10-01 11:13:13 Error: [MissingActionException] Action QuizzesController::js() could not be found.
+Exception Attributes: array (
+  'controller' => 'QuizzesController',
+  'action' => 'js',
+)
+Request URL: /mobile/sms_will/quizzes/js/vendor/custom.modernizr.js
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(QuizzesController), Object(CakeRequest), Object(CakeResponse))
+#2 /home1/infinasa/public_html/mobile/sms_will/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2013-10-01 11:13:13 Error: [MissingActionException] Action QuizzesController::img() could not be found.
+Exception Attributes: array (
+  'controller' => 'QuizzesController',
+  'action' => 'img',
+)
+Request URL: /mobile/sms_will/quizzes/img/smst_logo@2x.png
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(QuizzesController), Object(CakeRequest), Object(CakeResponse))
+#2 /home1/infinasa/public_html/mobile/sms_will/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2013-10-01 11:13:13 Error: [MissingActionException] Action QuizzesController::img() could not be found.
+Exception Attributes: array (
+  'controller' => 'QuizzesController',
+  'action' => 'img',
+)
+Request URL: /mobile/sms_will/quizzes/img/smst_bg.jpg
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(QuizzesController), Object(CakeRequest), Object(CakeResponse))
+#2 /home1/infinasa/public_html/mobile/sms_will/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2013-10-01 11:13:13 Error: [MissingActionException] Action QuizzesController::img() could not be found.
+Exception Attributes: array (
+  'controller' => 'QuizzesController',
+  'action' => 'img',
+)
+Request URL: /mobile/sms_will/quizzes/img/smst_menu@2x.png
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(QuizzesController), Object(CakeRequest), Object(CakeResponse))
+#2 /home1/infinasa/public_html/mobile/sms_will/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2013-10-01 11:13:13 Error: [MissingActionException] Action QuizzesController::js() could not be found.
+Exception Attributes: array (
+  'controller' => 'QuizzesController',
+  'action' => 'js',
+)
+Request URL: /mobile/sms_will/quizzes/js/foundation.min.js
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(QuizzesController), Object(CakeRequest), Object(CakeResponse))
+#2 /home1/infinasa/public_html/mobile/sms_will/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2013-10-01 11:13:13 Error: [MissingActionException] Action QuizzesController::js() could not be found.
+Exception Attributes: array (
+  'controller' => 'QuizzesController',
+  'action' => 'js',
+)
+Request URL: /mobile/sms_will/quizzes/js/vendor/zepto.js
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(QuizzesController), Object(CakeRequest), Object(CakeResponse))
+#2 /home1/infinasa/public_html/mobile/sms_will/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2013-10-01 11:15:29 Error: [MissingActionException] Action QuizzesController::css() could not be found.
+Exception Attributes: array (
+  'controller' => 'QuizzesController',
+  'action' => 'css',
+)
+Request URL: /mobile/sms_will/quizzes/css/foundation.css
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(QuizzesController), Object(CakeRequest), Object(CakeResponse))
+#2 /home1/infinasa/public_html/mobile/sms_will/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2013-10-01 11:15:29 Error: [MissingActionException] Action QuizzesController::js() could not be found.
+Exception Attributes: array (
+  'controller' => 'QuizzesController',
+  'action' => 'js',
+)
+Request URL: /mobile/sms_will/quizzes/js/vendor/custom.modernizr.js
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(QuizzesController), Object(CakeRequest), Object(CakeResponse))
+#2 /home1/infinasa/public_html/mobile/sms_will/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2013-10-01 11:15:29 Error: [MissingActionException] Action QuizzesController::js() could not be found.
+Exception Attributes: array (
+  'controller' => 'QuizzesController',
+  'action' => 'js',
+)
+Request URL: /mobile/sms_will/quizzes/js/foundation.min.js
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(QuizzesController), Object(CakeRequest), Object(CakeResponse))
+#2 /home1/infinasa/public_html/mobile/sms_will/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2013-10-01 11:15:29 Error: [MissingActionException] Action QuizzesController::img() could not be found.
+Exception Attributes: array (
+  'controller' => 'QuizzesController',
+  'action' => 'img',
+)
+Request URL: /mobile/sms_will/quizzes/img/smst_logo@2x.png
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(QuizzesController), Object(CakeRequest), Object(CakeResponse))
+#2 /home1/infinasa/public_html/mobile/sms_will/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2013-10-01 11:15:29 Error: [MissingActionException] Action QuizzesController::img() could not be found.
+Exception Attributes: array (
+  'controller' => 'QuizzesController',
+  'action' => 'img',
+)
+Request URL: /mobile/sms_will/quizzes/img/smst_bg.jpg
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(QuizzesController), Object(CakeRequest), Object(CakeResponse))
+#2 /home1/infinasa/public_html/mobile/sms_will/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2013-10-01 11:15:29 Error: [MissingActionException] Action QuizzesController::img() could not be found.
+Exception Attributes: array (
+  'controller' => 'QuizzesController',
+  'action' => 'img',
+)
+Request URL: /mobile/sms_will/quizzes/img/smst_menu@2x.png
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(QuizzesController), Object(CakeRequest), Object(CakeResponse))
+#2 /home1/infinasa/public_html/mobile/sms_will/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2013-10-01 11:15:29 Error: [MissingActionException] Action QuizzesController::js() could not be found.
+Exception Attributes: array (
+  'controller' => 'QuizzesController',
+  'action' => 'js',
+)
+Request URL: /mobile/sms_will/quizzes/js/vendor/zepto.js
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(QuizzesController), Object(CakeRequest), Object(CakeResponse))
+#2 /home1/infinasa/public_html/mobile/sms_will/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2013-10-01 11:15:30 Error: [MissingActionException] Action QuizzesController::js() could not be found.
+Exception Attributes: array (
+  'controller' => 'QuizzesController',
+  'action' => 'js',
+)
+Request URL: /mobile/sms_will/quizzes/js/foundation.min.js
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(QuizzesController), Object(CakeRequest), Object(CakeResponse))
+#2 /home1/infinasa/public_html/mobile/sms_will/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2013-10-01 11:46:20 Error: [MissingActionException] Action QuizzesController::css() could not be found.
+Exception Attributes: array (
+  'controller' => 'QuizzesController',
+  'action' => 'css',
+)
+Request URL: /mobile/sms_will/quizzes/css/foundation.css
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(QuizzesController), Object(CakeRequest), Object(CakeResponse))
+#2 /home1/infinasa/public_html/mobile/sms_will/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2013-10-01 11:46:20 Error: [MissingActionException] Action QuizzesController::js() could not be found.
+Exception Attributes: array (
+  'controller' => 'QuizzesController',
+  'action' => 'js',
+)
+Request URL: /mobile/sms_will/quizzes/js/vendor/custom.modernizr.js
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(QuizzesController), Object(CakeRequest), Object(CakeResponse))
+#2 /home1/infinasa/public_html/mobile/sms_will/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2013-10-01 11:46:20 Error: [MissingActionException] Action QuizzesController::js() could not be found.
+Exception Attributes: array (
+  'controller' => 'QuizzesController',
+  'action' => 'js',
+)
+Request URL: /mobile/sms_will/quizzes/js/foundation.min.js
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(QuizzesController), Object(CakeRequest), Object(CakeResponse))
+#2 /home1/infinasa/public_html/mobile/sms_will/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2013-10-01 11:46:20 Error: [MissingActionException] Action QuizzesController::img() could not be found.
+Exception Attributes: array (
+  'controller' => 'QuizzesController',
+  'action' => 'img',
+)
+Request URL: /mobile/sms_will/quizzes/img/smst_logo@2x.png
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(QuizzesController), Object(CakeRequest), Object(CakeResponse))
+#2 /home1/infinasa/public_html/mobile/sms_will/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2013-10-01 11:46:20 Error: [MissingActionException] Action QuizzesController::img() could not be found.
+Exception Attributes: array (
+  'controller' => 'QuizzesController',
+  'action' => 'img',
+)
+Request URL: /mobile/sms_will/quizzes/img/smst_bg.jpg
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(QuizzesController), Object(CakeRequest), Object(CakeResponse))
+#2 /home1/infinasa/public_html/mobile/sms_will/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2013-10-01 11:46:20 Error: [MissingActionException] Action QuizzesController::js() could not be found.
+Exception Attributes: array (
+  'controller' => 'QuizzesController',
+  'action' => 'js',
+)
+Request URL: /mobile/sms_will/quizzes/js/vendor/zepto.js
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(QuizzesController), Object(CakeRequest), Object(CakeResponse))
+#2 /home1/infinasa/public_html/mobile/sms_will/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2013-10-01 11:46:21 Error: [MissingActionException] Action QuizzesController::img() could not be found.
+Exception Attributes: array (
+  'controller' => 'QuizzesController',
+  'action' => 'img',
+)
+Request URL: /mobile/sms_will/quizzes/img/smst_menu@2x.png
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(QuizzesController), Object(CakeRequest), Object(CakeResponse))
+#2 /home1/infinasa/public_html/mobile/sms_will/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2013-10-01 11:47:09 Error: [MissingActionException] Action QuizzesController::js() could not be found.
+Exception Attributes: array (
+  'controller' => 'QuizzesController',
+  'action' => 'js',
+)
+Request URL: /mobile/sms_will/quizzes/js/vendor/custom.modernizr.js
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(QuizzesController), Object(CakeRequest), Object(CakeResponse))
+#2 /home1/infinasa/public_html/mobile/sms_will/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2013-10-01 11:47:09 Error: [MissingActionException] Action QuizzesController::css() could not be found.
+Exception Attributes: array (
+  'controller' => 'QuizzesController',
+  'action' => 'css',
+)
+Request URL: /mobile/sms_will/quizzes/css/foundation.css
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(QuizzesController), Object(CakeRequest), Object(CakeResponse))
+#2 /home1/infinasa/public_html/mobile/sms_will/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2013-10-01 11:47:10 Error: [MissingActionException] Action QuizzesController::js() could not be found.
+Exception Attributes: array (
+  'controller' => 'QuizzesController',
+  'action' => 'js',
+)
+Request URL: /mobile/sms_will/quizzes/js/foundation.min.js
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(QuizzesController), Object(CakeRequest), Object(CakeResponse))
+#2 /home1/infinasa/public_html/mobile/sms_will/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2013-10-01 11:47:10 Error: [MissingActionException] Action QuizzesController::img() could not be found.
+Exception Attributes: array (
+  'controller' => 'QuizzesController',
+  'action' => 'img',
+)
+Request URL: /mobile/sms_will/quizzes/img/smst_bg.jpg
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(QuizzesController), Object(CakeRequest), Object(CakeResponse))
+#2 /home1/infinasa/public_html/mobile/sms_will/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2013-10-01 11:47:10 Error: [MissingActionException] Action QuizzesController::img() could not be found.
+Exception Attributes: array (
+  'controller' => 'QuizzesController',
+  'action' => 'img',
+)
+Request URL: /mobile/sms_will/quizzes/img/smst_logo@2x.png
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(QuizzesController), Object(CakeRequest), Object(CakeResponse))
+#2 /home1/infinasa/public_html/mobile/sms_will/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2013-10-01 11:47:10 Error: [MissingActionException] Action QuizzesController::img() could not be found.
+Exception Attributes: array (
+  'controller' => 'QuizzesController',
+  'action' => 'img',
+)
+Request URL: /mobile/sms_will/quizzes/img/smst_menu@2x.png
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(QuizzesController), Object(CakeRequest), Object(CakeResponse))
+#2 /home1/infinasa/public_html/mobile/sms_will/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2013-10-01 11:47:10 Error: [MissingActionException] Action QuizzesController::js() could not be found.
+Exception Attributes: array (
+  'controller' => 'QuizzesController',
+  'action' => 'js',
+)
+Request URL: /mobile/sms_will/quizzes/js/vendor/zepto.js
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(QuizzesController), Object(CakeRequest), Object(CakeResponse))
+#2 /home1/infinasa/public_html/mobile/sms_will/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2013-10-01 11:47:11 Error: [MissingActionException] Action QuizzesController::js() could not be found.
+Exception Attributes: array (
+  'controller' => 'QuizzesController',
+  'action' => 'js',
+)
+Request URL: /mobile/sms_will/quizzes/js/foundation.min.js
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(QuizzesController), Object(CakeRequest), Object(CakeResponse))
+#2 /home1/infinasa/public_html/mobile/sms_will/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2013-10-01 11:52:33 Error: [MissingControllerException] Controller class <linkRel=Controller could not be found.
+Exception Attributes: array (
+  'class' => '<linkRel=Controller',
+  'plugin' => NULL,
+)
+Request URL: /mobile/sms_will/%3Clink%20rel=
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_will/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-10-01 11:52:33 Error: [MissingControllerException] Controller class <preClass=Controller could not be found.
+Exception Attributes: array (
+  'class' => '<preClass=Controller',
+  'plugin' => NULL,
+)
+Request URL: /mobile/sms_will/%3Cpre%20class=
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_will/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-10-01 11:53:32 Error: [MissingControllerException] Controller class <linkRel=Controller could not be found.
+Exception Attributes: array (
+  'class' => '<linkRel=Controller',
+  'plugin' => NULL,
+)
+Request URL: /mobile/sms_will/%3Clink%20rel=
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_will/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-10-01 11:53:32 Error: [MissingControllerException] Controller class <preClass=Controller could not be found.
+Exception Attributes: array (
+  'class' => '<preClass=Controller',
+  'plugin' => NULL,
+)
+Request URL: /mobile/sms_will/%3Cpre%20class=
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_will/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-10-01 11:53:40 Error: [MissingControllerException] Controller class <linkRel=Controller could not be found.
+Exception Attributes: array (
+  'class' => '<linkRel=Controller',
+  'plugin' => NULL,
+)
+Request URL: /mobile/sms_will/%3Clink%20rel=
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_will/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-10-01 11:53:41 Error: [MissingControllerException] Controller class <preClass=Controller could not be found.
+Exception Attributes: array (
+  'class' => '<preClass=Controller',
+  'plugin' => NULL,
+)
+Request URL: /mobile/sms_will/%3Cpre%20class=
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_will/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-10-01 11:54:33 Error: [MissingControllerException] Controller class <linkRel=Controller could not be found.
+Exception Attributes: array (
+  'class' => '<linkRel=Controller',
+  'plugin' => NULL,
+)
+Request URL: /mobile/sms_will/%3Clink%20rel=
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_will/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-10-01 11:54:33 Error: [MissingControllerException] Controller class <preClass=Controller could not be found.
+Exception Attributes: array (
+  'class' => '<preClass=Controller',
+  'plugin' => NULL,
+)
+Request URL: /mobile/sms_will/%3Cpre%20class=
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_will/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-10-01 11:58:25 Error: [MissingActionException] Action QuizzesController::img() could not be found.
+Exception Attributes: array (
+  'controller' => 'QuizzesController',
+  'action' => 'img',
+)
+Request URL: /mobile/sms_will/quizzes/img/smst_logo@2x.png
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(QuizzesController), Object(CakeRequest), Object(CakeResponse))
+#2 /home1/infinasa/public_html/mobile/sms_will/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2013-10-01 11:58:25 Error: [MissingActionException] Action QuizzesController::img() could not be found.
+Exception Attributes: array (
+  'controller' => 'QuizzesController',
+  'action' => 'img',
+)
+Request URL: /mobile/sms_will/quizzes/img/smst_bg.jpg
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(QuizzesController), Object(CakeRequest), Object(CakeResponse))
+#2 /home1/infinasa/public_html/mobile/sms_will/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2013-10-01 11:58:25 Error: [MissingActionException] Action QuizzesController::js() could not be found.
+Exception Attributes: array (
+  'controller' => 'QuizzesController',
+  'action' => 'js',
+)
+Request URL: /mobile/sms_will/quizzes/js/vendor/zepto.js
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(QuizzesController), Object(CakeRequest), Object(CakeResponse))
+#2 /home1/infinasa/public_html/mobile/sms_will/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2013-10-01 11:59:42 Error: [MissingActionException] Action QuizzesController::img() could not be found.
+Exception Attributes: array (
+  'controller' => 'QuizzesController',
+  'action' => 'img',
+)
+Request URL: /mobile/sms_will/quizzes/img/smst_logo@2x.png
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(QuizzesController), Object(CakeRequest), Object(CakeResponse))
+#2 /home1/infinasa/public_html/mobile/sms_will/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2013-10-01 12:02:55 Error: [MissingActionException] Action QuizzesController::img() could not be found.
+Exception Attributes: array (
+  'controller' => 'QuizzesController',
+  'action' => 'img',
+)
+Request URL: /mobile/sms_will/quizzes/img/smst_header_quiz@2x.png
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(QuizzesController), Object(CakeRequest), Object(CakeResponse))
+#2 /home1/infinasa/public_html/mobile/sms_will/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2013-10-01 12:02:55 Error: [MissingActionException] Action QuizzesController::img() could not be found.
+Exception Attributes: array (
+  'controller' => 'QuizzesController',
+  'action' => 'img',
+)
+Request URL: /mobile/sms_will/quizzes/img/smst_btn_q1.png
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(QuizzesController), Object(CakeRequest), Object(CakeResponse))
+#2 /home1/infinasa/public_html/mobile/sms_will/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2013-10-01 12:02:55 Error: [MissingActionException] Action QuizzesController::img() could not be found.
+Exception Attributes: array (
+  'controller' => 'QuizzesController',
+  'action' => 'img',
+)
+Request URL: /mobile/sms_will/quizzes/img/smst_btn_q2.png
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(QuizzesController), Object(CakeRequest), Object(CakeResponse))
+#2 /home1/infinasa/public_html/mobile/sms_will/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2013-10-01 12:02:55 Error: [MissingActionException] Action QuizzesController::img() could not be found.
+Exception Attributes: array (
+  'controller' => 'QuizzesController',
+  'action' => 'img',
+)
+Request URL: /mobile/sms_will/quizzes/img/smst_btn_soon.png
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(QuizzesController), Object(CakeRequest), Object(CakeResponse))
+#2 /home1/infinasa/public_html/mobile/sms_will/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2013-10-01 12:02:55 Error: [MissingActionException] Action QuizzesController::img() could not be found.
+Exception Attributes: array (
+  'controller' => 'QuizzesController',
+  'action' => 'img',
+)
+Request URL: /mobile/sms_will/quizzes/img/smst_btn_study.png
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(QuizzesController), Object(CakeRequest), Object(CakeResponse))
+#2 /home1/infinasa/public_html/mobile/sms_will/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2013-10-01 12:02:55 Error: [MissingActionException] Action QuizzesController::js() could not be found.
+Exception Attributes: array (
+  'controller' => 'QuizzesController',
+  'action' => 'js',
+)
+Request URL: /mobile/sms_will/quizzes/js/vendor/zepto.js
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(QuizzesController), Object(CakeRequest), Object(CakeResponse))
+#2 /home1/infinasa/public_html/mobile/sms_will/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2013-10-01 12:02:55 Error: [MissingActionException] Action QuizzesController::img() could not be found.
+Exception Attributes: array (
+  'controller' => 'QuizzesController',
+  'action' => 'img',
+)
+Request URL: /mobile/sms_will/quizzes/img/smst_btn_boards@2x.png
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(QuizzesController), Object(CakeRequest), Object(CakeResponse))
+#2 /home1/infinasa/public_html/mobile/sms_will/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2013-10-01 12:03:17 Error: [MissingActionException] Action QuizzesController::js() could not be found.
+Exception Attributes: array (
+  'controller' => 'QuizzesController',
+  'action' => 'js',
+)
+Request URL: /mobile/sms_will/quizzes/js/vendor/zepto.js
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(QuizzesController), Object(CakeRequest), Object(CakeResponse))
+#2 /home1/infinasa/public_html/mobile/sms_will/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2013-10-01 12:04:43 Error: [MissingActionException] Action QuizzesController::img() could not be found.
+Exception Attributes: array (
+  'controller' => 'QuizzesController',
+  'action' => 'img',
+)
+Request URL: /mobile/sms_will/quizzes/img/smst_btn_q1.png
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(QuizzesController), Object(CakeRequest), Object(CakeResponse))
+#2 /home1/infinasa/public_html/mobile/sms_will/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2013-10-01 12:04:43 Error: [MissingActionException] Action QuizzesController::img() could not be found.
+Exception Attributes: array (
+  'controller' => 'QuizzesController',
+  'action' => 'img',
+)
+Request URL: /mobile/sms_will/quizzes/img/smst_header_quiz@2x.png
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(QuizzesController), Object(CakeRequest), Object(CakeResponse))
+#2 /home1/infinasa/public_html/mobile/sms_will/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2013-10-01 12:04:43 Error: [MissingActionException] Action QuizzesController::img() could not be found.
+Exception Attributes: array (
+  'controller' => 'QuizzesController',
+  'action' => 'img',
+)
+Request URL: /mobile/sms_will/quizzes/img/smst_btn_study.png
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(QuizzesController), Object(CakeRequest), Object(CakeResponse))
+#2 /home1/infinasa/public_html/mobile/sms_will/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2013-10-01 12:04:43 Error: [MissingActionException] Action QuizzesController::img() could not be found.
+Exception Attributes: array (
+  'controller' => 'QuizzesController',
+  'action' => 'img',
+)
+Request URL: /mobile/sms_will/quizzes/img/smst_btn_q2.png
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(QuizzesController), Object(CakeRequest), Object(CakeResponse))
+#2 /home1/infinasa/public_html/mobile/sms_will/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2013-10-01 12:04:43 Error: [MissingActionException] Action QuizzesController::img() could not be found.
+Exception Attributes: array (
+  'controller' => 'QuizzesController',
+  'action' => 'img',
+)
+Request URL: /mobile/sms_will/quizzes/img/smst_btn_soon.png
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(QuizzesController), Object(CakeRequest), Object(CakeResponse))
+#2 /home1/infinasa/public_html/mobile/sms_will/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2013-10-01 12:04:43 Error: [MissingActionException] Action QuizzesController::img() could not be found.
+Exception Attributes: array (
+  'controller' => 'QuizzesController',
+  'action' => 'img',
+)
+Request URL: /mobile/sms_will/quizzes/img/smst_btn_boards@2x.png
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(QuizzesController), Object(CakeRequest), Object(CakeResponse))
+#2 /home1/infinasa/public_html/mobile/sms_will/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2013-10-01 13:40:51 Error: [NotFoundException] Not Found
+Request URL: /mobile/sms_will/quizzes/quiz
+Stack Trace:
+#0 [internal function]: QuizzesController->quiz()
+#1 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(QuizzesController), Array)
+#2 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#3 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(QuizzesController), Object(CakeRequest), Object(CakeResponse))
+#4 /home1/infinasa/public_html/mobile/sms_will/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2013-10-01 14:11:29 Error: [MissingControllerException] Controller class MobileController could not be found.
+Exception Attributes: array (
+  'class' => 'MobileController',
+  'plugin' => NULL,
+)
+Request URL: /mobile/sms_will//mobile/sms_will/favicon.ico
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_will/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-10-01 14:11:29 Error: [MissingControllerException] Controller class MobileController could not be found.
+Exception Attributes: array (
+  'class' => 'MobileController',
+  'plugin' => NULL,
+)
+Request URL: /mobile/sms_will//mobile/sms_will/css/smst.css
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_will/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-10-01 14:12:07 Error: [MissingControllerException] Controller class Controller could not be found.
+Exception Attributes: array (
+  'class' => 'Controller',
+  'plugin' => NULL,
+)
+Request URL: /mobile/sms_will/quizzes//mobile/sms_will/favicon.ico
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_will/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-10-01 14:12:08 Error: [MissingControllerException] Controller class Controller could not be found.
+Exception Attributes: array (
+  'class' => 'Controller',
+  'plugin' => NULL,
+)
+Request URL: /mobile/sms_will/quizzes//mobile/sms_will/css/smst.css
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_will/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-10-01 14:12:08 Error: [MissingActionException] Action QuizzesController::img() could not be found.
+Exception Attributes: array (
+  'controller' => 'QuizzesController',
+  'action' => 'img',
+)
+Request URL: /mobile/sms_will/quizzes/img/smst_btn_q2@2x.png
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(QuizzesController), Object(CakeRequest), Object(CakeResponse))
+#2 /home1/infinasa/public_html/mobile/sms_will/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2013-10-01 14:12:08 Error: [MissingActionException] Action QuizzesController::img() could not be found.
+Exception Attributes: array (
+  'controller' => 'QuizzesController',
+  'action' => 'img',
+)
+Request URL: /mobile/sms_will/quizzes/img/smst_btn_study@2x.png
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(QuizzesController), Object(CakeRequest), Object(CakeResponse))
+#2 /home1/infinasa/public_html/mobile/sms_will/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2013-10-01 14:12:08 Error: [MissingActionException] Action QuizzesController::img() could not be found.
+Exception Attributes: array (
+  'controller' => 'QuizzesController',
+  'action' => 'img',
+)
+Request URL: /mobile/sms_will/quizzes/img/smst_btn_q3@2x.png
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(QuizzesController), Object(CakeRequest), Object(CakeResponse))
+#2 /home1/infinasa/public_html/mobile/sms_will/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2013-10-01 14:12:09 Error: [MissingActionException] Action QuizzesController::img() could not be found.
+Exception Attributes: array (
+  'controller' => 'QuizzesController',
+  'action' => 'img',
+)
+Request URL: /mobile/sms_will/quizzes/img/smst_btn_q1@2x.png
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(QuizzesController), Object(CakeRequest), Object(CakeResponse))
+#2 /home1/infinasa/public_html/mobile/sms_will/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2013-10-01 14:12:09 Error: [MissingActionException] Action QuizzesController::img() could not be found.
+Exception Attributes: array (
+  'controller' => 'QuizzesController',
+  'action' => 'img',
+)
+Request URL: /mobile/sms_will/quizzes/img/smst_header_quiz@2x.png
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(QuizzesController), Object(CakeRequest), Object(CakeResponse))
+#2 /home1/infinasa/public_html/mobile/sms_will/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2013-10-01 14:12:09 Error: [MissingActionException] Action QuizzesController::img() could not be found.
+Exception Attributes: array (
+  'controller' => 'QuizzesController',
+  'action' => 'img',
+)
+Request URL: /mobile/sms_will/quizzes/img/smst_btn_boards@2x.png
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(QuizzesController), Object(CakeRequest), Object(CakeResponse))
+#2 /home1/infinasa/public_html/mobile/sms_will/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2013-10-02 06:42:21 Error: [NotFoundException] Not Found
+Request URL: /mobile/sms_will/quizzes/quiz
+Stack Trace:
+#0 [internal function]: QuizzesController->quiz()
+#1 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(QuizzesController), Array)
+#2 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#3 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(QuizzesController), Object(CakeRequest), Object(CakeResponse))
+#4 /home1/infinasa/public_html/mobile/sms_will/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2013-10-02 09:04:12 Error: Fatal Error (4): syntax error, unexpected '>' in [/home1/infinasa/public_html/mobile/sms_will/app/View/Quizzes/quiz.ctp, line 13]
+2013-10-02 09:04:12 Error: [FatalErrorException] syntax error, unexpected '>'
+Request URL: /mobile/sms_will/quizzes/quiz?level=1
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Error/ErrorHandler.php(205): ErrorHandler::handleFatalError(4, 'syntax error, u...', '/home1/infinasa...', 13)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', '/home1/infinasa...', 13, Array)
+#2 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', '/home1/infinasa...', 13, Array)
+#3 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2013-10-02 10:51:40 Error: [MissingActionException] Action QuizzesController::img() could not be found.
+Exception Attributes: array (
+  'controller' => 'QuizzesController',
+  'action' => 'img',
+)
+Request URL: /mobile/sms_will/quizzes/img/smst_icon_a.png
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(QuizzesController), Object(CakeRequest), Object(CakeResponse))
+#2 /home1/infinasa/public_html/mobile/sms_will/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2013-10-02 10:52:05 Error: [MissingControllerException] Controller class ImgController could not be found.
+Exception Attributes: array (
+  'class' => 'ImgController',
+  'plugin' => NULL,
+)
+Request URL: /mobile/sms_will/img/smst_icon_a.png
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_will/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-10-02 11:45:13 Error: [MissingControllerException] Controller class ImgController could not be found.
+Exception Attributes: array (
+  'class' => 'ImgController',
+  'plugin' => NULL,
+)
+Request URL: /mobile/sms_will/img/smst_icon_d.png
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_will/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-10-02 11:45:13 Error: [MissingControllerException] Controller class ImgController could not be found.
+Exception Attributes: array (
+  'class' => 'ImgController',
+  'plugin' => NULL,
+)
+Request URL: /mobile/sms_will/img/smst_icon_b.png
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_will/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-10-02 11:45:13 Error: [MissingControllerException] Controller class ImgController could not be found.
+Exception Attributes: array (
+  'class' => 'ImgController',
+  'plugin' => NULL,
+)
+Request URL: /mobile/sms_will/img/smst_icon_c.png
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_will/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-10-02 11:47:05 Error: [MissingControllerException] Controller class ImgController could not be found.
+Exception Attributes: array (
+  'class' => 'ImgController',
+  'plugin' => NULL,
+)
+Request URL: /mobile/sms_will/img/smst_icon_c.png
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_will/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-10-02 11:47:05 Error: [MissingControllerException] Controller class ImgController could not be found.
+Exception Attributes: array (
+  'class' => 'ImgController',
+  'plugin' => NULL,
+)
+Request URL: /mobile/sms_will/img/smst_icon_b.png
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_will/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-10-02 11:47:05 Error: [MissingControllerException] Controller class ImgController could not be found.
+Exception Attributes: array (
+  'class' => 'ImgController',
+  'plugin' => NULL,
+)
+Request URL: /mobile/sms_will/img/smst_icon_d.png
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_will/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-10-02 11:50:14 Error: [MissingControllerException] Controller class ImgController could not be found.
+Exception Attributes: array (
+  'class' => 'ImgController',
+  'plugin' => NULL,
+)
+Request URL: /mobile/sms_will/img/smst_icon_b.png
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_will/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-10-02 11:50:14 Error: [MissingControllerException] Controller class ImgController could not be found.
+Exception Attributes: array (
+  'class' => 'ImgController',
+  'plugin' => NULL,
+)
+Request URL: /mobile/sms_will/img/smst_icon_d.png
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_will/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-10-02 11:50:14 Error: [MissingControllerException] Controller class ImgController could not be found.
+Exception Attributes: array (
+  'class' => 'ImgController',
+  'plugin' => NULL,
+)
+Request URL: /mobile/sms_will/img/smst_icon_c.png
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_will/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-10-02 11:51:43 Error: [MissingControllerException] Controller class ImgController could not be found.
+Exception Attributes: array (
+  'class' => 'ImgController',
+  'plugin' => NULL,
+)
+Request URL: /mobile/sms_will/img/smst_icon_b.png
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_will/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-10-02 11:51:43 Error: [MissingControllerException] Controller class ImgController could not be found.
+Exception Attributes: array (
+  'class' => 'ImgController',
+  'plugin' => NULL,
+)
+Request URL: /mobile/sms_will/img/smst_icon_d.png
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_will/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-10-02 11:51:43 Error: [MissingControllerException] Controller class ImgController could not be found.
+Exception Attributes: array (
+  'class' => 'ImgController',
+  'plugin' => NULL,
+)
+Request URL: /mobile/sms_will/img/smst_icon_c.png
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_will/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-10-02 11:53:16 Error: [MissingControllerException] Controller class ImgController could not be found.
+Exception Attributes: array (
+  'class' => 'ImgController',
+  'plugin' => NULL,
+)
+Request URL: /mobile/sms_will/img/smst_icon_c.png
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_will/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-10-02 11:53:16 Error: [MissingControllerException] Controller class ImgController could not be found.
+Exception Attributes: array (
+  'class' => 'ImgController',
+  'plugin' => NULL,
+)
+Request URL: /mobile/sms_will/img/smst_icon_d.png
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_will/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-10-02 11:53:16 Error: [MissingControllerException] Controller class ImgController could not be found.
+Exception Attributes: array (
+  'class' => 'ImgController',
+  'plugin' => NULL,
+)
+Request URL: /mobile/sms_will/img/smst_icon_b.png
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_will/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-10-02 11:53:42 Error: [MissingControllerException] Controller class ImgController could not be found.
+Exception Attributes: array (
+  'class' => 'ImgController',
+  'plugin' => NULL,
+)
+Request URL: /mobile/sms_will/img/smst_icon_b.png
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_will/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-10-02 11:53:42 Error: [MissingControllerException] Controller class ImgController could not be found.
+Exception Attributes: array (
+  'class' => 'ImgController',
+  'plugin' => NULL,
+)
+Request URL: /mobile/sms_will/img/smst_icon_c.png
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_will/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-10-02 11:53:42 Error: [MissingControllerException] Controller class ImgController could not be found.
+Exception Attributes: array (
+  'class' => 'ImgController',
+  'plugin' => NULL,
+)
+Request URL: /mobile/sms_will/img/smst_icon_d.png
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_will/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-10-02 11:53:59 Error: [MissingControllerException] Controller class ImgController could not be found.
+Exception Attributes: array (
+  'class' => 'ImgController',
+  'plugin' => NULL,
+)
+Request URL: /mobile/sms_will/img/smst_icon_b.png
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_will/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-10-02 11:54:00 Error: [MissingControllerException] Controller class ImgController could not be found.
+Exception Attributes: array (
+  'class' => 'ImgController',
+  'plugin' => NULL,
+)
+Request URL: /mobile/sms_will/img/smst_icon_c.png
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_will/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-10-02 11:54:00 Error: [MissingControllerException] Controller class ImgController could not be found.
+Exception Attributes: array (
+  'class' => 'ImgController',
+  'plugin' => NULL,
+)
+Request URL: /mobile/sms_will/img/smst_icon_d.png
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_will/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-10-02 11:54:49 Error: [MissingControllerException] Controller class ImgController could not be found.
+Exception Attributes: array (
+  'class' => 'ImgController',
+  'plugin' => NULL,
+)
+Request URL: /mobile/sms_will/img/smst_icon_c.png
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_will/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-10-02 11:54:49 Error: [MissingControllerException] Controller class ImgController could not be found.
+Exception Attributes: array (
+  'class' => 'ImgController',
+  'plugin' => NULL,
+)
+Request URL: /mobile/sms_will/img/smst_icon_d.png
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_will/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-10-02 11:54:49 Error: [MissingControllerException] Controller class ImgController could not be found.
+Exception Attributes: array (
+  'class' => 'ImgController',
+  'plugin' => NULL,
+)
+Request URL: /mobile/sms_will/img/smst_icon_b.png
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_will/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-10-02 11:55:16 Error: [MissingControllerException] Controller class ImgController could not be found.
+Exception Attributes: array (
+  'class' => 'ImgController',
+  'plugin' => NULL,
+)
+Request URL: /mobile/sms_will/img/smst_icon_b.png
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_will/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-10-02 11:55:16 Error: [MissingControllerException] Controller class ImgController could not be found.
+Exception Attributes: array (
+  'class' => 'ImgController',
+  'plugin' => NULL,
+)
+Request URL: /mobile/sms_will/img/smst_icon_d.png
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_will/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-10-02 11:55:16 Error: [MissingControllerException] Controller class ImgController could not be found.
+Exception Attributes: array (
+  'class' => 'ImgController',
+  'plugin' => NULL,
+)
+Request URL: /mobile/sms_will/img/smst_icon_c.png
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_will/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-10-02 11:56:03 Error: [MissingControllerException] Controller class ImgController could not be found.
+Exception Attributes: array (
+  'class' => 'ImgController',
+  'plugin' => NULL,
+)
+Request URL: /mobile/sms_will/img/smst_icon_c.png
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_will/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-10-02 11:56:03 Error: [MissingControllerException] Controller class ImgController could not be found.
+Exception Attributes: array (
+  'class' => 'ImgController',
+  'plugin' => NULL,
+)
+Request URL: /mobile/sms_will/img/smst_icon_b.png
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_will/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-10-02 11:56:03 Error: [MissingControllerException] Controller class ImgController could not be found.
+Exception Attributes: array (
+  'class' => 'ImgController',
+  'plugin' => NULL,
+)
+Request URL: /mobile/sms_will/img/smst_icon_d.png
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_will/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-10-02 11:57:04 Error: [NotFoundException] Not Found
+Request URL: /mobile/sms_will/quizzes/quiz
+Stack Trace:
+#0 [internal function]: QuizzesController->quiz()
+#1 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(QuizzesController), Array)
+#2 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#3 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(QuizzesController), Object(CakeRequest), Object(CakeResponse))
+#4 /home1/infinasa/public_html/mobile/sms_will/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2013-10-02 11:57:13 Error: [MissingControllerException] Controller class ImgController could not be found.
+Exception Attributes: array (
+  'class' => 'ImgController',
+  'plugin' => NULL,
+)
+Request URL: /mobile/sms_will/img/smst_icon_b.png
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_will/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-10-02 11:57:13 Error: [MissingControllerException] Controller class ImgController could not be found.
+Exception Attributes: array (
+  'class' => 'ImgController',
+  'plugin' => NULL,
+)
+Request URL: /mobile/sms_will/img/smst_icon_c.png
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_will/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-10-02 11:57:13 Error: [MissingControllerException] Controller class ImgController could not be found.
+Exception Attributes: array (
+  'class' => 'ImgController',
+  'plugin' => NULL,
+)
+Request URL: /mobile/sms_will/img/smst_icon_d.png
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_will/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-10-02 12:01:15 Error: [MissingControllerException] Controller class ImgController could not be found.
+Exception Attributes: array (
+  'class' => 'ImgController',
+  'plugin' => NULL,
+)
+Request URL: /mobile/sms_will/img/smst_icon_c.png
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_will/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-10-02 12:01:15 Error: [MissingControllerException] Controller class ImgController could not be found.
+Exception Attributes: array (
+  'class' => 'ImgController',
+  'plugin' => NULL,
+)
+Request URL: /mobile/sms_will/img/smst_icon_d.png
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_will/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-10-02 12:01:15 Error: [MissingControllerException] Controller class ImgController could not be found.
+Exception Attributes: array (
+  'class' => 'ImgController',
+  'plugin' => NULL,
+)
+Request URL: /mobile/sms_will/img/smst_icon_b.png
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_will/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-10-02 12:02:58 Error: [MissingControllerException] Controller class ImgController could not be found.
+Exception Attributes: array (
+  'class' => 'ImgController',
+  'plugin' => NULL,
+)
+Request URL: /mobile/sms_will/img/smst_icon_c.png
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_will/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-10-02 12:02:58 Error: [MissingControllerException] Controller class ImgController could not be found.
+Exception Attributes: array (
+  'class' => 'ImgController',
+  'plugin' => NULL,
+)
+Request URL: /mobile/sms_will/img/smst_icon_b.png
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_will/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-10-02 12:02:58 Error: [MissingControllerException] Controller class ImgController could not be found.
+Exception Attributes: array (
+  'class' => 'ImgController',
+  'plugin' => NULL,
+)
+Request URL: /mobile/sms_will/img/smst_icon_d.png
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_will/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-10-02 12:03:52 Error: [MissingControllerException] Controller class ImgController could not be found.
+Exception Attributes: array (
+  'class' => 'ImgController',
+  'plugin' => NULL,
+)
+Request URL: /mobile/sms_will/img/smst_icon_b.png
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_will/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-10-02 12:03:52 Error: [MissingControllerException] Controller class ImgController could not be found.
+Exception Attributes: array (
+  'class' => 'ImgController',
+  'plugin' => NULL,
+)
+Request URL: /mobile/sms_will/img/smst_icon_d.png
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_will/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-10-02 12:03:52 Error: [MissingControllerException] Controller class ImgController could not be found.
+Exception Attributes: array (
+  'class' => 'ImgController',
+  'plugin' => NULL,
+)
+Request URL: /mobile/sms_will/img/smst_icon_c.png
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_will/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-10-02 12:43:21 Error: [MissingControllerException] Controller class ImgController could not be found.
+Exception Attributes: array (
+  'class' => 'ImgController',
+  'plugin' => NULL,
+)
+Request URL: /mobile/sms_will/img/smst_icon_b.png
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_will/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-10-02 12:43:21 Error: [MissingControllerException] Controller class ImgController could not be found.
+Exception Attributes: array (
+  'class' => 'ImgController',
+  'plugin' => NULL,
+)
+Request URL: /mobile/sms_will/img/smst_icon_d.png
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_will/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-10-02 12:43:21 Error: [MissingControllerException] Controller class ImgController could not be found.
+Exception Attributes: array (
+  'class' => 'ImgController',
+  'plugin' => NULL,
+)
+Request URL: /mobile/sms_will/img/smst_icon_c.png
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_will/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-10-02 13:57:43 Error: [MissingActionException] Action QuizzesController::img() could not be found.
+Exception Attributes: array (
+  'controller' => 'QuizzesController',
+  'action' => 'img',
+)
+Request URL: /mobile/sms_will/quizzes/img/smst_hof_bg.png
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(QuizzesController), Object(CakeRequest), Object(CakeResponse))
+#2 /home1/infinasa/public_html/mobile/sms_will/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2013-10-02 13:57:53 Error: [MissingActionException] Action QuizzesController::img() could not be found.
+Exception Attributes: array (
+  'controller' => 'QuizzesController',
+  'action' => 'img',
+)
+Request URL: /mobile/sms_will/quizzes/img/smst_hof_bg.png
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(QuizzesController), Object(CakeRequest), Object(CakeResponse))
+#2 /home1/infinasa/public_html/mobile/sms_will/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2013-10-02 13:57:59 Error: [MissingActionException] Action QuizzesController::img() could not be found.
+Exception Attributes: array (
+  'controller' => 'QuizzesController',
+  'action' => 'img',
+)
+Request URL: /mobile/sms_will/quizzes/img/smst_hof_bg.png
+Stack Trace:
+#0 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(QuizzesController), Object(CakeRequest), Object(CakeResponse))
+#2 /home1/infinasa/public_html/mobile/sms_will/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2013-10-02 15:29:57 Error: [NotFoundException] Not Found
+Request URL: /mobile/sms_will/quizzes/quiz
+Stack Trace:
+#0 [internal function]: QuizzesController->quiz()
+#1 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(QuizzesController), Array)
+#2 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#3 /home1/infinasa/public_html/mobile/sms_will/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(QuizzesController), Object(CakeRequest), Object(CakeResponse))
+#4 /home1/infinasa/public_html/mobile/sms_will/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
