@@ -332,7 +332,17 @@ $(document).ready(function () {
             $("#accu").html($accumulateScore);
             $("#remaining_score").html($counter);
             $("#correct").html('Right');
-            $($(this).children('div')).addClass('correct');
+            $(".a_" + $(this).attr('question_id')).each(function(){
+                if(parseInt($(this).attr('correct')) == 1)
+                {
+                    $(this).children('div').addClass('correct');
+                }
+                else
+                {
+                    $(this).children('div').addClass('others');
+                }
+            });
+            //$($(this).children('div')).addClass('correct');
             $totalCorrect ++;
         }
         else
@@ -341,8 +351,6 @@ $(document).ready(function () {
             $res.score = 0;
             $("#remaining_score").html(0);
             $("#correct").html('Wrong');
-            
-            
             
             $(".a_" + $(this).attr('question_id')).each(function(){
                 if(parseInt($(this).attr('correct')) == 1)
@@ -354,8 +362,8 @@ $(document).ready(function () {
                     $(this).children('div').addClass('others');
                 }
             });
-            $($(this).children('div')).removeClass('others');
-            $($(this).children('div')).addClass('incorrect');
+            $(this).children('div').removeClass('others');
+            $(this).children('div').addClass('incorrect');
         }
         $responses.push($res);
         
