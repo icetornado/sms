@@ -42,23 +42,26 @@ $this->set('title_for_layout', 'SMS Training - Leaderboards');
                                 </tbody>
                             </table>
                         <?php endif; ?>
-                        <?php $sb = $d['score']; ?>
-                        <div>Ranking</div>
-                        <table>
-                            <thead>
-                                <th>Alias</th>
-                                <th>Score</th>
-                            </thead>
-                            <tbody>
-                                <?php foreach ($sb as $s): ?>
-                                <tr>
-                                    <td><?php echo $s['initial']; ?></td>
-                                    <td><?php echo $s['score']; ?></td>
-                                </tr>
-                                <?php endforeach; ?>
-                            </tbody>
+                            
+                        <?php if(isset($d['score'])): ?>
+                            <?php $sb = $d['score']; ?>
+                            <div>Ranking</div>
+                            <table>
+                                <thead>
+                                    <th>Alias</th>
+                                    <th>Score</th>
+                                </thead>
+                                <tbody>
+                                    <?php foreach ($sb as $s): ?>
+                                    <tr>
+                                        <td><?php echo $s['initial']; ?></td>
+                                        <td><?php echo $s['score']; ?></td>
+                                    </tr>
+                                    <?php endforeach; ?>
+                                </tbody>
 
-                        </table>
+                            </table>
+                        <?php endif;?>
                     </div><!-- end of content div -->
                 </section>
             <?php endforeach; ?>
