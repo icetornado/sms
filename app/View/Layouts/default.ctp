@@ -48,14 +48,14 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
 			</ul>
 				 <section class="top-bar-section">
 				<ul class="right">
-					<li class="active">
+					<li class="">
 						<a href="<?php echo $this->webroot; ?>">Home</a>
 					</li>
                     <li class="">
 						<a href="<?php echo $this->Html->url(array('controller' => 'quizzes')) ; ?>">Are You Smarter?</a>
 					</li>
 					<li class="">
-						<a href="#">Study</a>
+						<a href="<?php echo $this->Html->url(array('controller' => 'refresher')) ; ?>">Refresher</a>
 					</li>
 					<li class="">
 						<a href="#">Resources</a>
