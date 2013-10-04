@@ -19,6 +19,14 @@ class QuizzesController extends AppController
     public function beforeFilter(){
         parent::beforeFilter();
         $this->Security->unlockedFields = array('score', 'correct');
+        $this->Security->blackHoleCallback = 'blackhole';
+    }
+    
+    
+    public function blackhole($type)
+    {
+        // handle errors.
+        throw new NotFoundException();
     }
     
     public function index()
@@ -42,22 +50,23 @@ class QuizzesController extends AppController
         {
             $level = $this->request->query['level'];
             
-            $bosses = $this->Boss->find('all');
-            
-            $bossmax = $this->Boss->find('all', array(
+            $bosses = $this->Boss->find('all',  array(
                 'conditions' => array('level' => $level),
-                'fields' => array('MAX(Boss.score) as maxscore'),
-            ));
+                )
+            );
             
             $bossArr = array();
+            $bossmax = array();
             
             foreach($bosses as $boss)
             {
                 $bossArr[$boss['Boss']['email']] = $boss['Boss']['firstname'] . " " . $boss['Boss']['lastname'];
+                $bossmax[] = $boss['Boss']['score'];
             }
+                                  
             
             $this->set('bosses', $bossArr);
-            $this->set('bossmax', $bossmax[0][0]['maxscore']);
+            $this->set('bossmax', $bossmax);
             $this->set('level', $level);
             $this->set('quizzes', $this->Quiz->findAllByLevel($level));
             $this->set('title_for_layout','SMS Quiz Level ' . $level);

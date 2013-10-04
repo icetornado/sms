@@ -170,7 +170,6 @@ $this->set('title_for_layout', 'SMS Training - Refresher');
         </div>
     </div>
 </div>
-
 <script src="js/jquery.touchwipe.1.1.1.js"></script>
 <script>
     function deg2rad($a)
@@ -191,7 +190,7 @@ $this->set('title_for_layout', 'SMS Training - Refresher');
 
         var $xRad = $("#wheelbox").width()/2;
         var $yRad = -74;
-        
+       
         var $angleArr = [];
         
         floatCircles();     
@@ -217,8 +216,8 @@ $this->set('title_for_layout', 'SMS Training - Refresher');
              wipeRight: function(){
                 buttonClick('right');
              },
-             /*wipeUp: function() { alert("up"); },
-             wipeDown: function() { alert("down"); },*/
+             //wipeUp: function() { alert("up"); },
+             //wipeDown: function() { alert("down"); },
              min_move_x: 20,
              min_move_y: 20,
              preventDefaultEvents: true
@@ -233,10 +232,10 @@ $this->set('title_for_layout', 'SMS Training - Refresher');
         
         function floatCircles()
         {
-            $("#spinBtn").css({
+            /*$("#spinBtn").css({
                 top: $("#wheelbox").height()/2 - $("#spinBtn").height()/2 ,
                 left: $("#wheelbox").width()/2 - $("#spinBtn").width()/2
-            });
+            });*/
         
             //arranging satellites
             $(".satellite").each(function(){
@@ -246,7 +245,7 @@ $this->set('title_for_layout', 'SMS Training - Refresher');
                     top: $yRad + (Math.sin(deg2rad($phi)) * $radius) - $(this).height()/2,
                     left: $xRad + (Math.cos(deg2rad($phi)) * $radius) - $(this).width()/2
                 });
-        
+                
                 if($count == 0)
                 {
                     $("#panel").html($("#story" + $(this).attr('story')).html());
