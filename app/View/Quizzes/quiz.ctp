@@ -182,8 +182,8 @@ echo '</div>';
     <div class="splashBottom" style="background:rgba(51,82,102,0.35);width:100%;position:relative;">
         <div id="results_wrapper" style="text-align:center;padding:63px 22px 20px 22px;">
             <div id="results_success">
-                <div style="font-weight:bold;font-size:30px;color:#99D538;text-transform:uppercase;margin-bottom:14px;">Success!</div>
-                <div>You scored high enough to make the Hall of Fame.</div>
+                <div id="success_head" style="font-weight:bold;font-size:30px;color:#99D538;text-transform:uppercase;margin-bottom:14px;"></div>
+                <div id="success_text"></div>
                 <div style="margin:18px 0 22px 0;">
                     <input type="button" name="enter_initial" id="enter_btn" value="Enter Initials" class="others_btn" style="margin:4px 0 0 0;" />
                     <input type="button" name="hall_of_fame" id="hall_of_fame" value="Hall of Fame" class="others_btn" style="margin:4px 0 0 0;" />
@@ -196,8 +196,8 @@ echo '</div>';
             </div>
 
             <div id="results_failed">
-                <div style="font-weight:bold;font-size:30px;color:#FF5C37;text-transform:uppercase;margin-bottom:14px;">Sorry!</div>
-                <div>You didn't score high enough to make the Hall of Fame.</div>
+                <div id="failed_head" style="font-weight:bold;font-size:30px;color:#FF5C37;text-transform:uppercase;margin-bottom:14px;"></div>
+                <div id="failed_text"></div>
                 <div style="margin:18px 0 32px 0;">
                     <input type="button" name="try_again" id="try_again" value="Try Again" class="others_btn" style="margin:4px 0 0 0;" />
                     <input type="button" name="hall_of_fame" value="Hall of Fame" id="hall_of_fame2" class="others_btn" style="margin:4px 0 0 0;" />
@@ -270,25 +270,74 @@ $(document).ready(function () {
     var $totalCorrect = 0;
     var $responses = [];
     var $stepdown = 20;
-    var $bossmax = <?php echo $bossmax ?>;
+    var $bossmax = [<?php echo implode(',', $bossmax); ?>];
+    console.log($bossmax);
     
     $('#smst-modal').foundation('reveal', {
-            //animation: 'fadeAndPop',
-            //animationSpeed: 250,
-            //closeOnBackgroundClick: false,
-            dismissModalClass: 'close_modal_btn',
-            //bgClass: 'reveal-modal-bg',
-            //open: function(){},
-            //opened: function(){},
-            close: function(){
-            },
-            closed: function(){
-            }
-            //bg : $('.reveal-modal-bg'),
-        });
+        //animation: 'fadeAndPop',
+        //animationSpeed: 250,
+        //closeOnBackgroundClick: false,
+        dismissModalClass: 'close_modal_btn',
+        //bgClass: 'reveal-modal-bg',
+        //open: function(){},
+        //opened: function(){},
+        close: function(){
+        },
+        closed: function(){
+        }
+        //bg : $('.reveal-modal-bg'),
+    });
+    
     $('#smst-modal').on('opened', function () {
         $(this).foundation('section', 'reflow');
-    });    
+    });
+    
+    function isSmarter()
+    {
+        var $isSmarter = false;
+        var $howSmart = 0;
+        var $smart = {};
+        
+        console.log($bossmax);
+        
+        for(var $i = 0; $i < $bossmax.length; $i++)
+        {
+            if($accumulateScore > $bossmax[$i])
+            {
+                $isSmarter = true;
+                $howSmart ++;
+            }
+        }
+        
+        $smart.isSmarter = $isSmarter;
+        
+        if($isSmarter)
+            $smart.success = 'Woo-hoo!';
+        else
+            $smart.success = 'Boo-hoo';
+
+        switch($howSmart)
+        {
+            case 0:
+                $smart.text = 'Uh, you are not yet smarter than your boss.';
+                break;
+            
+            case 1:
+                $smart.text = 'Good job! You&apos;are smarter than a boss.';
+                break;
+            
+            case 2:
+            default:
+                $smart.text = 'Yeah! You&apos;are smarter than some of your bosses.';
+                break;
+        }
+        
+        if($howSmart == $bossmax.length)
+            $smart.text = 'Awesome! You bosses need to know you are smarter than them. ';
+        console.log($smart);
+        return $smart;
+    }
+    
     function loadQuestion($q)
     {
         if($("#question_" + $q).length > 0)
@@ -333,13 +382,19 @@ $(document).ready(function () {
             $("#quiz_correct").html($totalCorrect + "/" + $totalQ);
             $("#quiz_score").html($accumulateScore);
             
-            if($accumulateScore > $bossmax)
+            var $smartResult = isSmarter();
+            if($smartResult.isSmarter)
             {
+                
+                $("#success_head").html($smartResult.success);
+                $("#success_text").html($smartResult.text);
                 $("#results_success").show();
                 $("#results_failed").hide();
             }
             else
             {
+                $("#failed_head").html($smartResult.success);
+                $("#failed_text").html($smartResult.text);
                 $("#results_success").hide();
                 $("#results_failed").show();
             }
