@@ -52,7 +52,7 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
 						<a href="<?php echo $this->webroot; ?>">Home</a>
 					</li>
                     <li class="">
-						<a href="<?php echo $this->Html->url(array('controller' => 'quizzes')) ; ?>">Are You Smarter?</a>
+						<a href="<?php echo $this->Html->url(array('controller' => 'quizzes', 'action' => 'index')) ; ?>">Are You Smarter?</a>
 					</li>
 					<li class="">
 						<a href="#">Study</a>

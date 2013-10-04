@@ -222,9 +222,7 @@ echo '</div>';
                 echo '</div>';
                 $cn ++;
             }
-
          ?>
-            
             <input type="hidden" name="ajaxURL" value="<?php echo $this->Html->url(array('controller' => 'quizzes', 'action' => 'save')) . '.json'; ?>" id="ajax_url">
             <input type="hidden" name="scoreURL" value="<?php echo $this->Html->url(array('controller' => 'quizzes', 'action' => 'scoreboard')) . '.json'; ?>" id="scoreboard_url">
             <input type="hidden" name="saveURL" value="<?php echo $this->Html->url(array('controller' => 'scoreboards', 'action' => 'scoreboard')). '.json'; ?>" id="save_url">
@@ -251,6 +249,10 @@ echo '</div>';
     <?php echo $this->Form->input('level', array('type' => 'hidden', 'id' => 'brag_level', 'value' => $level)); ?>
     <?php echo $this->Form->input('correct', array('type' => 'hidden', 'id' => 'brag_correct', 'value' => '')); ?>
     <?php echo $this->Form->button('Brag!', array('id' => 'brag_submit')); ?>
+    <!--
+    <input type="button" name="brag" value="Brag!" id="brag_submit" class="others_btn" style="margin:4px 0 0 0;" />
+    <input type="button" name="cancel" value="Cancel" id="brag_cancel" class="others_btn" style="margin:4px 0 0 0;" />
+    -->
     <?php echo $this->Form->end(); ?>
 </div>
 <!-- end of area -->
@@ -487,9 +489,16 @@ $(document).ready(function () {
         $("#quiz_results").hide();
                
         $('#smst-modal').html($('#brag').html());   
-        //$('#smst-modal').css('color', 'black');
         $('#smst-modal').foundation('reveal','open');
     });
+    
+    /*$("#brag_cancel").click(function(){
+        $('#smst-modal').foundation('reveal','close');
+    });
+    
+    $("#brag_submit").click(function(){
+        $("#bragForm").submit();
+   });*/
     
     $("#hall_of_fame").click(function(){
         $.ajax({

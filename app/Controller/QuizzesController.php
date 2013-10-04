@@ -19,6 +19,14 @@ class QuizzesController extends AppController
     public function beforeFilter(){
         parent::beforeFilter();
         $this->Security->unlockedFields = array('score', 'correct');
+        $this->Security->blackHoleCallback = 'blackhole';
+    }
+    
+    
+    public function blackhole($type)
+    {
+        // handle errors.
+        throw new NotFoundException();
     }
     
     public function index()
