@@ -234,6 +234,7 @@ echo '</div>';
 
 <!-- brag area -->
 <div id="brag" style="display:none;">
+    <a class="close-reveal-modal">&#215;</a>
     <p>Show your boss(es) how well you scored: </p>
     <?php echo $this->Form->create(null, array('url' => array('controller' => 'quizzes', 'action' => 'brag'), 'id' => 'bragForm')); ?>
     <?php echo $this->Form->input('email', array(
@@ -542,7 +543,7 @@ $(document).ready(function () {
         
     $("#brag_btn").click(function(){
         $("#quiz_results").hide();
-               
+        $('#smst-modal').foundation('reveal',{dismissModalClass: 'close-reveal-modal'});
         $('#smst-modal').html($('#brag').html());   
         $('#smst-modal').foundation('reveal','open');
     });
