@@ -1,10 +1,19 @@
 <style>
-    /*.reveal-modal {
-        z-index:200;
+    .reveal-modal {
+        background:#304859;
+        border:none;
     }
-    .reveal-modal-bg {
-        z-index:100;
-    }*/
+    .close_modal_btn {
+            background: url("img/smst_btn_bg.png") repeat-y scroll center top rgba(0, 0, 0, 0);
+            border:none;
+            border-radius: 0 0 0 0;
+            color: #99D538;
+            cursor: pointer;
+            font-size: 1em;
+            font-weight: bold;
+            margin-top: 11px;
+            padding: 10px 22px;
+    }
 </style>
 
 <?php
@@ -18,17 +27,17 @@ $this->set('title_for_layout', 'SMS Training - Are You Smarter Than Your Boss?')
 </div>
 <div class="splashBottom" style="background:rgba(51,82,102,0.35);width:100%;position:relative;text-align:center;">
     <div style="padding-top:63px;width:228px;height:291px;position:relative;margin:0 auto;">
-        <div style="position:absolute;left:0;top:63;" class="quiz_buttons" url="<?php echo $this->Html->url(array('controller' => 'quizzes', 'action' => 'quiz', '?' => array('level' => 1))) ; ?>">
+        <div style="position:absolute;left:0;top:63;cursor:pointer;" class="quiz_buttons" url="<?php echo $this->Html->url(array('controller' => 'quizzes', 'action' => 'quiz', '?' => array('level' => 1))) ; ?>">
             <img width="110px" height="110px" src="img/smst_btn_q1@2x.png" alt="" />
         </div>
-        <div style="position:absolute;right:0;top:63;" class="quiz_buttons" url="<?php echo $this->Html->url(array('controller' => 'quizzes', 'action' => 'quiz', '?' => array('level' => 2))) ; ?>">
+        <div style="position:absolute;right:0;top:63;cursor:pointer;" class="quiz_buttons" url="<?php echo $this->Html->url(array('controller' => 'quizzes', 'action' => 'quiz', '?' => array('level' => 2))) ; ?>">
             <img width="110px" height="110px" src="img/smst_btn_q2@2x.png" alt="" />
         </div>
-        <div style="position:absolute;left:0;bottom:0;" class="quiz_buttons" url="<?php echo $this->Html->url(array('controller' => 'quizzes', 'action' => 'quiz', '?' => array('level' => 3))) ; ?>">
+        <div style="position:absolute;left:0;bottom:0;">
             <img width="110px" height="110px" src="img/smst_btn_q3@2x.png" alt="" />
         </div>
-        <div style="position:absolute;right:0;bottom:0;">
-            <a href="<?php echo $this->Html->url(array('controller' => 'quizzes', 'action' => 'quiz', '?' => array('level' => 3))) ; ?>">
+        <div style="position:absolute;right:0;bottom:0;cursor:pointer;">
+            <a href="<?php echo $this->Html->url(array('controller' => 'refresher', 'action' => 'index')) ; ?>">
                 <img width="110px" height="110px" src="img/smst_btn_study@2x.png" alt="" />
             </a>    
         </div>
@@ -71,12 +80,15 @@ $this->set('title_for_layout', 'SMS Training - Are You Smarter Than Your Boss?')
         $(".quiz_buttons").click(function(){
             //console.log($(this).attr('url'));
             $('#smst-modal').html(
-                '<h2>Awesome. I have it.</h2>' + 
-                '<p class="lead">Your couch.  It is mine.</p>' +
-                '<p>Im a cool paragraph that lives inside of an even cooler modal. Wins</p>' +
-                //'<a class="close-reveal-modal">&#215;</a>' +
+                '<h3 style="line-height:0.9em;">10 questions<br /><span style="color:#99D538;font-size:0.8em;font-weight:lighter;">(quick)</span></h3>' +
+                '<h3 style="line-height:0.9em;">7,200 points<br /><span style="color:#99D538;font-size:0.8em;font-weight:lighter;">(impossible)</span></h3>' +
+                '<h3 style="line-height:0.9em;">Speed counts<br /><span style="color:#99D538;font-size:0.8em;font-weight:lighter;">(you\'ll see)</span></h3>' +
+                '<h3 style="line-height:0.9em;">Wrong answer: 0<br /><span style="color:#99D538;font-size:0.8em;font-weight:lighter;">(oomph)</span></h3>' +
+                // '<h3 style="line-height:0.9em;">Be a Hall of Famer</h3>' +
+                // '<h3 style="line-height:0.9em;">Brag to your boss</h3>' +
                 '<div id="close_reveal_button"></div>' + 
-                '<input type="button" name="close_modal" value="Close" class="close_modal_btn" id="close_modal_btn" style="margin:4px 0 0 0;" />'
+                '<a class="close-reveal-modal">&#215;</a>' +
+                '<input type="button" name="close_modal" value="Go" class="close_modal_btn" id="close_modal_btn" />'
             );
             
             $('#smst-modal').foundation('reveal','open');

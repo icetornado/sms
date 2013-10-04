@@ -52,13 +52,13 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
 						<a href="<?php echo $this->webroot; ?>">Home</a>
 					</li>
                     <li class="">
-						<a href="<?php echo $this->Html->url(array('controller' => 'quizzes')) ; ?>">Are You Smarter?</a>
+						<a href="<?php echo $this->Html->url(array('controller' => 'quizzes', 'action' => 'index')) ; ?>">Are You Smarter?</a>
 					</li>
 					<li class="">
-						<a href="<?php echo $this->Html->url(array('controller' => 'refresher')) ; ?>">Refresher</a>
+						<a href="<?php echo $this->Html->url(array('controller' => 'refresher', 'action' => 'index')) ; ?>">Refresher</a>
 					</li>
 					<li class="">
-						<a href="#">Resources</a>
+						<a href="<?php echo $this->Html->url(array('controller' => 'resources', 'action' => 'index')) ; ?>">Resources</a>
 					</li>
 				</ul>
 			</section> 
@@ -69,7 +69,7 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
         <?php echo $this->Session->flash(); ?>
 		<?php echo $this->fetch('content'); ?>
 	</div>
-        <div id="smst-modal" class="reveal-modal" style="color: black;">
+        <div id="smst-modal" class="reveal-modal">
             
         </div>
 
