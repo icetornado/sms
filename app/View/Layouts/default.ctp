@@ -69,7 +69,9 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
         <?php echo $this->Session->flash(); ?>
 		<?php echo $this->fetch('content'); ?>
 	</div>
-
+        <div id="smst-modal" class="reveal-modal" style="color: black;">
+            
+        </div>
 
 <!--  <script>
     document.write('<script src=' + ('__proto__' in {} ? 'js/vendor/zepto' : 'js/vendor/jquery') + '.js><\/script>')

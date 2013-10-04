@@ -59,6 +59,9 @@ CREATE TABLE `bosses` (
 INSERT INTO bosses (firstname, lastname, email, level, score) VALUES('William', 'Kuykendall', 'wkuykendall@infina.net', 1, 500);
 INSERT INTO bosses (firstname, lastname, email, level, score) VALUES('Trieu', 'Tran', 'ttran@infina.net', 1, 501);
 
+INSERT INTO bosses (firstname, lastname, email, level, score) VALUES('William', 'Kuykendall', 'wkuykendall@infina.net', 2, 1001);
+INSERT INTO bosses (firstname, lastname, email, level, score) VALUES('Trieu', 'Tran', 'ttran@infina.net', 2, 1000);
+
 INSERT INTO questions (title, body, level) VALUES('Q1', 'The Top 5 are:', 1);
 INSERT INTO answers(title, body, correct, question_id, ord) VALUES ('a', 'The top 5 controllers as determined by the Risk Analysis Process', 0, 1, 1);
 INSERT INTO answers(title, body, correct, question_id, ord) VALUES ('b', 'The top 5 facilities as determined by the Risk Analysis Process', 0, 1, 2);

@@ -11,13 +11,31 @@ class ScoreboardsController extends AppController
     
     public function index()
     {
+        if(isset($this->request->query['level']) && is_numeric($this->request->query['level']))
+            $level = $this->request->query['level'];
+        else
+            $level = 1;
+        
         $data = $this->getScoreboardData();
+        $this->set('requestLevel', $level);
         $this->set('data', $data);
     }
     
     public function scoreboard()
     {
         $data = $this->getScoreboardData();
+        $this->set('data', $data);
+    }
+    
+    public function scoreboard_ajax()
+    {
+        if(isset($this->request->query['level']) && is_numeric($this->request->query['level']))
+            $level = $this->request->query['level'];
+        else
+            $level = 1;
+        
+        $data = $this->getScoreboardData();
+        $this->set('requestLevel', $level);
         $this->set('data', $data);
     }
     
