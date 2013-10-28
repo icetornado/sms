@@ -185,12 +185,12 @@ echo '</div>';
                 <div id="success_head" style="font-weight:bold;font-size:30px;color:#99D538;text-transform:uppercase;margin-bottom:14px;"></div>
                 <div id="success_text"></div>
                 <div style="margin:18px 0 22px 0;">
-                    <input type="button" name="enter_initial" id="enter_btn" value="Enter Initials" class="others_btn" style="margin:4px 0 0 0;" />
-                    <input type="button" name="hall_of_fame" id="hall_of_fame" value="Hall of Fame" class="others_btn" style="margin:4px 0 0 0;" />
                     <div id="initial_div" style="display:none;">
-                        <input type="text" name="initial" value="AAA" maxlength="3" id="initial" />
+                        <input type="text" name="initial" value="AAA" maxlength="3" id="initial" style="margin: 0 auto;width:200px;border:none;" />
                         <input type="button" name="submit_initial" value="Submit" class="others_btn" id="submit_btn" style="margin:4px 0 0 0;" />
                     </div>
+                    <input type="button" name="enter_initial" id="enter_btn" value="Enter Initials" class="others_btn" style="margin:4px 0 0 0;" />
+                    <input type="button" name="hall_of_fame" id="hall_of_fame" value="Hall of Fame" class="others_btn" style="margin:4px 0 0 0;" />
                     <input type="button" name="brag_button" value="Brag" class="others_btn" id="brag_btn" style="margin:4px 0 0 0;" />
                 </div>
             </div>
@@ -315,7 +315,7 @@ $(document).ready(function () {
         if($isSmarter)
             $smart.success = 'Woo-hoo!';
         else
-            $smart.success = 'Boo-hoo';
+            $smart.success = 'Boo-hoo!';
 
         switch($howSmart)
         {
@@ -324,17 +324,17 @@ $(document).ready(function () {
                 break;
             
             case 1:
-                $smart.text = 'Good job! You&apos;are smarter than a boss.';
+                $smart.text = 'Good job! You&apos;re smarter than a boss.';
                 break;
             
             case 2:
             default:
-                $smart.text = 'Yeah! You&apos;are smarter than some of your bosses.';
+                $smart.text = 'Yeah! You&apos;re smarter than some of your bosses.';
                 break;
         }
         
         if($howSmart == $bossmax.length)
-            $smart.text = 'Awesome! You bosses need to know you are smarter than them. ';
+            $smart.text = 'Awesome! Your bosses need to know you&apos;re smarter than them. ';
         console.log($smart);
         return $smart;
     }
@@ -532,6 +532,7 @@ $(document).ready(function () {
     });
     
     $("#enter_btn").click(function(){
+        $(this).hide();
         $("#initial_div").show();
     });
     
@@ -542,7 +543,7 @@ $(document).ready(function () {
     });
         
     $("#brag_btn").click(function(){
-        $("#quiz_results").hide();
+        //$("#quiz_results").hide();
         $('#smst-modal').foundation('reveal',{dismissModalClass: 'close-reveal-modal'});
         $('#smst-modal').html($('#brag').html());   
         $('#smst-modal').foundation('reveal','open');

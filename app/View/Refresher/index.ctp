@@ -78,7 +78,8 @@ $this->set('title_for_layout', 'SMS Training - Refresher');
         <h3>Primer</h3>
         <p>The SMS is a systemic, proactive approach to managing safety risks. It informs organizational structures, accountabilities, policies and procedures.</p>
         <div class="flex-video">
-            <iframe style="border:none;" src="//player.vimeo.com/video/76005391?title=0&byline=0&portrait=0&color=eeeeee" width="500" height="281" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+            <iframe width="420" height="315" src="//www.youtube.com/embed/sPA2yDRMYPI" frameborder="0" allowfullscreen></iframe>
+            <!-- <iframe style="border:none;" src="//player.vimeo.com/video/76005391?title=0&byline=0&portrait=0&color=eeeeee" width="500" height="281" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> -->
         </div>
         <h3>SMS Principles</h3>
         <div class="large-12" style="position:relative;z-index:50;">

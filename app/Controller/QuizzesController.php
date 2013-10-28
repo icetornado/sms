@@ -135,17 +135,17 @@ class QuizzesController extends AppController
         App::uses('CakeEmail', 'Network/Email');
         
         $Email = new CakeEmail();
-        $Email->from(array('me@example.com' => 'My Site'));
+        $Email->from(array('me@example.com' => 'SMS Training'));
         $otherMail = explode(',', $this->request->data['Quiz']['emailother']);
         
         if(!is_array($otherMail))
             $otherMail = array();
         
-        $subject = 'Beat you - From ' . $this->request->data['Quiz']['yourname'];
+        $subject = 'I\'m Smarter Than You - From ' . $this->request->data['Quiz']['yourname'];
         
         $Email->to($this->request->data['Quiz']['email']);
         $Email->subject($subject);
-        $body = 'My message is: my score is ' . $this->request->data['Quiz']['score'] . ' at level ' . $this->request->data['Quiz']['level'];
+        $body = 'Hey Boss: I scored ' . $this->request->data['Quiz']['score'] . ' at level ' . $this->request->data['Quiz']['level'];
         $Email->send($body);
         
         if(!empty($otherMail))
@@ -156,7 +156,7 @@ class QuizzesController extends AppController
                 {
                     $Email->to($om);
                     $Email->subject($subject);
-                    $body = 'My message is: my score is ' . $this->request->data['Quiz']['score'] . ' at level ' . $this->request->data['Quiz']['level'];
+                    $body = 'Hey Boss: I scored ' . $this->request->data['Quiz']['score'] . ' at level ' . $this->request->data['Quiz']['level'];
                     $Email->send($body);
                 }
             }

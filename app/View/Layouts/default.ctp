@@ -6,7 +6,6 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
-    <meta name="apple-mobile-web-app-capable" content="yes" />
 	<?php echo $this->Html->charset(); ?>
 	<title>
 	<?php echo $title_for_layout; ?>
@@ -20,9 +19,7 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
 		echo $this->fetch('script');
 	?>
 	<?php echo $this->Html->css('foundation'); ?>
-
     <?php echo $this->Html->css('smst'); ?>
-    
   	<?php echo $this->Html->script("vendor/custom.modernizr"); ?>    
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
@@ -30,11 +27,7 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
 </head>
 <body>
 
-
-	<!-- <div class="fixed-test">test</div> -->
-
-	<div class="fixed-sub"></div>
-<!--	<div class="fixed-sub2"></div>-->
+	<div class="smst-fixed-sub"></div>
 
 	<div class="fixed">
 		<nav class="top-bar">
@@ -46,7 +39,7 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
 					<a href="#"><span>Menu</span></a>
 				</li> 
 			</ul>
-				 <section class="top-bar-section">
+				<section class="top-bar-section">
 				<ul class="right">
 					<li class="">
 						<a href="<?php echo $this->webroot; ?>">Home</a>
@@ -65,22 +58,16 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
 		</nav>
 	</div>
 
-	<div class="smst-content">
+	<div class="smst-main">
         <?php echo $this->Session->flash(); ?>
 		<?php echo $this->fetch('content'); ?>
 	</div>
-        <div id="smst-modal" class="reveal-modal">
-            
-        </div>
+    <div id="smst-modal" class="reveal-modal"></div>
 
-<!--  <script>
-    document.write('<script src=' + ('__proto__' in {} ? 'js/vendor/zepto' : 'js/vendor/jquery') + '.js><\/script>')
-  </script>-->
-  <?php echo $this->Html->script("foundation.min"); ?>
-  
-  
+	<?php echo $this->Html->script("foundation.min"); ?>
 	<script>
     	$(document).foundation();
 	</script>
+
 </body>
 </html>
