@@ -13,7 +13,6 @@
 <?php
 $this->set('title_for_layout', 'SMS Training - Leaderboards');
 ?>
-
 <div class="splashTop" style="height:63px;width:100%;position:relative;z-index:75;text-align:center;">
     <div style="width:135px;margin:0 auto;">
         <div style="position:absolute;bottom:-27px;"><img width="146px" height="55px" src="img/smst_header_hof@2x.png" alt="" /></div>

@@ -126,12 +126,6 @@ class QuizzesController extends AppController
     
     public function brag()
     {
-        /*echo '<pre>';
-        print_r($this->request->data);
-        print_r(explode(',', $this->request->data['Quiz']['emailother']));
-        echo '</pre>';*/
-        //exit;
-        
         App::uses('CakeEmail', 'Network/Email');
         
         $Email = new CakeEmail();
@@ -162,9 +156,8 @@ class QuizzesController extends AppController
             }
         }
         
-        $this->set('body', $body);
+        //$this->set('body', $body);
+        $this->redirect(array('controller' => 'quizzes', 'action' => 'quiz'));
     }
-    
-    
 }
 ?>

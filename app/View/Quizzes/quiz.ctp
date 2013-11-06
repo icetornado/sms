@@ -138,7 +138,6 @@ echo $this->fetch('script');
     </div>
 
 <?
-
 echo '<div class="splashBottom" style="background:rgba(51,82,102,0.35);width:100%;position:relative;">';
 
 $cn = 0;
@@ -590,7 +589,6 @@ $(document).ready(function () {
         window.location.href = "<?php echo $this->Html->url(array('controller' => 'quizzes', 'action' => 'index')); ?>";
     });
     //---- end of events ------
-    
     
     // ------ main -----
     loadQuestion(0);
