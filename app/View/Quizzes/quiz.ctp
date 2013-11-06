@@ -1,254 +1,146 @@
-<style>
-    .countdown_hide {
-        display:none;
-    }
-    .block {
-        background:transparent url(../img/smst_answer_bg.png) repeat-x scroll left center;
-        list-style-type:none;
-        position:relative;
-        padding:12px 0;
-        margin:0;
-        cursor:pointer;
-    }
-    .block:before {
-        content: '';
-        display: inline-block;
-        height: 100%; 
-        vertical-align: middle;
-    }
-    .centered {
-        display: inline-block;
-        vertical-align: middle;
-        padding: 0 0 0 44px;
-        min-height:30px;
-        font-weight:16px;
-        line-height:16px;
-        position:relative;
-        left:-22px;
-    }
-    .centered.a {
-        background:transparent url(../img/smst_icon_a@2x.png) no-repeat scroll left center;
-        background-size:44px 44px;
-    }
-
-    .centered.b {
-        background:transparent url(../img/smst_icon_b@2x.png) no-repeat scroll left center;
-        background-size:44px 44px;
-    }
-
-    .centered.c {
-        background:transparent url(../img/smst_icon_c@2x.png) no-repeat scroll left center;
-        background-size:44px 44px;
-    }
-
-    .centered.d {
-        background:transparent url(../img/smst_icon_d@2x.png) no-repeat scroll left center;
-        background-size:44px 44px;
-    }
-    .centered.correct {
-        background:transparent url(../img/smst_icon_check@2x.png) no-repeat scroll left center;
-        background-size:44px 44px;
-        color:#99d538;
-    }
-    .centered.incorrect {
-        background:transparent url(../img/smst_icon_x@2x.png) no-repeat scroll left center;
-        background-size:44px 44px;
-        color:#ff5c37;
-    }
-    .centered.others {
-        background-image:none;
-    }
-    .next_btn {
-        color:#99d538;
-        background:transparent url(../img/smst_btn_bg.png) repeat-y scroll center top;
-        padding:10px 22px;
-        font-size:1em;
-        border:none;
-        cursor:pointer;
-        margin:22px;
-        font-weight:bold;
-        border-radius:0;
-    }
-    .next_btn:disabled {
-        cursor:default;
-        color:#edf7f9;
-    }
-    
-    .others_btn {
-        color:#99d538;
-        background:transparent url(../img/smst_btn_bg.png) repeat-y scroll center top;
-        padding:10px 22px;
-        font-size:1em;
-        border:none;
-        cursor:pointer;
-        margin:22px;
-        font-weight:bold;
-        border-radius:0;
-    }
-    .others_btn:disabled {
-        cursor:default;
-        color:#edf7f9;
-    }
-    .quiz_answers {
-        margin-bottom:22px;
-        padding-left:44px;
-        min-height:44px;
-    }
-    .quiz_answers.correct {
-        background:transparent url(../img/smst_icon_check@2x.png) no-repeat scroll left center;
-        background-size:44px 44px;
-        color:#99d538;
-    }
-    .quiz_answers.incorrect {
-        background:transparent url(../img/smst_icon_x@2x.png) no-repeat scroll left center;
-        background-size:44px 44px;
-        color:#FF5C37;
-    }
-</style>
-
-
 <?php
 echo $this->Html->css('jquery.countdown');
 echo $this->Html->script('jquery.countdown.min');
-$this->Html->addCrumb('Quizzes', '/quizzes');
-//echo $this->fetch('meta');
-echo $this->fetch('css');
-echo $this->fetch('script');
 ?>
+
 <div id="quiz_content">
-    <div class="splashTop" style="height:63px;width:100%;position:relative;z-index:75;text-align:center;color:#d6dfe1;">
+    <div class="smst-top quiz">
         <div class="row">
-            <div style="float:left;width:30%;text-align:left;height:63px;overflow:hidden;">
-                <div style="line-height:14px;font-size:18px;font-weight:bold;padding:16px 0 0 13px;"> 
-                    <span style="color:#edf7f9;">QUIZ <?php echo $level; ?></span><br />
+            <div class="smst-quiz-left">
+                <div class="smst-quiz-leftSub bold"> 
+                    <span class="smst-quiz-dark">QUIZ <?php echo $level; ?></span><br />
                     #<span id="qNum">0</span> of <span id="qTotal"><?php echo count($quizzes); ?></span>
                 </div>
             </div>
-            <div id="remaining_score" style="float:left;width:40%;text-align:center;font-weight:bold;height:63px;font-size:48px;padding:7px 0 0 0;color:#edf7f9;">
+            <div id="remaining_score" class="smst-quiz-center bold">
                 <!-- Score Timer -->
             </div>
-            <div style="float:left;width:30%;text-align:right;height:63px;overflow:hidden;">
-                <div style="line-height:14px;font-size:18px;font-weight:bold;padding:16px 13px 0 0;">
+            <div class="smst-quiz-right">
+                <div class="smst-quiz-rightSub bold">
                     <span id="accu">0</span><br />
-                    <span style="color:#edf7f9;">SCORE</span>
+                    <span class="smst-quiz-dark">SCORE</span>
                 </div>
             </div>
-            <div style="position:absolute;bottom:0;" id="remaining_score"></div>
+            <div id="remaining_score"></div>
         </div>
     </div>
 
-<?
-echo '<div class="splashBottom" style="background:rgba(51,82,102,0.35);width:100%;position:relative;">';
+    <?
+    echo '<div class="smst-bottom quiz" ><div class="row">';
 
-$cn = 0;
-foreach($quizzes as $q)
-{
-    echo '<div id="question_' . $cn . ($cn == 0 ? '' : '" style="display:none;"') .'" question_id="' . $q['Quiz']['id']. '">';
-    echo '<div id="countdown_' . $cn . '" class="countdown_hide"></div>';
-    
-    echo '<div style="padding:20px 22px;font-size:18px;">'. $q['Quiz']['body'] . '</div>';
-    
-    echo '<ul style="margin:0;padding:0 22px;">';
-
-    $charCounter = 97;
-    foreach($q['Answer'] as $a)
+    $cn = 0;
+    foreach($quizzes as $q)
     {
-        echo '<li class="block answer_li answer_choices a_'  . $q['Quiz']['id'] . '" question_ord="' . $cn . '" question_id="' . $q['Quiz']['id']. '" correct="' . $a['correct'] . '" answer_val="' . $a['id'] . '">';
-        echo '<div class="centered ' . chr($charCounter) . '">' . $a['body'] . '</div>';
-        echo '</li>';
+        echo '<div id="question_' . $cn . ($cn == 0 ? '' : '" style="display:none;"') .'" question_id="' . $q['Quiz']['id']. '">';
+        echo '<div id="countdown_' . $cn . '" class="countdown_hide"></div>';
 
-        $charCounter ++;
+        echo '<div class="smst-quiz-q">'. $q['Quiz']['body'] . '</div>';
+
+        echo '<ul class="smst-quiz-ul">';
+
+        $charCounter = 97;
+        foreach($q['Answer'] as $a)
+        {
+            echo '<li class="block answer_li answer_choices a_'  . $q['Quiz']['id'] . '" question_ord="' . $cn . '" question_id="' . $q['Quiz']['id']. '" correct="' . $a['correct'] . '" answer_val="' . $a['id'] . '">';
+            echo '<div class="centered ' . chr($charCounter) . '">' . $a['body'] . '</div>';
+            echo '</li>';
+
+            $charCounter ++;
+        }
+
+        echo '</ul>';
+
+        echo '<input type="button" name="submit" value="Next" id="select_' . $cn . '" question_ord="' . $cn . '" class="next_btn" disabled="disabled"/>';
+        echo '</div>';
+        $cn ++;
     }
-    
-    echo '</ul>';
-    
-    echo '<input type="button" name="submit" value="Next" id="select_' . $cn . '" question_ord="' . $cn . '" class="next_btn" disabled="disabled"/>';
-    echo '</div>';
-    $cn ++;
-}
-echo '</div>';
-?>
+    echo '</div></div>';
+    ?>
 </div>
 <!-- end of quiz_content -->
 
-<!-- display score -->
-<div id="results_display" style="display:none;" >
-    <div class="splashTop" style="height:63px;width:100%;position:relative;z-index:75;text-align:center;">
-        <div style="width:159px;margin:0 auto;">
-            <div style="position:absolute;bottom:-28px;"><img width="159px" height="55px" src="../img/smst_header_lvl<?php echo $level; ?>@2x.png" alt="" /></div>
+<!-- Quiz Finished area -->
+<div id="results_display" style="display:none;">
+    <div class="smst-top finish">
+        <div class="smst-top-sub">
+            <div class="smst-top-sub2">
+                <img width="159" height="55" data-interchange="[../img/smst_header_lvl<?php echo $level; ?>.png, (default)], [../img/smst_header_lvl<?php echo $level; ?>@2x.png, (retina)]" alt="Level <?php echo $level; ?> Results" />
+            </div>
         </div>
     </div>
-    <div class="splashBottom" style="background:rgba(51,82,102,0.35);width:100%;position:relative;">
-        <div id="results_wrapper" style="text-align:center;padding:63px 22px 20px 22px;">
+    <div class="smst-bottom">
+        <div id="results_wrapper" class="smst-finished-main">
             <div id="results_success">
-                <div id="success_head" style="font-weight:bold;font-size:30px;color:#99D538;text-transform:uppercase;margin-bottom:14px;"></div>
-                <div id="success_text"></div>
-                <div style="margin:18px 0 22px 0;">
-                    <input type="button" name="enter_initial" id="enter_btn" value="Enter Initials" class="others_btn" style="margin:4px 0 0 0;" />
-                    <input type="button" name="hall_of_fame" id="hall_of_fame" value="Hall of Fame" class="others_btn" style="margin:4px 0 0 0;" />
+                <div id="success_head" class="smst-finished-success"></div>
+                <div id="success_text" class="smst-finished-text"></div>
+                <div class="smst-finished-btns">
                     <div id="initial_div" style="display:none;">
-                        <input type="text" name="initial" value="AAA" maxlength="3" id="initial" />
-                        <input type="button" name="submit_initial" value="Submit" class="others_btn" id="submit_btn" style="margin:4px 0 0 0;" />
+                        <input type="text" name="initial" value="" placeholder="AAA" maxlength="3" id="initial" class="smst-initials" autocorrect="off" autocapitalize="off" />
+                        <input type="button" name="submit_initial" value="Submit" class="others_btn" id="submit_btn" />
                     </div>
-                    <input type="button" name="brag_button" value="Brag" class="others_btn" id="brag_btn" style="margin:4px 0 0 0;" />
+                    <input type="button" name="enter_initial" id="enter_btn" value="Enter Initials" class="others_btn" />
+                    <input type="button" name="hall_of_fame" id="hall_of_fame" value="Hall of Fame" class="others_btn" />
+                    <input type="button" name="brag_button" value="Brag" class="others_btn" id="brag_btn" />
+                    <input type="button" name="results_button" value="Results" class="others_btn" id="results_btn" />
                 </div>
             </div>
-
             <div id="results_failed">
-                <div id="failed_head" style="font-weight:bold;font-size:30px;color:#FF5C37;text-transform:uppercase;margin-bottom:14px;"></div>
-                <div id="failed_text"></div>
-                <div style="margin:18px 0 32px 0;">
-                    <input type="button" name="try_again" id="try_again" value="Try Again" class="others_btn" style="margin:4px 0 0 0;" />
-                    <input type="button" name="hall_of_fame" value="Hall of Fame" id="hall_of_fame2" class="others_btn" style="margin:4px 0 0 0;" />
+                <div id="failed_head" class="smst-finished-fail"></div>
+                <div id="failed_text" class="smst-finished-text"></div>
+                <div class="smst-finished-btns">
+                    <input type="button" name="try_again" id="try_again" value="Try Again" class="others_btn" />
+                    <input type="button" name="hall_of_fame" value="Hall of Fame" id="hall_of_fame2" class="others_btn" />
                 </div>
             </div>
-
-            <div style="font-size:20px;font-weight:bold;text-align:left;">Correct: <span id="quiz_correct">xx/xx</span></div>
-            <div style="font-size:20px;font-weight:bold;text-align:left;">Points: <span id="quiz_score">4500</span></div>
-        </div>
-        <!----->
-
-        <!-- results area -->
-        <div id="quiz_results" style="display:block;padding:0 15px;">
-
-        <?php
-            $cn = 0;
-            foreach($quizzes as $q)
-            {
-                echo '<div class="quiz_answers">';
-                echo '  <div>' . $q['Quiz']['title'] . ': ' . $q['Quiz']['body'] . '</div>';
-                echo '  <div id="answer_correct_'. $cn . '"></div>';
-                echo '</div>';
-                $cn ++;
-            }
-         ?>
-            <input type="hidden" name="ajaxURL" value="<?php echo $this->Html->url(array('controller' => 'quizzes', 'action' => 'save')) . '.json'; ?>" id="ajax_url">
-            <input type="hidden" name="scoreURL" value="<?php echo $this->Html->url(array('controller' => 'quizzes', 'action' => 'scoreboard')) . '.json'; ?>" id="scoreboard_url">
-            <input type="hidden" name="saveURL" value="<?php echo $this->Html->url(array('controller' => 'scoreboards', 'action' => 'scoreboard')). '.json'; ?>" id="save_url">
-            <input type="hidden" name="fameURL" value="<?php echo $this->Html->url(array('controller' => 'scoreboards', 'action' => 'scoreboardAjax')). '.json'; ?>" id="fame_url">
         </div>
     </div>
 </div>
 <!-- end of results area -->
 
+<!-- results modal area -->
+<div id="results" style="display:none;">
+    <a class="close-reveal-modal">&#215;</a>
+    <div class="smst-results-title"><span class="bold">Correct:</span> <span id="quiz_correct">xx/xx</span></div>
+    <div class="smst-results-title"><span class="bold" >Points:</span> <span id="quiz_score">4500</span></div>
+    <div id="quiz_results" class="smst-results-main">
+
+    <?php
+        $cn = 0;
+        foreach($quizzes as $q)
+        {
+            echo '<div class="quiz_answers">';
+            echo '  <div>' . $q['Quiz']['title'] . ': ' . $q['Quiz']['body'] . '</div>';
+            echo '  <div id="answer_correct_'. $cn . '"></div>';
+            echo '</div>';
+            $cn ++;
+        }
+     ?>
+        <input type="hidden" name="ajaxURL" value="<?php echo $this->Html->url(array('controller' => 'quizzes', 'action' => 'save')) . '.json'; ?>" id="ajax_url">
+        <input type="hidden" name="scoreURL" value="<?php echo $this->Html->url(array('controller' => 'quizzes', 'action' => 'scoreboard')) . '.json'; ?>" id="scoreboard_url">
+        <input type="hidden" name="saveURL" value="<?php echo $this->Html->url(array('controller' => 'scoreboards', 'action' => 'scoreboard')). '.json'; ?>" id="save_url">
+        <input type="hidden" name="fameURL" value="<?php echo $this->Html->url(array('controller' => 'scoreboards', 'action' => 'scoreboardAjax')). '.json'; ?>" id="fame_url">
+    </div>
+</div>
+<!-- end of area -->
+
 <!-- brag area -->
 <div id="brag" style="display:none;">
     <a class="close-reveal-modal">&#215;</a>
-    <p>Show your boss(es) how well you scored: </p>
+    <div class="bragDiv bold">Brag to your Boss(es):</div>
     <?php echo $this->Form->create(null, array('url' => array('controller' => 'quizzes', 'action' => 'brag'), 'id' => 'bragForm')); ?>
-    <?php echo $this->Form->input('email', array(
+    <?php echo $this->Form->input('', array(
         'type' => 'select',
         'multiple' => 'checkbox',
         'options' => $bosses,
         'hiddenField' => false
         )); 
     ?>
-    <?php echo $this->Form->input('emailother', array('id' => 'emailother', 'label' => 'Mail to Others:')); ?><br />
-    <?php echo $this->Form->input('yourname', array('id' => 'yourname')); ?><br />
+    <?php echo $this->Form->input('emailother', array('id' => 'emailother', 'label' => 'Addition Recipients (email):')); ?><br />
+    <?php echo $this->Form->input('yourname', array('id' => 'yourname', 'label' => 'Your Name:')); ?><br />
     <?php echo $this->Form->input('score', array('type' => 'hidden', 'id' => 'brag_score', 'value' => '')); ?>
     <?php echo $this->Form->input('level', array('type' => 'hidden', 'id' => 'brag_level', 'value' => $level)); ?>
     <?php echo $this->Form->input('correct', array('type' => 'hidden', 'id' => 'brag_correct', 'value' => '')); ?>
-    <?php echo $this->Form->button('Brag!', array('id' => 'brag_submit')); ?>
+    <?php echo $this->Form->button('Send', array('id' => 'brag_submit')); ?>
     <!--
     <input type="button" name="brag" value="Brag!" id="brag_submit" class="others_btn" style="margin:4px 0 0 0;" />
     <input type="button" name="cancel" value="Cancel" id="brag_cancel" class="others_btn" style="margin:4px 0 0 0;" />
@@ -259,8 +151,9 @@ echo '</div>';
 
 <!-- hall of fame -->
 <div id="scoreboard"></div>
-<!-- end of fame --->
- <script>
+<!-- end of fame -->
+
+<script>
 $(document).ready(function () {
     var $maxScore = 620;
     var $currentQuestion = 0;
@@ -271,7 +164,7 @@ $(document).ready(function () {
     var $responses = [];
     var $stepdown = 20;
     var $bossmax = [<?php echo implode(',', $bossmax); ?>];
-    console.log($bossmax);
+    // console.log($bossmax);
     
     $('#smst-modal').foundation('reveal', {
         //animation: 'fadeAndPop',
@@ -298,7 +191,7 @@ $(document).ready(function () {
         var $howSmart = 0;
         var $smart = {};
         
-        console.log($bossmax);
+        // console.log($bossmax);
         
         for(var $i = 0; $i < $bossmax.length; $i++)
         {
@@ -314,7 +207,7 @@ $(document).ready(function () {
         if($isSmarter)
             $smart.success = 'Woo-hoo!';
         else
-            $smart.success = 'Boo-hoo';
+            $smart.success = 'Boo-hoo!';
 
         switch($howSmart)
         {
@@ -323,18 +216,18 @@ $(document).ready(function () {
                 break;
             
             case 1:
-                $smart.text = 'Good job! You&apos;are smarter than a boss.';
+                $smart.text = 'Good job! You&apos;re smarter than a boss.';
                 break;
             
             case 2:
             default:
-                $smart.text = 'Yeah! You&apos;are smarter than some of your bosses.';
+                $smart.text = 'Yeah! You&apos;re smarter than some of your bosses.';
                 break;
         }
         
         if($howSmart == $bossmax.length)
-            $smart.text = 'Awesome! You bosses need to know you are smarter than them. ';
-        console.log($smart);
+            $smart.text = 'Awesome! Your bosses need to know you&apos;re smarter than them. ';
+        // console.log($smart);
         return $smart;
     }
     
@@ -369,7 +262,7 @@ $(document).ready(function () {
                 {
                     $counter -= $stepdown;
                     $("#remaining_score").html($counter);
-                    console.log('tick: ' + $counter);
+                    // console.log('tick: ' + $counter);
                 }
             });
         }
@@ -426,7 +319,7 @@ $(document).ready(function () {
             data: {'data': JSON.stringify($rez)},
             dataType: 'html',
             success: function(response){
-                console.log(response);
+                // console.log(response);
             }
         });
     }
@@ -463,9 +356,9 @@ $(document).ready(function () {
         $("#select_" + $qOrder).removeAttr('disabled');
         
         $("#countdown_" + $qOrder).countdown('destroy');
-        console.log('R/W: ' + $(this).attr('correct'));
-        console.log('counter: ' + $counter);
-        console.log('accu: ' + $accumulateScore);
+        // console.log('R/W: ' + $(this).attr('correct'));
+        // console.log('counter: ' + $counter);
+        // console.log('accu: ' + $accumulateScore);
         
         var $res = {
             question_order: $qOrder,
@@ -521,6 +414,31 @@ $(document).ready(function () {
         $(this).unbind('click');
         $(this).siblings().unbind('click');
     });
+
+    // Will's Crap Code That Trieu Needs to Make Better
+
+    var centeredHeightA, centeredHeightB, centeredHeightC, centeredHeightD
+
+    function setLineHeight() {
+        centeredHeightA = $(".centered.a").height();
+        centeredHeightB = $(".centered.b").height();
+        centeredHeightC = $(".centered.c").height();
+        centeredHeightD = $(".centered.d").height();
+        if (centeredHeightA < 31) {$(".centered.a").css('line-height', '27px');}
+        else {$(".centered.a").css('line-height', '16px');}
+        if (centeredHeightB < 31) {$(".centered.b").css('line-height', '27px');}
+        else {$(".centered.b").css('line-height', '16px');}
+        if (centeredHeightC < 31) {$(".centered.c").css('line-height', '27px');}
+        else {$(".centered.c").css('line-height', '16px');}
+        if (centeredHeightD < 31) {$(".centered.d").css('line-height', '27px');}
+        else {$(".centered.d").css('line-height', '16px');}
+    };
+
+    setLineHeight();
+
+    $(window).resize(setLineHeight);
+
+    //---- end crap code ------
     
     $(".next_btn").click(function(){
         $("#remaining_score").html('');
@@ -528,9 +446,15 @@ $(document).ready(function () {
 
         $("#question_" + $qOrder).remove();
         loadQuestion($qOrder + 1);
+
+        setLineHeight();
+
+        var headerHeight = $(".top-bar").height();
+        $('body,html').animate({scrollTop:$('.smst-main').offset().top - headerHeight}, 'fast');
     });
     
     $("#enter_btn").click(function(){
+        $(this).hide();
         $("#initial_div").show();
     });
     
@@ -541,9 +465,16 @@ $(document).ready(function () {
     });
         
     $("#brag_btn").click(function(){
-        $("#quiz_results").hide();
+        //$("#quiz_results").hide();
         $('#smst-modal').foundation('reveal',{dismissModalClass: 'close-reveal-modal'});
         $('#smst-modal').html($('#brag').html());   
+        $('#smst-modal').foundation('reveal','open');
+    });
+    
+    $("#results_btn").click(function(){
+        //$("#quiz_results").hide();
+        $('#smst-modal').foundation('reveal',{dismissModalClass: 'close-reveal-modal'});
+        $('#smst-modal').html($('#results').html());   
         $('#smst-modal').foundation('reveal','open');
     });
     
@@ -563,7 +494,7 @@ $(document).ready(function () {
             data: {'level': <?php echo $level; ?>},
             dataType: 'html',
             success: function(response){
-                $('#smst-modal').html(response + '<input type="button" name="close_modal" value="Close" class="close_modal_btn" id="close_modal_btn" style="margin:4px 0 0 0;" />');   
+                $('#smst-modal').html(response + '<a class="close-reveal-modal">×</a>');   
                 //$('#smst-modal').css('color', 'black');
                 $('#smst-modal').foundation('reveal','open');
             }
@@ -578,7 +509,7 @@ $(document).ready(function () {
             data: {'level': <?php echo $level; ?>},
             dataType: 'html',
             success: function(response){
-                $('#smst-modal').html(response + '<input type="button" name="close_modal" value="Close" class="close_modal_btn" id="close_modal_btn" style="margin:4px 0 0 0;" />');   
+                $('#smst-modal').html(response + '<a class="close-reveal-modal">×</a>');  
                 //$('#smst-modal').css('color', 'black');
                 $('#smst-modal').foundation('reveal','open');
             }
@@ -590,8 +521,15 @@ $(document).ready(function () {
     });
     //---- end of events ------
     
+    
     // ------ main -----
     loadQuestion(0);
+
     
 });
 </script>
+
+
+
+
+

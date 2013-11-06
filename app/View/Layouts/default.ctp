@@ -6,11 +6,8 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
-    <meta name="apple-mobile-web-app-capable" content="yes" />
 	<?php echo $this->Html->charset(); ?>
-	<title>
-	<?php echo $title_for_layout; ?>
-	</title>
+    <title>SMS Training - Are You Smarter Than Your Boss?</title><!--<?php echo $title_for_layout; ?>-->
 	<?php
 		echo $this->Html->meta('icon');
 		//echo $this->Html->css('cake.generic');
@@ -20,21 +17,14 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
 		echo $this->fetch('script');
 	?>
 	<?php echo $this->Html->css('foundation'); ?>
-
     <?php echo $this->Html->css('smst'); ?>
-    
   	<?php echo $this->Html->script("vendor/custom.modernizr"); ?>    
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
-
 </head>
 <body>
 
-
-	<!-- <div class="fixed-test">test</div> -->
-
-	<div class="fixed-sub"></div>
-<!--	<div class="fixed-sub2"></div>-->
+	<div class="smst-fixed-sub"></div>
 
 	<div class="fixed">
 		<nav class="top-bar">
@@ -46,7 +36,7 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
 					<a href="#"><span>Menu</span></a>
 				</li> 
 			</ul>
-				 <section class="top-bar-section">
+				<section class="top-bar-section">
 				<ul class="right">
 					<li class="">
 						<a href="<?php echo $this->webroot; ?>">Home</a>
@@ -55,32 +45,32 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
 						<a href="<?php echo $this->Html->url(array('controller' => 'quizzes', 'action' => 'index')) ; ?>">Are You Smarter?</a>
 					</li>
 					<li class="">
-						<a href="<?php echo $this->Html->url(array('controller' => 'refresher')) ; ?>">Refresher</a>
+						<a href="<?php echo $this->Html->url(array('controller' => 'refresher', 'action' => 'index')) ; ?>">Refresher</a>
 					</li>
-					<li class="">
-						<a href="#">Resources</a>
-					</li>
+					<!-- <li class="">
+						<a href="<?php echo $this->Html->url(array('controller' => 'resources', 'action' => 'index')) ; ?>">Resources</a>
+					</li> -->
 				</ul>
 			</section> 
 		</nav>
 	</div>
 
-	<div class="smst-content">
+	<div class="smst-main">
         <?php echo $this->Session->flash(); ?>
 		<?php echo $this->fetch('content'); ?>
 	</div>
-        <div id="smst-modal" class="reveal-modal" style="color: black;">
-            
-        </div>
+    <div id="smst-modal" class="reveal-modal"></div>
 
-<!--  <script>
-    document.write('<script src=' + ('__proto__' in {} ? 'js/vendor/zepto' : 'js/vendor/jquery') + '.js><\/script>')
-  </script>-->
-  <?php echo $this->Html->script("foundation.min"); ?>
-  
-  
+	<?php echo $this->Html->script("foundation.min"); ?>
+	<?php echo $this->Html->script("foundation/foundation.interchange"); ?>
 	<script>
     	$(document).foundation();
+    	$(document).foundation('interchange', {
+			named_queries : {
+				retina: 'only screen and (-webkit-min-device-pixel-ratio: 1.3), only screen and (-o-min-device-pixel-ratio: 13/10), only screen and (min-resolution: 120dpi), only screen and (device-height: 80em)'
+			}
+		});
 	</script>
+
 </body>
 </html>

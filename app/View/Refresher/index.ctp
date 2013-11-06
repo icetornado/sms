@@ -60,6 +60,9 @@
         margin-top: 10px;
         margin-bottom: 10px;
         }
+    .flex-video {
+        padding-bottom: 45%;
+    }
 </style>
 
 <?php
@@ -75,31 +78,69 @@ $this->set('title_for_layout', 'SMS Training - Refresher');
 </div>
 <div class="splashBottom" style="background:rgba(51,82,102,0.35);width:100%;position:relative;padding:0 22px 63px 22px;">
     <div style="padding-top:63px;" class="row">
-        <h3>Primer</h3>
-        <p>The SMS is a systemic, proactive approach to managing safety risks. It informs organizational structures, accountabilities, policies and procedures.</p>
-        <div class="flex-video">
-            <iframe style="border:none;" src="//player.vimeo.com/video/76005391?title=0&byline=0&portrait=0&color=eeeeee" width="500" height="281" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+        <div class="large-12 columns">
+            <h3>The SMS</h3>
+            <p>The more complex a system is, the harder it is to see inside. So how do we see inside the complexity of the NAS?<p>
+        </div>        
+        <div class="large-8 large-offset-2 columns">
+                <div class="flex-video" style="border:10px solid #304554;">
+                    <iframe src="http://player.vimeo.com/video/78548567?title=0&byline=0&portrait=0&color=99d539" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+                </div>
         </div>
-        <h3>SMS Principles</h3>
-        <div class="large-12" style="position:relative;z-index:50;">
+        <div class="large-12 columns">
+            <h3>Applied Safety Principles</h3>
+            <p>The SMS is a systemic, proactive approach to managing safety risks. It informs organizational structures, accountabilities, policies and procedures.</p>
+            <div class="row">
+                <div class="large-4 columns">
+                    <div style="background:rgba(51, 82, 102, 0.3);text-align:center;">
+                        <img src="img/sms_principles_1.png" />
+                        <div style="padding:10px;">
+                            <h4>Collect</h4>
+                            <p><strong>Values</strong><br />Value Employee Safety Contributions</p>
+                            <p><strong>Source</strong><br />Reporting/Just Culture</p>
+                            <p><strong>How?</strong><br />Employees/Technology, ATSAP, OEDP, TSAP, TARP, PFS, DALR</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="large-4 columns">
+                    <div style="background:rgba(51, 82, 102, 0.3);text-align:center;">
+                        <img src="img/sms_principles_1.png" />
+                        <div style="padding:10px;">
+                            <h4>Collect</h4>
+                            <p><strong>Values</strong><br />Value Employee Safety Contributions</p>
+                            <p><strong>Source</strong><br />Reporting/Just Culture</p>
+                            <p><strong>How?</strong><br />Employees/Technology, ATSAP, OEDP, TSAP, TARP, PFS, DALR</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="large-4 columns">
+                    <div style="background:rgba(51, 82, 102, 0.3);text-align:center;">
+                        <img src="img/sms_principles_1.png" />
+                        <div style="padding:10px;">
+                            <h4>Collect</h4>
+                            <p><strong>Values</strong><br />Value Employee Safety Contributions</p>
+                            <p><strong>Source</strong><br />Reporting/Just Culture</p>
+                            <p><strong>How?</strong><br />Employees/Technology, ATSAP, OEDP, TSAP, TARP, PFS, DALR</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- <div class="large-12" style="position:relative;z-index:50;">
             <div id="wheelbox">
-                <!-- <div id="spinBtn">spin</div> -->
                 <div id="box1" class="satellite" story="1">Circle 1</div>
                 <div id="box2" class="satellite" story="2">Circle 2</div>
                 <div id="box3" class="satellite" story="3">Circle 3</div>
                 <div id="box4" class="satellite" story="4">Circle 4</div>
                 <div id="box5" class="satellite" story="5">Circle 5</div>
                 <div id="box6" class="satellite" story="6">Circle 6</div>
-                
-                <!-- <button class="btn" id="leftBtn" style="position:absolute;top:0;left:20px;">Left</button>
-                <button class="btn" id="rightBtn">Right</button> -->
             </div>
     
             <div id="panel"></div>
     
             <div id="story" style="display:none;"> 
                 <div id="story1">
-                    <!-- <h2>Collect</h2> -->
                     <div class="sms-header">Values</div>
                     <div class="sms-p">Value Employee Safety Contributions</div>
 
@@ -111,7 +152,6 @@ $this->set('title_for_layout', 'SMS Training - Refresher');
                 </div>
                 
                 <div id="story2">
-                    <!-- <h2>Find</h2> -->
                     <div class="sms-header">Values</div>
                     <div class="sms-p">Improve Technology to Gather and Analyze Data</div>
 
@@ -123,7 +163,6 @@ $this->set('title_for_layout', 'SMS Training - Refresher');
                 </div>
                 
                 <div id="story3">
-                    <!-- <h2>Fix</h2> -->
                     <div class="sms-header">Values</div>
                     <div class="sms-p">Embrace Change</div>
 
@@ -166,7 +205,7 @@ $this->set('title_for_layout', 'SMS Training - Refresher');
                     <div class="sms-header">How?</div>
                     <div class="sms-p">Top 5, Corrective Action Requests, Corrective Action Plans, Technical Training</div>
                 </div>
-            </div>
+            </div> -->
         </div>
     </div>
 </div>

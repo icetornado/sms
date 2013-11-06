@@ -1,51 +1,39 @@
-<style>
-    /*.reveal-modal {
-        z-index:200;
-    }
-    .reveal-modal-bg {
-        z-index:100;
-    }*/
-</style>
-
-<?php
-$this->set('title_for_layout', 'SMS Training - Are You Smarter Than Your Boss?'); 
-?>
-
-<div class="splashTop" style="height:63px;width:100%;position:relative;z-index:75;text-align:center;">
-    <div style="width:135px;margin:0 auto;">
-        <div style="position:absolute;bottom:-27px;"><img width="135px" height="55px" src="img/smst_header_quiz@2x.png" alt="" /></div>
+<div class="smst-top quizes">
+    <div class="smst-top-sub">
+        <div class="smst-top-sub2">
+            <img width="135" height="55" data-interchange="[img/smst_header_quiz.png, (default)], [img/smst_header_quiz@2x.png, (retina)]" alt="Select Level" />
+        </div>
     </div>
 </div>
-<div class="splashBottom" style="background:rgba(51,82,102,0.35);width:100%;position:relative;text-align:center;">
-    <div style="padding-top:63px;width:228px;height:291px;position:relative;margin:0 auto;">
-        <div style="position:absolute;left:0;top:63;" class="quiz_buttons" url="<?php echo $this->Html->url(array('controller' => 'quizzes', 'action' => 'quiz', '?' => array('level' => 1))) ; ?>">
-            <img width="110px" height="110px" src="img/smst_btn_q1@2x.png" alt="" />
+<div class="smst-bottom">
+    <div class="smst-quiz-grid">
+        <div class="smst-quiz-item1 quiz_buttons" url="<?php echo $this->Html->url(array('controller' => 'quizzes', 'action' => 'quiz', '?' => array('level' => 1))) ; ?>">
+            <img width="110" height="110" data-interchange="[img/smst_btn_q1.png, (default)], [img/smst_btn_q1@2x.png, (retina)]" alt="Level 1 - Basic" />
         </div>
-        <div style="position:absolute;right:0;top:63;" class="quiz_buttons" url="<?php echo $this->Html->url(array('controller' => 'quizzes', 'action' => 'quiz', '?' => array('level' => 2))) ; ?>">
-            <img width="110px" height="110px" src="img/smst_btn_q2@2x.png" alt="" />
+        <div class="smst-quiz-item2 quiz_buttons" url="<?php echo $this->Html->url(array('controller' => 'quizzes', 'action' => 'quiz', '?' => array('level' => 2))) ; ?>">
+            <img width="110" height="110" data-interchange="[img/smst_btn_q2.png, (default)], [img/smst_btn_q2@2x.png, (retina)]" alt="Level 2 - Advanced" />
         </div>
-        <div style="position:absolute;left:0;bottom:0;" class="quiz_buttons" url="<?php echo $this->Html->url(array('controller' => 'quizzes', 'action' => 'quiz', '?' => array('level' => 3))) ; ?>">
-            <img width="110px" height="110px" src="img/smst_btn_q3@2x.png" alt="" />
+        <div class="smst-quiz-item3">
+            <img width="110" height="110" data-interchange="[img/smst_btn_q3.png, (default)], [img/smst_btn_q3@2x.png, (retina)]" alt="Coming Soon - Level 3 - Expert" />
         </div>
-        <div style="position:absolute;right:0;bottom:0;">
-            <a href="<?php echo $this->Html->url(array('controller' => 'quizzes', 'action' => 'quiz', '?' => array('level' => 3))) ; ?>">
-                <img width="110px" height="110px" src="img/smst_btn_study@2x.png" alt="" />
+        <div class="smst-quiz-item4">
+            <a href="<?php echo $this->Html->url(array('controller' => 'refresher', 'action' => 'index')) ; ?>">
+                <img width="110" height="110" data-interchange="[img/smst_btn_study.png, (default)], [img/smst_btn_study@2x.png, (retina)]" alt="Need Help?" />
             </a>    
         </div>
     </div>
+    <div class="smst-btn-hof">
+        <a href="<?php echo $this->Html->url(array('controller' => 'scoreboards')) ; ?>">
+            <img width="120" height="22" data-interchange="[img/smst_btn_boards.png, (default)], [img/smst_btn_boards@2x.png, (retina)]" alt="View Hall of Fame" />
+        </a>
+    </div> 
 </div>
-
-<div style="position:fixed;z-index:51;left:0;bottom:0;width:100%;text-align:center;">
-    <a href="<?php echo $this->Html->url(array('controller' => 'scoreboards')) ; ?>"><img width="120px" height="22px" src="img/smst_btn_boards@2x.png" alt="" /></a>
-</div>
-
-
 
 <script>
     $(document).ready(function(){
-        $('.splashBottom').css({'height':($(window).height())-'108'+'px'});
+        $('.smst-btn-hof').css({'padding-top':($(window).height())-'489'+'px'});
         $(window).resize(function(){
-            $('.splashBottom').css({'height':($(window).height())-'108'+'px'});
+          $('.smst-btn-hof').css({'padding-top':($(window).height())-'489'+'px'});
         });
         
         //setting option of reveal here
@@ -66,28 +54,24 @@ $this->set('title_for_layout', 'SMS Training - Are You Smarter Than Your Boss?')
         
         $('#smst-modal').bind('closed', function(){
             window.location.href = $("#close_reveal_button").attr('url');
-            
         });
+
         $(".quiz_buttons").click(function(){
             //console.log($(this).attr('url'));
             $('#smst-modal').html(
-                '<h2>Awesome. I have it.</h2>' + 
-                '<p class="lead">Your couch.  It is mine.</p>' +
-                '<p>Im a cool paragraph that lives inside of an even cooler modal. Wins</p>' +
-                //'<a class="close-reveal-modal">&#215;</a>' +
+                '<h3>10 questions<br /><span>(quick)</span></h3>' +
+                '<h3>7,200 points<br /><span>(impossible)</span></h3>' +
+                '<h3>Speed counts<br /><span>(you\'ll see)</span></h3>' +
+                '<h3>Wrong answer: 0<br /><span>(oomph)</span></h3>' +
+                // '<h3>Be a Hall of Famer</h3>' +
+                // '<h3>Brag to your boss</h3>' +
                 '<div id="close_reveal_button"></div>' + 
-                '<input type="button" name="close_modal" value="Close" class="close_modal_btn" id="close_modal_btn" style="margin:4px 0 0 0;" />'
+                '<a class="close-reveal-modal">&#215;</a>' +
+                '<input type="button" name="close_modal" value="Go" class="close_modal_btn" id="close_modal_btn" />'
             );
-            
             $('#smst-modal').foundation('reveal','open');
             $("#close_reveal_button").attr('url', $(this).attr('url'));
         });
-        
-        /*
-         * 
-         */
-    });
-    
-    
 
+    });
 </script>
