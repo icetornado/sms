@@ -7,9 +7,7 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
 	<?php echo $this->Html->charset(); ?>
-	<title>
-	<?php echo $title_for_layout; ?>
-	</title>
+    <title>SMS Training - Are You Smarter Than Your Boss?</title><!--<?php echo $title_for_layout; ?>-->
 	<?php
 		echo $this->Html->meta('icon');
 		//echo $this->Html->css('cake.generic');
@@ -23,7 +21,6 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
   	<?php echo $this->Html->script("vendor/custom.modernizr"); ?>    
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
-
 </head>
 <body>
 
@@ -50,9 +47,9 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
 					<li class="">
 						<a href="<?php echo $this->Html->url(array('controller' => 'refresher', 'action' => 'index')) ; ?>">Refresher</a>
 					</li>
-					<li class="">
+					<!-- <li class="">
 						<a href="<?php echo $this->Html->url(array('controller' => 'resources', 'action' => 'index')) ; ?>">Resources</a>
-					</li>
+					</li> -->
 				</ul>
 			</section> 
 		</nav>
@@ -65,8 +62,14 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
     <div id="smst-modal" class="reveal-modal"></div>
 
 	<?php echo $this->Html->script("foundation.min"); ?>
+	<?php echo $this->Html->script("foundation/foundation.interchange"); ?>
 	<script>
     	$(document).foundation();
+    	$(document).foundation('interchange', {
+			named_queries : {
+				retina: 'only screen and (-webkit-min-device-pixel-ratio: 1.3), only screen and (-o-min-device-pixel-ratio: 13/10), only screen and (min-resolution: 120dpi), only screen and (device-height: 80em)'
+			}
+		});
 	</script>
 
 </body>

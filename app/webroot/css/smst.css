@@ -1,10 +1,10 @@
-/* Global */
+
+/* Global */ 
 
 body {
-    background:#000000 /*url(img/smst_bg.jpg) no-repeat fixed center top*/;
+    background:#000000;
     color:#ffffff;
-    /*padding-top:139px;*/
-    font-family: "Segoe WP","HelveticaNeue-Light","Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
+    font-family: "Segoe WP","Roboto","HelveticaNeue-Light","Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
     font-weight: 300;
 }
 p {
@@ -31,8 +31,7 @@ ul, ol {
     background:rgba(51,82,102,0.6);
     }
 .top-bar .name h1 a {
-    background:transparent url(../img/smst_logo@2x.png) no-repeat scroll left top;
-    background-size:164px 45px;
+    background:transparent url('../img/smst_logo.png') no-repeat scroll left top;
     text-indent: -9999em;
     width:164px;
     }
@@ -50,17 +49,26 @@ ul, ol {
 .top-bar-section ul li > a {
     font-weight:300;
     font-size:0.85em;
+    text-align: center;
+    padding:12px;
+}
+.top-bar.expanded .top-bar-section ul li > a {
+    font-size:1em;
 }
 .smst-menu {
-    background:transparent url(../img/smst_menu@2x.png) no-repeat scroll right center;
-    background-size:46px 45px;
+    background:transparent url('../img/smst_menu.png') no-repeat scroll right center;
     text-indent: -9999em;
     width:46px;
     height:45px;
 }
 
-/* Main */
+/* General */
 
+.bold {
+    font-family: "Segoe WP","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
+    font-weight:bold;
+    letter-spacing:-0.5px;
+}
 .smst-fixed-sub {
     position:fixed;
     z-index:1;
@@ -68,7 +76,7 @@ ul, ol {
     top:0;
     width:100%;
     height:480px;
-    background:#000000 url(../img/smst_bg.jpg) no-repeat scroll center top;
+    background:#000000 url('../img/smst_bg.jpg') no-repeat scroll center top;
     }
 .smst-main {
     position:relative;
@@ -79,6 +87,7 @@ ul, ol {
     position:relative;
     z-index:75;
     text-align:center;
+    color:#d6dfe1;
 }
 .smst-top-sub {
     margin:0 auto;
@@ -93,12 +102,21 @@ ul, ol {
 .quizes.smst-top {height:63px;}
 .quizes .smst-top-sub {width:135px;}
 .quizes .smst-top-sub2 {bottom:-27px;}
+.finish.smst-top {height:63px;}
+.finish .smst-top-sub {width:159px;}
+.finish .smst-top-sub2 {bottom:-28px;}
+.hof.smst-top {height:63px;}
+.hof .smst-top-sub {width:135px;}
+.hof .smst-top-sub2 {bottom:-27px;}
 
 .smst-bottom {
     background:rgba(51,82,102,0.35);
     width:100%;
     position:relative;
     text-align:center;
+}
+.smst-bottom.left {
+    text-align:left;
 }
 .sms-header {
     font-size:19px;
@@ -118,9 +136,13 @@ ul, ol {
 .reveal-modal {
     background:none repeat scroll 0 0 rgba(49, 74, 90, 0.95);
     border:none;
+    z-index: 101;
+}
+.reveal-modal-bg {
+    z-index:100;
 }
 .close_modal_btn {
-        background: url("../img/smst_btn_bg.png") repeat-y scroll center top rgba(0, 0, 0, 0);
+        background: url('../img/smst_btn_bg.png') repeat-y scroll center top rgba(0, 0, 0, 0);
         border:none;
         border-radius: 0 0 0 0;
         color: #99D538;
@@ -150,7 +172,6 @@ ul, ol {
     top:63;
 }
 .smst-quiz-item3 {
-    cursor:pointer;
     position:absolute;
     left:0;
     bottom:0;
@@ -161,6 +182,70 @@ ul, ol {
     right:0;
     bottom:0;
 }
+.smst-hof-tabs {
+    padding:39px 22px;
+}
+.smst-hof-tabs.modal {
+    padding:0;
+}
+.smst-hof-btn {
+    text-align:center;
+    font-weight:bold;
+    font-size:1em;
+    background:transparent url('../img/smst_btn_bg.png') repeat-y scroll center top;
+    width:100%;
+    padding:13px 0;
+    float:left;
+    margin-bottom:4px;
+}
+.section-container.tabs > section > .content {
+    border:none;
+    background:transparent;
+    padding:22px 0;
+    width:100%;
+    float:left;
+}
+.smst-hof-box {
+    clear:both;
+    width:100%;
+    margin:11px 0 22px 0;
+    float:left;
+}
+.smst-hof-row {
+    font-size:16px;
+    background:transparent url('../img/smst_answer_bg.png') repeat-x scroll left center;
+    float:left;
+    width:100%;
+    padding:12px 14px;
+    position:relative;
+    text-transform: uppercase;
+}
+.smst-hof-row .left {
+    width:80%;
+}
+.smst-hof-row.bosses .left {
+    padding-left:25px;
+    text-transform: none;
+}
+.smst-hof-row .right {
+    width:20%;
+    text-align:right;
+}
+.smst-hof-row .icon {
+    height:40px;
+    width:40px;
+    background:transparent url('../img/smst_hof_boss.png') no-repeat scroll left center;
+    left:0;
+    top:0;
+    position:absolute;
+}
+.smst-hof-tabs.modal [data-section="tabs"], .smst-hof-tabs.modal .section-container.tabs {
+    margin:0;
+}
+.section-container.tabs > section > .content.modal {
+    padding:0;
+}
+
 
 /* Buttons */
 
@@ -168,136 +253,311 @@ ul, ol {
     padding-top:107px;
 }
 .smst-btn-hof {
-    margin-top:34px;
+    margin-top:68px;
     width:100%;
     text-align:center;
 }
 
+/* Quiz Specific */
 
-
-
-
-
-#wheelbox {
-    height:150px;
-    position:relative;
+.smst-quiz-left {
+    float:left;
+    width:30%;
+    text-align:left;
+    height:63px;
     overflow:hidden;
-    /*background:#cccccc;*/
-    }
-#spinBtn {
-    background:#aaaaaa;
-    position:relative;
-    z-index:101;
-    width:40px;
-    height:40px;
-    border-radius:20px;
-    line-height:40px;
-    text-align:center;
-    cursor:pointer;
-    }
-.satellite {
-    background:transparent url(../img/sms_circle_sprite@2x.png) no-repeat scroll center center;
-    background-size:330px 110px;
-    line-height:110px;
-    text-indent:-9999em;
-    width:110px;
-    height:110px;
-    position:absolute;
-    }
-
-#box1 {
-    /*background:rgba(199,227,242,0.35);*/
-
-    }
-#box2 {
-    /*background:rgba(199,227,242,0.35)*/
-    background-position:left center;
 }
-#box3 {
-    /*background:rgba(199,227,242,0.35)*/
-    background-position:right center;
-    }
-#box4 {
-    background-position:center center;
-    }
-#box5 {
-    background-position:left center;
-    }
-#box6 {
-    background-position:right center;
-    }
-#panel {
-    padding:0 22px 44px 22px;
-    font-weight:lighter;
-    font-size:1.1em;
+.smst-quiz-leftSub {
+    line-height:13px;
+    font-size:18px;
+    padding:16px 0 0 14px;
+}
+.smst-quiz-center {
+    float:left;
+    width:40%;
+    text-align:center;
+    height:63px;
+    font-size:58px;
+    padding:1px 0 0 0;
     color:#edf7f9;
-    background:rgba(51,82,102,0.3);
-    }
+    /*font-family: 'Orbitron';*/
+}
+.smst-quiz-right {
+    float:left;
+    width:30%;
+    text-align:right;
+    height:63px;
+    overflow:hidden;
+}
+.smst-quiz-rightSub {
+    line-height:13px;
+    font-size:18px;
+    padding:16px 14px 0 0;
+}
+.smst-quiz-dark {
+    color:#edf7f9;
+}
+.smst-bottom.quiz {
+    text-align:left;
+}
+.smst-quiz-q {
+    padding:20px 22px;
+    font-size:18px;
+}
+.smst-quiz-ul {
+    margin:0;
+    padding:0 22px
+}
 
-#swipeDiv{
-    line-height: 40px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    }
+.countdown_hide {
+    display:none;
+}
+.block {
+    background:transparent url('../img/smst_answer_bg.png') repeat-x scroll left center;
+    list-style-type:none;
+    position:relative;
+    padding:12px 0;
+    margin:0;
+    cursor:pointer;
+}
+.block:before {
+    content: '';
+    display: inline-block;
+    height: 100%; 
+    vertical-align: middle;
+}
+.centered {
+    display: inline-block;
+    vertical-align: middle;
+    padding: 0 0 0 44px;
+    min-height:30px;
+    font-weight:16px;
+    line-height:16px;
+    position:relative;
+    left:-22px;
+}
+.centered.single {
+    line-height:27px;
+}
+.block:hover {
+    color:#d6dfe1;
+}
+.centered.a {
+    background:transparent url('../img/smst_icon_a.png') no-repeat scroll left center;
+}
+.centered.b {
+    background:transparent url('../img/smst_icon_b.png') no-repeat scroll left center;
+}
+.centered.c {
+    background:transparent url('../img/smst_icon_c.png') no-repeat scroll left center;
+}
+.centered.d {
+    background:transparent url('../img/smst_icon_d.png') no-repeat scroll left center;
+}
+.centered.correct {
+    background:transparent url('../img/smst_icon_check.png') no-repeat scroll left center;
+    color:#99d538;
+}
+.centered.incorrect {
+    background:transparent url('../img/smst_icon_x.png') no-repeat scroll left center;
+    color:#ff5c37;
+}
+.centered.others {
+    background-image:none;
+}
+.next_btn {
+    color:#99d538;
+    background:transparent url('../img/smst_btn_bg.png') repeat-y scroll center top;
+    padding:10px 22px;
+    font-size:1em;
+    border:none;
+    cursor:pointer;
+    margin:22px;
+    font-weight:bold;
+    border-radius:0;
+}
+.next_btn:hover, .close_modal_btn:hover, .others_btn:hover, #brag_submit:hover {
+    color:#85b932;
+}
+.next_btn:disabled {
+    cursor:default;
+    color:#768f9e;
+}
 
-
-
-
-
-/* OLD */
-
-/*
-.fixed-sub2 {
-    position:fixed;
-    z-index:75;
-    left:0;
-    top:0;
-    width:100%;
-    height:139px;
-    background:#000000 url(../img/smst_bg.jpg) no-repeat scroll center top;
-    }
-.smst-cover {
-    background:#000000 url(../img/smst_bg.jpg) no-repeat fixed center top;
-    }
-.smst-cover.sub1 {
-    background-position:center -45px;
-    }
-.smst-cover.sub2 {
-    background-position:center -139px;
-    }
-.smst-nav {
+.others_btn {
+    color:#99d538;
+    background:transparent url('../img/smst_btn_bg.png') repeat-y scroll center top;
+    padding:10px 22px;
+    font-size:1em;
+    border:none;
+    cursor:pointer;
+    font-weight:bold;
+    border-radius:0;
+    
+    display: block;
+    margin: 0 auto 4px auto;
+    max-width: 320px;
+    width: 100%;
+}
+.others_btn:disabled {
+    cursor:default;
+    color:#edf7f9;
+}
+input.smst-initials {
+    border: 0 none;
+    display: block;
+    margin: 0 auto 8px;
+    max-width: 100px;
     text-align: center;
-    }
-.smst-nav ul {
-    width:198px;
-    margin:14px auto;
-    }
-.smst-nav ul li {
+    width: 100%;
+    text-transform:uppercase;
+    border-radius:3px;
+}
+.quiz_answers {
+    margin-bottom:22px;
+    padding-left:44px;
+    min-height:44px;
+}
+.quiz_answers.correct {
+    color:#99d538;
+}
+.quiz_answers.incorrect {
+    color:#FF5C37;
+}
+.smst-results-main {
+    margin-top:20px;
+}
+.smst-results-main .quiz_answers {
+    padding-left:0;
+    min-height:0;
+}
+.smst-results-title {
+    font-size:1.1em;
+    line-height:1.2em;
+}
+.smst-finished-main {
+    padding:59px 22px 20px 22px;
+}
+.smst-finished-success {
+    font-size:30px;
+    color:#99D538;
+    font-style: italic;
+    text-transform:uppercase;
+    margin-bottom:4px;
+}
+.smst-finished-fail {
+    font-size:30px;
+    color:#FF5C37;
+    text-transform:uppercase;
+    margin-bottom:14px;
+}
+.smst-finished-text {
+    padding:0 10px 18px 10px;
+}
+.smst-finished-btns {
+    margin:18px 0 22px 0;
+}
+#bragForm label {
+    font-weight: 300;
+    line-height: 1.2em;
+    font-size: 1em;
+    color:#ffffff;
+}
+#bragForm input {
+    border: 0 none;
+    display: block;
+    margin: 0 auto 8px;
+    max-width: 100%;
+    width: 100%;
+    border-radius: 3px;
+}
+#bragForm .checkbox {
+    background:transparent url('../img/smst_answer_bg.png') repeat-x scroll left center;
+    padding:12px 8px;
     float:left;
-    list-style-type: none;
-    }
-.smst-nav ul li a {
+    width:100%;
+}
+#bragForm .checkbox input {
     float:left;
-    width:66px;
-    height:66px;
-    background:#888888;
-    text-indent:-9999em;
-    background:transparent url(../img/sms_nav_sprite@2x.png) no-repeat scroll left top;
-    background-size:198px 132px;
+    margin:5px 0 0 0;
+    border:none;
+    text-align:center;
+    width:20px;
+}
+#bragForm .checkbox label {
+    float:left;
+    margin-left:8px;
+    cursor:default;
+}
+#bragForm .input.select {
+    margin-bottom: 1.25em;
+    float:left;
+    width:100%;
+}
+#bragForm .input.text {
+    margin-bottom: 1.1em;
+    float:left;
+    width:100%;
+}
+#bragForm .input.text label {
+    margin-bottom:0.4em;
+}
+#bragForm .input.text input {
+    margin:0;
+}
+.bragDiv {
+    margin-bottom:1.25em;
+}
+#brag_submit {
+    background: url('../img/smst_btn_bg.png') repeat-y scroll center top rgba(0, 0, 0, 0);
+    border:none;
+    border-radius:0;
+    color: #99D538;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: bold;
+    margin: 0.5em 0 0 0;
+    padding: 10px 22px;
+    box-shadow:none;
+}
+
+/* Retina */
+
+@media only screen and (-webkit-min-device-pixel-ratio: 1.3), only screen and (-o-min-device-pixel-ratio: 13/10), only screen and (min-resolution: 120dpi), only screen and (device-height: 80em) {
+    .top-bar .name h1 a {
+        background:transparent url('../img/smst_logo@2x.png') no-repeat scroll left top;
+        background-size:164px 45px;
     }
-.smst-nav ul li a:hover.one, .smst-nav ul li a.one.active {
-    background-position:left bottom;
+    .smst-menu {
+        background:transparent url('../img/smst_menu@2x.png') no-repeat scroll right center;
+        background-size:46px 45px;
     }
-.smst-nav ul li a.two {
-    background-position:center top;
+    .smst-hof-row .icon {
+        background:transparent url('../img/smst_hof_boss@2x.png') no-repeat scroll left center;
+        background-size:40px 40px;
     }
-.smst-nav ul li a:hover.two, .smst-nav ul li a.two.active {
-    background-position:center bottom;
+    .centered.a {
+        background:transparent url('../img/smst_icon_a.png') no-repeat scroll left center;
+        background-size:44px 44px;
     }
-.smst-nav ul li a.three {
-    background-position:right top;
+    .centered.b {
+        background:transparent url('../img/smst_icon_b.png') no-repeat scroll left center;
+        background-size:44px 44px;
     }
-.smst-nav ul li a:hover.three, .smst-nav ul li a.three.active {
-    background-position:right bottom;
+    .centered.c {
+        background:transparent url('../img/smst_icon_c.png') no-repeat scroll left center;
+        background-size:44px 44px;
     }
-*/
+    .centered.d {
+        background:transparent url('../img/smst_icon_d.png') no-repeat scroll left center;
+        background-size:44px 44px;
+    }
+    .centered.correct {
+        background:transparent url('../img/smst_icon_check@2x.png') no-repeat scroll left center;
+        background-size:44px 44px;
+    }
+    .centered.incorrect {
+        background:transparent url('../img/smst_icon_x@2x.png') no-repeat scroll left center;
+        background-size:44px 44px;
+    }
+}

@@ -1,43 +1,39 @@
-<?php
-$this->set('title_for_layout', 'SMS Training - Are You Smarter Than Your Boss?');
-?>
-
 <div class="smst-top quizes">
     <div class="smst-top-sub">
         <div class="smst-top-sub2">
-            <img width="135px" height="55px" src="img/smst_header_quiz@2x.png" alt="Select Level" />
+            <img width="135" height="55" data-interchange="[img/smst_header_quiz.png, (default)], [img/smst_header_quiz@2x.png, (retina)]" alt="Select Level" />
         </div>
     </div>
 </div>
-<div class="smst-bottom"> 
+<div class="smst-bottom">
     <div class="smst-quiz-grid">
         <div class="smst-quiz-item1 quiz_buttons" url="<?php echo $this->Html->url(array('controller' => 'quizzes', 'action' => 'quiz', '?' => array('level' => 1))) ; ?>">
-            <img width="110px" height="110px" src="img/smst_btn_q1@2x.png" alt="Level 1 - Basic" />
+            <img width="110" height="110" data-interchange="[img/smst_btn_q1.png, (default)], [img/smst_btn_q1@2x.png, (retina)]" alt="Level 1 - Basic" />
         </div>
         <div class="smst-quiz-item2 quiz_buttons" url="<?php echo $this->Html->url(array('controller' => 'quizzes', 'action' => 'quiz', '?' => array('level' => 2))) ; ?>">
-            <img width="110px" height="110px" src="img/smst_btn_q2@2x.png" alt="Level 2 - Advanced" />
+            <img width="110" height="110" data-interchange="[img/smst_btn_q2.png, (default)], [img/smst_btn_q2@2x.png, (retina)]" alt="Level 2 - Advanced" />
         </div>
         <div class="smst-quiz-item3">
-            <img width="110px" height="110px" src="img/smst_btn_q3@2x.png" alt="Coming Soon - Level 3 - Expert" />
+            <img width="110" height="110" data-interchange="[img/smst_btn_q3.png, (default)], [img/smst_btn_q3@2x.png, (retina)]" alt="Coming Soon - Level 3 - Expert" />
         </div>
         <div class="smst-quiz-item4">
             <a href="<?php echo $this->Html->url(array('controller' => 'refresher', 'action' => 'index')) ; ?>">
-                <img width="110px" height="110px" src="img/smst_btn_study@2x.png" alt="Need Help?" />
+                <img width="110" height="110" data-interchange="[img/smst_btn_study.png, (default)], [img/smst_btn_study@2x.png, (retina)]" alt="Need Help?" />
             </a>    
         </div>
     </div>
     <div class="smst-btn-hof">
         <a href="<?php echo $this->Html->url(array('controller' => 'scoreboards')) ; ?>">
-            <img width="120px" height="22px" src="img/smst_btn_boards@2x.png" alt="View Hall of Fame" />
+            <img width="120" height="22" data-interchange="[img/smst_btn_boards.png, (default)], [img/smst_btn_boards@2x.png, (retina)]" alt="View Hall of Fame" />
         </a>
     </div> 
 </div>
 
 <script>
     $(document).ready(function(){
-        $('.smst-btn-hof').css({'padding-top':($(window).height())-'455'+'px'});
+        $('.smst-btn-hof').css({'padding-top':($(window).height())-'489'+'px'});
         $(window).resize(function(){
-          $('.smst-btn-hof').css({'padding-top':($(window).height())-'455'+'px'});
+          $('.smst-btn-hof').css({'padding-top':($(window).height())-'489'+'px'});
         });
         
         //setting option of reveal here
@@ -56,9 +52,9 @@ $this->set('title_for_layout', 'SMS Training - Are You Smarter Than Your Boss?')
             //bg : $('.reveal-modal-bg'),
         });
         
-        //$('#smst-modal').bind('closed', function(){
-        //    window.location.href = $("#close_reveal_button").attr('url');
-        //});
+        $('#smst-modal').bind('closed', function(){
+            window.location.href = $("#close_reveal_button").attr('url');
+        });
 
         $(".quiz_buttons").click(function(){
             //console.log($(this).attr('url'));
@@ -78,7 +74,4 @@ $this->set('title_for_layout', 'SMS Training - Are You Smarter Than Your Boss?')
         });
 
     });
-    
-    
-
 </script>
