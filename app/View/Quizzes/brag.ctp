@@ -1,6 +1,4 @@
 <?php 
-echo '<pre>';
-echo $body;
-echo '</pre>';
+echo $this->Session->flash();
 ?>
  

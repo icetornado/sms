@@ -42,9 +42,15 @@ class AppController extends Controller {
         )
     );
     
+    public $menuID = '';
+    
     public function beforeFilter() {
         //$this->Auth->allow('index', 'view', 'quiz');
         $this->Auth->allow();
+    }
+    
+    public function beforeRender() {
+        $this->set('menuID', $this->menuID);
     }
     
     public function isAuthorized($user)
@@ -61,5 +67,5 @@ class AppController extends Controller {
          */
         
         return true;
-    }   
+    }
 }

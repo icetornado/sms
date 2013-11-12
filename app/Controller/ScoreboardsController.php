@@ -30,8 +30,6 @@ class ScoreboardsController extends AppController
     
     public function scoreboard_ajax()
     {
-        pr($this->request->params['requested']);
-        
         if(isset($this->request->query['level']) && is_numeric($this->request->query['level']))
             $level = $this->request->query['level'];
         else

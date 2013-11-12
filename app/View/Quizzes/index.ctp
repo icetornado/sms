@@ -1,3 +1,5 @@
+
+
 <div class="smst-top quizes">
     <div class="smst-top-sub">
         <div class="smst-top-sub2">
@@ -41,7 +43,7 @@
             //animation: 'fadeAndPop',
             //animationSpeed: 250,
             //closeOnBackgroundClick: false,
-            dismissModalClass: 'close_modal_btn',
+            dismissModalClass: 'close-reveal-modal',
             //bgClass: 'reveal-modal-bg',
             //open: function(){},
             //opened: function(){},
@@ -53,7 +55,7 @@
         });
         
         $('#smst-modal').bind('closed', function(){
-            window.location.href = $("#close_reveal_button").attr('url');
+            //window.location.href = $("#close_reveal_button").attr('url');
         });
 
         $(".quiz_buttons").click(function(){
@@ -71,6 +73,9 @@
             );
             $('#smst-modal').foundation('reveal','open');
             $("#close_reveal_button").attr('url', $(this).attr('url'));
+            $("#close_modal_btn").bind('click', function(){
+                window.location.href = $("#close_reveal_button").attr('url');
+            });
         });
 
     });

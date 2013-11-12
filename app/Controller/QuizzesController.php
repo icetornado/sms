@@ -4,7 +4,8 @@ class QuizzesController extends AppController
 {
     public $components = array(
         'RequestHandler', 
-        'Security'
+        //'Security'
+        'Session'
     );
     
     public $uses = array(
@@ -16,10 +17,12 @@ class QuizzesController extends AppController
         'Boss'
     );
     
+    public $menuID = 'quizzes';
+    
     public function beforeFilter(){
         parent::beforeFilter();
-        $this->Security->unlockedFields = array('score', 'correct');
-        $this->Security->blackHoleCallback = 'blackhole';
+        //$this->Security->unlockedFields = array('score', 'correct');
+        //$this->Security->blackHoleCallback = 'blackhole';
     }
     
     
@@ -31,16 +34,6 @@ class QuizzesController extends AppController
     
     public function index()
     {
-        /*if(isset($this->request->query['level']) && is_numeric($this->request->query['level']))
-            return $this->redirect(
-                array(
-                    'action' => 'level', 
-                    $this->request->query['level'],
-                    //'level' => $this->request->query['level'],
-                    'uid' => AuthComponent::user('id')
-               )
-            );*/
-        
         $this->set('title_for_layout','SMS Quizzes');
     }
     
@@ -68,7 +61,8 @@ class QuizzesController extends AppController
             $this->set('bosses', $bossArr);
             $this->set('bossmax', $bossmax);
             $this->set('level', $level);
-            $this->set('quizzes', $this->Quiz->findAllByLevel($level));
+            //$this->set('quizzes', $this->Quiz->findAllByLevel($level));
+            $this->set('quizzes', $this->Quiz->findRandomByLevel($level));
             $this->set('title_for_layout','SMS Quiz Level ' . $level);
         }
         else
@@ -130,16 +124,18 @@ class QuizzesController extends AppController
         
         $Email = new CakeEmail();
         $Email->from(array('me@example.com' => 'SMS Training'));
-        $otherMail = explode(',', $this->request->data['Quiz']['emailother']);
+        $data = $this->request->query['data'];
+        
+        $otherMail = explode(',', $data['emailother']);
         
         if(!is_array($otherMail))
             $otherMail = array();
         
-        $subject = 'I\'m Smarter Than You - From ' . $this->request->data['Quiz']['yourname'];
+        $subject = 'I\'m Smarter Than You - From ' . $data['yourname'];
         
-        $Email->to($this->request->data['Quiz']['email']);
+        $Email->to($data['emailboss']);
         $Email->subject($subject);
-        $body = 'Hey Boss: I scored ' . $this->request->data['Quiz']['score'] . ' at level ' . $this->request->data['Quiz']['level'];
+        $body = 'Hey Boss: I scored ' . $data['score'] . ' at level ' . $data['level'];
         $Email->send($body);
         
         if(!empty($otherMail))
@@ -150,14 +146,14 @@ class QuizzesController extends AppController
                 {
                     $Email->to($om);
                     $Email->subject($subject);
-                    $body = 'Hey Boss: I scored ' . $this->request->data['Quiz']['score'] . ' at level ' . $this->request->data['Quiz']['level'];
+                    $body = 'Hey Boss: I scored ' . $data['score'] . ' at level ' . $data['level'];
                     $Email->send($body);
                 }
             }
         }
         
         //$this->set('body', $body);
-        $this->redirect(array('controller' => 'quizzes', 'action' => 'quiz'));
+        $this->Session->setFlash('Email sent to your boss(es).');
     }
 }
 ?>
