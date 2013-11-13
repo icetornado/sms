@@ -70,11 +70,13 @@ echo $this->Html->script('jquery.countdown.min');
     </div>
     <div class="smst-bottom">
         <div id="results_wrapper" class="smst-finished-main">
-            <div class="smst-results-title"><span class="bold">Correct:</span> <span id="quiz_correct_finish"></span></div>
-            <div class="smst-results-title"><span class="bold" >Points:</span> <span id="quiz_score_finish"></span></div>
             <div id="results_success">
                 <div id="success_head" class="smst-finished-success"></div>
                 <div id="success_text" class="smst-finished-text"></div>
+                <div class="smst-finished-score">
+                    <div class="smst-results-title">Correct: <span class="bold" id="quiz_correct_finish"></span></div>
+                    <div class="smst-results-title">Points: <span  class="bold" id="quiz_score_finish"></span></div>
+                </div>
                 <form class="custom" id="hall_of_fame_form">
                 <div class="smst-finished-btns">
                     <div id="initial_div" style="display:none;">
@@ -84,18 +86,23 @@ echo $this->Html->script('jquery.countdown.min');
                         <input type="button" name="submit_initial" value="Submit" class="others_btn" id="submit_btn" />
                     </div>
                     <input type="button" name="enter_initial" id="enter_btn" value="Enter Initials" class="others_btn" />
+                    <input type="button" name="results_button" value="Results" class="others_btn" id="results_btn" />
                     <input type="button" name="hall_of_fame" id="hall_of_fame" value="Hall of Fame" class="others_btn" />
                     <input type="button" name="brag_button" value="Brag" class="others_btn" id="brag_btn" />
-                    <input type="button" name="results_button" value="Results" class="others_btn" id="results_btn" />
                 </div>
                 </form>
             </div>
             <div id="results_failed">
                 <div id="failed_head" class="smst-finished-fail"></div>
                 <div id="failed_text" class="smst-finished-text"></div>
+                <div class="smst-finished-score">
+                    <div class="smst-results-title">Correct: <span class="bold" id="quiz_correct_finish2"></span></div>
+                    <div class="smst-results-title">Points: <span  class="bold" id="quiz_score_finish2"></span></div>
+                </div>
                 <div class="smst-finished-btns">
-                    <input type="button" name="try_again" id="try_again" value="Try Again" class="others_btn" />
+                    <input type="button" name="results_button" value="Results" class="others_btn" id="results_btn2" />
                     <input type="button" name="hall_of_fame" value="Hall of Fame" id="hall_of_fame2" class="others_btn" />
+                    <input type="button" name="try_again" id="try_again" value="Try Again" class="others_btn" />
                 </div>
             </div>
         </div>
@@ -115,7 +122,7 @@ echo $this->Html->script('jquery.countdown.min');
         foreach($quizzes as $q)
         {
             echo '<div class="quiz_answers">';
-            echo '  <div>' . $q['Quiz']['title'] . ': ' . $q['Quiz']['body'] . '</div>';
+            echo '  <div>Q: ' . $q['Quiz']['body'] . '</div>';
             echo '  <div id="answer_correct_'. $cn . '"></div>';
             echo '</div>';
             $cn ++;
@@ -261,6 +268,8 @@ $(document).ready(function () {
             $("#quiz_score").html($accumulateScore);
             $("#quiz_correct_finish").html($totalCorrect + "/" + $totalQ);
             $("#quiz_score_finish").html($accumulateScore);
+            $("#quiz_correct_finish2").html($totalCorrect + "/" + $totalQ);
+            $("#quiz_score_finish2").html($accumulateScore);
              
             var $smartResult = isSmarter();
             if($smartResult.isSmarter)
@@ -468,6 +477,7 @@ $(document).ready(function () {
             '<label for="yourname">Your name:</label>' +
             '<input class="textBox" type="text" id="yourname" placeholder="Name" name="data[yourname]" required />' +
             '</div>' +
+            '<div class="smst-note">Note: Submitting this form will return you to the Select Level screen.</div>' +
             '<input type="button" name="send_brag" value="Send" id="brag_something" class="next_btn" />' +
             '<input type="hidden" name="data[score]" id="brag_score" value="' + $accumulateScore + '">' + 
             '<input type="hidden" name="data[level]" id="brag_level" value="' + $level + '">' +
@@ -527,6 +537,12 @@ $(document).ready(function () {
     });
     
     $("#results_btn").click(function(){
+        $('#smst-modal').foundation('reveal',{dismissModalClass: 'close-reveal-modal'});
+        $('#smst-modal').html($('#results').html());   
+        $('#smst-modal').foundation('reveal','open');
+    });
+    
+    $("#results_btn2").click(function(){
         $('#smst-modal').foundation('reveal',{dismissModalClass: 'close-reveal-modal'});
         $('#smst-modal').html($('#results').html());   
         $('#smst-modal').foundation('reveal','open');
@@ -610,8 +626,3 @@ $(document).ready(function () {
     
 });
 </script>
-
-
-
-
-

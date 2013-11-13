@@ -457,14 +457,17 @@ input.smst-initials {
     color:#99D538;
     font-style: italic;
     text-transform:uppercase;
-    margin-bottom:7px;
+    margin-bottom:3px;
 }
 .smst-finished-fail {
     font-size:30px;
     font-style: italic;
     color:#FF5C37;
     text-transform:uppercase;
-    margin-bottom:7px;
+    margin-bottom:3px;
+}
+.smst-finished-score {
+    margin-bottom:24px;
 }
 .smst-finished-text {
     padding:0 10px 18px 10px;
@@ -526,7 +529,7 @@ input.smst-initials {
     box-shadow:none;
 }
 #brag_something {
-    margin:12px 0 0 0;
+    margin:18px 0 0 0;
 }
 .error input, .error textarea, .error select, .error input:focus, .error textarea:focus, .error select:focus {
     background-color: #F25734;
@@ -534,6 +537,12 @@ input.smst-initials {
 }
 .error .checkbox {
     border-left:5px solid #F25734;
+}
+.smst-note {
+    color: #AAAAAA;
+    font-size: 0.9em;
+    font-style: italic;
+    line-height:1em;
 }
 
 
