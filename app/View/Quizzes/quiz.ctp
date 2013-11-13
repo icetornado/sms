@@ -70,10 +70,10 @@ echo $this->Html->script('jquery.countdown.min');
     </div>
     <div class="smst-bottom">
         <div id="results_wrapper" class="smst-finished-main">
-<!--            <div style="margin-bottom:25px;">
-                <div class="smst-results-title">Correct: <span class="bold" id="quiz_correct_finish"></span></div>
-                <div class="smst-results-title">Points: <span class="bold" id="quiz_score_finish"></span></div>
-            </div>-->
+
+            <div class="smst-results-title"><span class="bold">Correct:</span> <span id="quiz_correct_finish"></span></div>
+            <div class="smst-results-title"><span class="bold" >Points:</span> <span id="quiz_score_finish"></span></div>
+
             <div id="results_success">
                 <div id="success_head" class="smst-finished-success"></div>
                 <div id="success_text" class="smst-finished-text"></div>
