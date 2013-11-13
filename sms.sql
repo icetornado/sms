@@ -56,11 +56,18 @@ CREATE TABLE `bosses` (
     );
 
 /* data */
-INSERT INTO bosses (firstname, lastname, email, level, score) VALUES('William', 'Kuykendall', 'wkuykendall@infina.net', 1, 500);
-INSERT INTO bosses (firstname, lastname, email, level, score) VALUES('Trieu', 'Tran', 'ttran@infina.net', 1, 501);
+TRUNCATE TABLE bosses;
+INSERT INTO bosses (firstname, lastname, email, level, score) VALUES('Joseph', 'Teixeira', 'joseph.teixeira@faa.gov', 1, 4340);
+INSERT INTO bosses (firstname, lastname, email, level, score) VALUES('Stephen', 'Lloyd', 'stephen.lloyd@faa.gov', 1, 3660);
+INSERT INTO bosses (firstname, lastname, email, level, score) VALUES('Lisbeth', 'Mack', 'lisbeth.mack@faa.gov', 1, 3480);
+INSERT INTO bosses (firstname, lastname, email, level, score) VALUES('David', 'Boone', 'david.m.boone@faa.gov', 1, 3840);
+INSERT INTO bosses (firstname, lastname, email, level, score) VALUES('Tim', 'Arel', 'timothy.arel@faa.gov', 1, 4280);
 
-INSERT INTO bosses (firstname, lastname, email, level, score) VALUES('William', 'Kuykendall', 'wkuykendall@infina.net', 2, 1001);
-INSERT INTO bosses (firstname, lastname, email, level, score) VALUES('Trieu', 'Tran', 'ttran@infina.net', 2, 1000);
+INSERT INTO bosses (firstname, lastname, email, level, score) VALUES('Joseph', 'Teixeira', 'joseph.teixeira@faa.gov', 2, 4240);
+INSERT INTO bosses (firstname, lastname, email, level, score) VALUES('Stephen', 'Lloyd', 'stephen.lloyd@faa.gov', 2, 4260);
+INSERT INTO bosses (firstname, lastname, email, level, score) VALUES('Lisbeth', 'Mack', 'lisbeth.mack@faa.gov', 2, 4280);
+INSERT INTO bosses (firstname, lastname, email, level, score) VALUES('David', 'Boone', 'david.m.boone@faa.gov', 2, 4460);
+INSERT INTO bosses (firstname, lastname, email, level, score) VALUES('Tim', 'Arel', 'timothy.arel@faa.gov', 2, 3860);
 
 INSERT INTO questions (title, body, level) VALUES('Q1', 'The Top 5 are:', 1);
 INSERT INTO answers(title, body, correct, question_id, ord) VALUES ('a', 'The top 5 controllers as determined by the Risk Analysis Process', 0, 1, 1);
@@ -236,3 +243,33 @@ INSERT INTO answers(title, body, correct, question_id, ord) VALUES ('b', 'False'
 INSERT INTO questions (title, body, level) VALUES('Q25', 'The Runway Safety program office provides commercial pilot training for runway mitigations.', 1);
 INSERT INTO answers(title, body, correct, question_id, ord) VALUES ('a', 'True', 0, 35, 1);
 INSERT INTO answers(title, body, correct, question_id, ord) VALUES ('b', 'False', 1, 35, 2);
+
+INSERT INTO questions (title, body, level) VALUES('Q11', 'Heinrich&apos;s Triangle is analogous to Maslow&apos;s Hierarchy of Needs because it:', 2);
+INSERT INTO answers(title, body, correct, question_id, ord) VALUES ('a', 'Clearly states, in ascending order, the basic psychological profiles pilots need to maintain on final approach BEFORE they reach the runway threshold.', 0, 36, 1);
+INSERT INTO answers(title, body, correct, question_id, ord) VALUES ('b', 'Clearly states, in ascending order, the psychological profiles pilots need to maintain AFTER initial decent and BEFORE they begin final approach.', 0, 36, 2);
+INSERT INTO answers(title, body, correct, question_id, ord) VALUES ('c', 'Clearly states the psychological safety risks profiles, in ascending order, controllers must account for when vectoring pilots for final approach.', 0, 36, 3);
+INSERT INTO answers(title, body, correct, question_id, ord) VALUES ('d', 'The statement is false they are not analogous', 1, 36, 4);
+
+INSERT INTO questions (title, body, level) VALUES('Q12', 'The 4 pillars of our SMS are:', 2);
+INSERT INTO answers(title, body, correct, question_id, ord) VALUES ('a', 'Safety Culture, Safety Risk Management, Safety Policy, Safety Communication', 0, 37, 1);
+INSERT INTO answers(title, body, correct, question_id, ord) VALUES ('b', 'Safety Promotion, Safety Risk Management, Safety Analysis, Safety Programs', 0, 37, 2);
+INSERT INTO answers(title, body, correct, question_id, ord) VALUES ('c', 'Safety Risk Management, Safety Assurance, Safety Promotion, Safety Policy', 1, 37, 3);
+INSERT INTO answers(title, body, correct, question_id, ord) VALUES ('d', 'd. Safety Guidance, Just Culture, Safety Risk Management, Safety Promotion', 0, 37, 4);
+
+INSERT INTO questions (title, body, level) VALUES('Q13', 'DIAAT stands for:', 2);
+INSERT INTO answers(title, body, correct, question_id, ord) VALUES ('a', 'Describe the System; Identify the Hazards; Analyze Risk; Assess Risk; Treat Risk', 1, 38, 1);
+INSERT INTO answers(title, body, correct, question_id, ord) VALUES ('b', 'Describe the Error; Identify the Fault; Analyze the Event; Assess the Frequency; Treat Risk', 0, 38, 2);
+INSERT INTO answers(title, body, correct, question_id, ord) VALUES ('c', 'Discover Risk; Identify Cause; Accept Responsibility; Assess Threat; Treat Risk', 0, 38, 3);
+INSERT INTO answers(title, body, correct, question_id, ord) VALUES ('d', 'Describe the Risk; Identify the Cause, Analyze Risk; Analyze Cause, Treat Risk', 0, 38, 4);
+
+INSERT INTO questions (title, body, level) VALUES('Q14', 'Which is NOT part of a Positive Safety Culture?', 2);
+INSERT INTO answers(title, body, correct, question_id, ord) VALUES ('a', 'Reporting Culture', 0, 39, 1);
+INSERT INTO answers(title, body, correct, question_id, ord) VALUES ('b', 'Learning Culture', 0, 39, 2);
+INSERT INTO answers(title, body, correct, question_id, ord) VALUES ('c', 'Diverse Culture', 1, 39, 3);
+INSERT INTO answers(title, body, correct, question_id, ord) VALUES ('d', 'Just Culture', 0, 39, 4);
+
+INSERT INTO questions (title, body, level) VALUES('Q15', 'Which of the following is a result or benefit of SMS?', 2);
+INSERT INTO answers(title, body, correct, question_id, ord) VALUES ('a', 'No Accidents', 0, 40, 1);
+INSERT INTO answers(title, body, correct, question_id, ord) VALUES ('b', 'Proactive Risk Mitigation', 1, 40, 2);
+INSERT INTO answers(title, body, correct, question_id, ord) VALUES ('c', 'Traffic Flow Management', 0, 40, 3);
+INSERT INTO answers(title, body, correct, question_id, ord) VALUES ('d', 'Effective Time-Based Metering', 0, 40, 4);
