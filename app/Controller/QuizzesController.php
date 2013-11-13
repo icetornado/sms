@@ -45,6 +45,7 @@ class QuizzesController extends AppController
             
             $bosses = $this->Boss->find('all',  array(
                 'conditions' => array('level' => $level),
+                'order' => array('score desc')
                 )
             );
             
@@ -136,7 +137,7 @@ class QuizzesController extends AppController
         $Email->to($data['emailboss']);
         $Email->subject($subject);
         $body = 'Hey Boss: I scored ' . $data['score'] . ' at level ' . $data['level'];
-        $Email->send($body);
+        //$Email->send($body);
         
         if(!empty($otherMail))
         {
@@ -147,7 +148,7 @@ class QuizzesController extends AppController
                     $Email->to($om);
                     $Email->subject($subject);
                     $body = 'Hey Boss: I scored ' . $data['score'] . ' at level ' . $data['level'];
-                    $Email->send($body);
+                    //$Email->send($body);
                 }
             }
         }
