@@ -33,9 +33,11 @@
                             <div class="bold">Ranking</div>
                             <?php $sb = $d['score']; ?>
                             <div class="smst-hof-box">
+                                <?php $cn = 0; ?>
                                 <?php foreach ($sb as $s): ?>
+                                    <?php $cn ++;?>
                                     <div class="smst-hof-row">
-                                        <div class="left"><?php echo $s['initial']; ?></div>
+                                        <div class="left"><?php echo $cn . '. ' . $s['initial']; ?></div>
                                         <div class="right"><?php echo $s['score']; ?></div>
                                     </div>
                                 <?php endforeach; ?>
