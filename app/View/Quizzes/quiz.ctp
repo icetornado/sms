@@ -50,7 +50,7 @@ echo $this->Html->script('jquery.countdown.min');
 
         echo '</ul>';
 
-        echo '<input type="button" name="submit" value="Next" id="select_' . $cn . '" question_ord="' . $cn . '" class="next_btn" disabled="disabled"/>';
+        echo '<input type="button" name="submit" value="Next" id="select_' . $cn . '" question_ord="' . $cn . '" class="next_btn" disabled />';
         echo '</div>';
         $cn ++;
     }
