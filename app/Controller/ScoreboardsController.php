@@ -46,7 +46,7 @@ class ScoreboardsController extends AppController
         
         $scoreboard = $this->Scoreboard->find('all', array(
             'order' => array('level', 'score desc'),
-            'limit' => 10,
+            'limit' => 50,
         ));
         $bosses = $this->Boss->find('all');
         
