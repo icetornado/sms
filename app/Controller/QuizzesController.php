@@ -152,9 +152,8 @@ class QuizzesController extends AppController
                 }
             }
         }
-        
-        //$this->set('body', $body);
-        $this->Session->setFlash('Email sent to your boss(es).');
+        //$this->Session->setFlash('Email sent to your boss(es).');
+        $this->redirect(array('controller' => 'quizzes', 'action' => 'index'));
     }
 }
 ?>
