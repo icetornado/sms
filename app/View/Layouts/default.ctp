@@ -34,6 +34,10 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
             'title' => 'Are You Smarter?',
             'url' => $this->Html->url(array('controller' => 'quizzes', 'action' => 'index'))
         ),
+        'scoreboards' => array(
+            'title' => 'Hall of Fame',
+            'url' => $this->Html->url(array('controller' => 'scoreboards', 'action' => 'index'))
+        ),
         'refresher' => array(
             'title' => 'Refresher',
             'url' => $this->Html->url(array('controller' => 'refresher', 'action' => 'index'))
@@ -74,7 +78,7 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
 				<section class="top-bar-section">
                                 
 				<ul class="right">
-                                    <?php echo $this->fetch('menubar'); ?>
+                    <?php echo $this->fetch('menubar'); ?>
 				</ul>
 			</section> 
 		</nav>
