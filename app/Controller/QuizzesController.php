@@ -45,6 +45,7 @@ class QuizzesController extends AppController
             
             $bosses = $this->Boss->find('all',  array(
                 'conditions' => array('level' => $level),
+                'order' => array('score desc')
                 )
             );
             

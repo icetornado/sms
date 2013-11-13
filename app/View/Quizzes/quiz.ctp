@@ -70,6 +70,7 @@ echo $this->Html->script('jquery.countdown.min');
     </div>
     <div class="smst-bottom">
         <div id="results_wrapper" class="smst-finished-main">
+            <div class="smst-results-title"><span class="bold" >Points:</span> <span id="quiz_score_finish"></span></div>
             <div id="results_success">
                 <div id="success_head" class="smst-finished-success"></div>
                 <div id="success_text" class="smst-finished-text"></div>
@@ -257,11 +258,11 @@ $(document).ready(function () {
         {
             $("#quiz_correct").html($totalCorrect + "/" + $totalQ);
             $("#quiz_score").html($accumulateScore);
-            
+            $("#quiz_score_finish").html($accumulateScore);
+             
             var $smartResult = isSmarter();
             if($smartResult.isSmarter)
             {
-                
                 $("#success_head").html($smartResult.success);
                 $("#success_text").html($smartResult.text);
                 $("#results_success").show();

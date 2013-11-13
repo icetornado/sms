@@ -49,6 +49,11 @@ class ScoreboardsController extends AppController
         $scoreboard = $this->Scoreboard->find('all', array('order' => array('level', 'score desc')));
         $bosses = $this->Boss->find('all');
         
+        $bosses = $this->Boss->find('all',  array(
+                'order' => array('score desc')
+            )
+        );
+        
         foreach($scoreboard as $sc)
         {
             if(!isset($data[$sc['Scoreboard']['level']]))
