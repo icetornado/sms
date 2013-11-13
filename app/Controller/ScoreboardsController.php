@@ -24,6 +24,7 @@ class ScoreboardsController extends AppController
     public function scoreboard()
     {
         $data = $this->getScoreboardData();
+        
         $this->set('data', $data);
     }
     

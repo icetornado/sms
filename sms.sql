@@ -168,3 +168,71 @@ INSERT INTO answers(title, body, correct, question_id, ord) VALUES ('a', 'Value 
 INSERT INTO answers(title, body, correct, question_id, ord) VALUES ('b', 'Invest in technology and processes to better gather and analyze data', 0, 20, 2);
 INSERT INTO answers(title, body, correct, question_id, ord) VALUES ('c', 'Embrace change to mitigate risk', 0, 20, 3);
 INSERT INTO answers(title, body, correct, question_id, ord) VALUES ('d', 'All of the above', 1, 20, 4);
+
+INSERT INTO questions (title, body, level) VALUES('Q11', 'Each year ATO Vice Presidents sign', 1);
+INSERT INTO answers(title, body, correct, question_id, ord) VALUES ('a', 'A letter giving ATO Safety control over Recurrent Training decisions', 0, 21, 1);
+INSERT INTO answers(title, body, correct, question_id, ord) VALUES ('b', 'A commitment statement to fix the Top 5', 1, 21, 2);
+INSERT INTO answers(title, body, correct, question_id, ord) VALUES ('c', 'A recognition letter to the top 5 controllers in the NAS', 0, 21, 3);
+INSERT INTO answers(title, body, correct, question_id, ord) VALUES ('d', 'None of the above', 0, 21, 4);
+
+INSERT INTO questions (title, body, level) VALUES('Q12', 'Everyone in AJI will contribute to reducing risk in the NAS.', 1);
+INSERT INTO answers(title, body, correct, question_id, ord) VALUES ('a', 'True', 1, 22, 1);
+INSERT INTO answers(title, body, correct, question_id, ord) VALUES ('b', 'False', 0, 22, 2);
+
+INSERT INTO questions (title, body, level) VALUES('Q13', 'If we follow the SMS we will need a larger budget to maintain the safety of the NAS.', 1);
+INSERT INTO answers(title, body, correct, question_id, ord) VALUES ('a', 'True', 0, 23, 1);
+INSERT INTO answers(title, body, correct, question_id, ord) VALUES ('b', 'False', 1, 23, 2);
+
+INSERT INTO questions (title, body, level) VALUES('Q14', 'The Academy in Oklahoma City is not related to ATO Safety except that we share the same Vice President under our new organizations structure.', 1);
+INSERT INTO answers(title, body, correct, question_id, ord) VALUES ('a', 'True', 0, 24, 1);
+INSERT INTO answers(title, body, correct, question_id, ord) VALUES ('b', 'False', 1, 24, 2);
+
+INSERT INTO questions (title, body, level) VALUES('Q15', 'Fully integrating the SMS into the FAA means we will begin to look for risk as early as the acquisition process.', 1);
+INSERT INTO answers(title, body, correct, question_id, ord) VALUES ('a', 'True', 1, 25, 1);
+INSERT INTO answers(title, body, correct, question_id, ord) VALUES ('b', 'False', 0, 25, 2);
+
+INSERT INTO questions (title, body, level) VALUES('Q16', 'Using the SMS in a proactive way to look for precursors of risk means we do not need to study safety events after they happen.', 1);
+INSERT INTO answers(title, body, correct, question_id, ord) VALUES ('a', 'True', 0, 26, 1);
+INSERT INTO answers(title, body, correct, question_id, ord) VALUES ('b', 'False', 1, 26, 2);
+
+INSERT INTO questions (title, body, level) VALUES('Q17', 'I work on the Safety side of AJI so I do not need to participate in the SMS because I am already doing safety as my full-time job.', 1);
+INSERT INTO answers(title, body, correct, question_id, ord) VALUES ('a', 'True', 0, 27, 1);
+INSERT INTO answers(title, body, correct, question_id, ord) VALUES ('b', 'False', 1, 27, 2);
+
+INSERT INTO questions (title, body, level) VALUES('Q18', 'I work on the Technical Training side of AJI so I am not involved in the SMS.', 1);
+INSERT INTO answers(title, body, correct, question_id, ord) VALUES ('a', 'True', 0, 28, 1);
+INSERT INTO answers(title, body, correct, question_id, ord) VALUES ('b', 'False', 1, 28, 2);
+
+INSERT INTO questions (title, body, level) VALUES('Q19', 'Potential hazards that might introduce risk into the NAS include:', 1);
+INSERT INTO answers(title, body, correct, question_id, ord) VALUES ('a', 'New technology', 0, 29, 1);
+INSERT INTO answers(title, body, correct, question_id, ord) VALUES ('b', 'Poor training', 0, 29, 2);
+INSERT INTO answers(title, body, correct, question_id, ord) VALUES ('c', 'Inexperienced pilots', 0, 29, 3);
+INSERT INTO answers(title, body, correct, question_id, ord) VALUES ('d', 'All of the above', 1, 29, 4);
+
+INSERT INTO questions (title, body, level) VALUES('Q20', 'Most of what Technical Training does is proactive in nature.', 1);
+INSERT INTO answers(title, body, correct, question_id, ord) VALUES ('a', 'True', 1, 30, 1);
+INSERT INTO answers(title, body, correct, question_id, ord) VALUES ('b', 'False', 0, 30, 2);
+
+INSERT INTO questions (title, body, level) VALUES('Q21', 'The SMS has structure, processes, rational, and purpose.', 1);
+INSERT INTO answers(title, body, correct, question_id, ord) VALUES ('a', 'True', 1, 31, 1);
+INSERT INTO answers(title, body, correct, question_id, ord) VALUES ('b', 'False', 0, 31, 2);
+
+INSERT INTO questions (title, body, level) VALUES('Q22', 'Which is not a foundational pillar of the SMS?', 1);
+INSERT INTO answers(title, body, correct, question_id, ord) VALUES ('a', 'Safety Structure', 1, 32, 1);
+INSERT INTO answers(title, body, correct, question_id, ord) VALUES ('b', 'Safety Assurance', 0, 32, 2);
+INSERT INTO answers(title, body, correct, question_id, ord) VALUES ('c', 'Safety Promotion', 0, 29, 3);
+INSERT INTO answers(title, body, correct, question_id, ord) VALUES ('d', 'Safety Policy', 0, 32, 4);
+
+INSERT INTO questions (title, body, level) VALUES('Q23', 'Quality Control ensures that we', 1);
+INSERT INTO answers(title, body, correct, question_id, ord) VALUES ('a', 'Have the best data collection system', 0, 33, 1);
+INSERT INTO answers(title, body, correct, question_id, ord) VALUES ('b', 'Have the highest quality Mitigation Plans (MPs)', 0, 33, 2);
+INSERT INTO answers(title, body, correct, question_id, ord) VALUES ('c', 'Close performance gaps and perform up to operational standards', 1, 33, 3);
+INSERT INTO answers(title, body, correct, question_id, ord) VALUES ('d', 'Develop Mitigation Plans (MPs) as determined by the Risk Analysis Process', 0, 33, 4);
+
+INSERT INTO questions (title, body, level) VALUES('Q24', 'Voluntary reporting programs are important to the SMS because they provide first-hand knowledge from front-line employees that is critical to understanding the context surrounding a safety incident.', 1);
+INSERT INTO answers(title, body, correct, question_id, ord) VALUES ('a', 'True', 1, 34, 1);
+INSERT INTO answers(title, body, correct, question_id, ord) VALUES ('b', 'False', 0, 34, 2);
+
+INSERT INTO questions (title, body, level) VALUES('Q25', 'The Runway Safety program office provides commercial pilot training for runway mitigations.', 1);
+INSERT INTO answers(title, body, correct, question_id, ord) VALUES ('a', 'True', 0, 35, 1);
+INSERT INTO answers(title, body, correct, question_id, ord) VALUES ('b', 'False', 1, 35, 2);

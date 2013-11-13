@@ -11,6 +11,27 @@ class Quiz extends AppModel
         ),
     );
     
+    public function findRandomByLevel($level)
+    {
+        $quizBank = $this->findAllByLevel($level);
+        
+        $randomArr = array();
+        
+        while(count($randomArr) < 10)
+        {
+            $randVar = rand(0, count($quizBank) - 1);
+            
+            if(!in_array($randVar, $randomArr))
+                $randomArr[] = $randVar;
+        }
+        
+        $quizQuestions = array();
+        
+        foreach($randomArr as $k => $v)
+            $quizQuestions[] = $quizBank[$v];
+        
+        return $quizQuestions;
+    }
     
 }
 ?>

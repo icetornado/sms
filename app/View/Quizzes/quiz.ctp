@@ -31,7 +31,7 @@ echo $this->Html->script('jquery.countdown.min');
     $cn = 0;
     foreach($quizzes as $q)
     {
-        echo '<div id="question_' . $cn . ($cn == 0 ? '' : '" style="display:none;"') .'" question_id="' . $q['Quiz']['id']. '">';
+        echo '<div id="question_' . $cn .  '" ' . ($cn == 0 ? '' : 'style="display:none;"') .' question_id="' . $q['Quiz']['id']. '">';
         echo '<div id="countdown_' . $cn . '" class="countdown_hide"></div>';
 
         echo '<div class="smst-quiz-q">'. $q['Quiz']['body'] . '</div>';
@@ -60,7 +60,7 @@ echo $this->Html->script('jquery.countdown.min');
 <!-- end of quiz_content -->
 
 <!-- Quiz Finished area -->
-<div id="results_display" style="display:none;">
+<div id="results_display" style="display:block;">
     <div class="smst-top finish">
         <div class="smst-top-sub">
             <div class="smst-top-sub2">
@@ -73,9 +73,12 @@ echo $this->Html->script('jquery.countdown.min');
             <div id="results_success">
                 <div id="success_head" class="smst-finished-success"></div>
                 <div id="success_text" class="smst-finished-text"></div>
+                <form class="custom" id="hall_of_fame_form">
                 <div class="smst-finished-btns">
                     <div id="initial_div" style="display:none;">
-                        <input type="text" name="initial" value="" placeholder="AAA" maxlength="3" id="initial" class="smst-initials" autocorrect="off" autocapitalize="off" />
+                         <div class="initial-field">
+                            <input type="text" name="initial" required pattern="[a-zA-Z]{3}" value="" placeholder="AAA" maxlength="3" id="initial" class="smst-initials" autocorrect="off" autocapitalize="off" />
+                         </div>
                         <input type="button" name="submit_initial" value="Submit" class="others_btn" id="submit_btn" />
                     </div>
                     <input type="button" name="enter_initial" id="enter_btn" value="Enter Initials" class="others_btn" />
@@ -83,6 +86,7 @@ echo $this->Html->script('jquery.countdown.min');
                     <input type="button" name="brag_button" value="Brag" class="others_btn" id="brag_btn" />
                     <input type="button" name="results_button" value="Results" class="others_btn" id="results_btn" />
                 </div>
+                </form>
             </div>
             <div id="results_failed">
                 <div id="failed_head" class="smst-finished-fail"></div>
@@ -124,29 +128,7 @@ echo $this->Html->script('jquery.countdown.min');
 <!-- end of area -->
 
 <!-- brag area -->
-<div id="brag" style="display:none;">
-    <a class="close-reveal-modal">&#215;</a>
-    <div class="bragDiv bold">Brag to your Boss(es):</div>
-    <?php echo $this->Form->create(null, array('url' => array('controller' => 'quizzes', 'action' => 'brag'), 'id' => 'bragForm')); ?>
-    <?php echo $this->Form->input('', array(
-        'type' => 'select',
-        'multiple' => 'checkbox',
-        'options' => $bosses,
-        'hiddenField' => false
-        )); 
-    ?>
-    <?php echo $this->Form->input('emailother', array('id' => 'emailother', 'label' => 'Addition Recipients (email):')); ?><br />
-    <?php echo $this->Form->input('yourname', array('id' => 'yourname', 'label' => 'Your Name:')); ?><br />
-    <?php echo $this->Form->input('score', array('type' => 'hidden', 'id' => 'brag_score', 'value' => '')); ?>
-    <?php echo $this->Form->input('level', array('type' => 'hidden', 'id' => 'brag_level', 'value' => $level)); ?>
-    <?php echo $this->Form->input('correct', array('type' => 'hidden', 'id' => 'brag_correct', 'value' => '')); ?>
-    <?php echo $this->Form->button('Send', array('id' => 'brag_submit')); ?>
-    <!--
-    <input type="button" name="brag" value="Brag!" id="brag_submit" class="others_btn" style="margin:4px 0 0 0;" />
-    <input type="button" name="cancel" value="Cancel" id="brag_cancel" class="others_btn" style="margin:4px 0 0 0;" />
-    -->
-    <?php echo $this->Form->end(); ?>
-</div>
+<div id="brag" style="display:none;"></div>
 <!-- end of area -->
 
 <!-- hall of fame -->
@@ -164,7 +146,9 @@ $(document).ready(function () {
     var $responses = [];
     var $stepdown = 20;
     var $bossmax = [<?php echo implode(',', $bossmax); ?>];
-    // console.log($bossmax);
+    var $level = <?php echo $level; ?>;
+    var $bragCorrect = '';
+    
     
     $('#smst-modal').foundation('reveal', {
         //animation: 'fadeAndPop',
@@ -174,10 +158,10 @@ $(document).ready(function () {
         //bgClass: 'reveal-modal-bg',
         //open: function(){},
         //opened: function(){},
-        close: function(){
-        },
-        closed: function(){
-        }
+        //close: function(){
+        //},
+        //closed: function(){
+        //}
         //bg : $('.reveal-modal-bg'),
     });
     
@@ -262,7 +246,6 @@ $(document).ready(function () {
                 {
                     $counter -= $stepdown;
                     $("#remaining_score").html($counter);
-                    // console.log('tick: ' + $counter);
                 }
             });
         }
@@ -303,8 +286,8 @@ $(document).ready(function () {
                 
             }
             
-            $("#brag_score").val($accumulateScore);
-            $("#brag_correct").val($totalCorrect + "/" + $totalQ);
+            //$("#brag_score").val($accumulateScore);
+            $bragCorrect = $totalCorrect + "/" + $totalQ;
             $("#results_display").show();
             $("#quiz_results").show();
         }
@@ -356,9 +339,6 @@ $(document).ready(function () {
         $("#select_" + $qOrder).removeAttr('disabled');
         
         $("#countdown_" + $qOrder).countdown('destroy');
-        // console.log('R/W: ' + $(this).attr('correct'));
-        // console.log('counter: ' + $counter);
-        // console.log('accu: ' + $accumulateScore);
         
         var $res = {
             question_order: $qOrder,
@@ -413,33 +393,24 @@ $(document).ready(function () {
         
         $(this).unbind('click');
         $(this).siblings().unbind('click');
+        console.log($responses);
     });
 
-    // Will's Crap Code That Trieu Needs to Make Better
-
-    var centeredHeightA, centeredHeightB, centeredHeightC, centeredHeightD
-
     function setLineHeight() {
-        centeredHeightA = $(".centered.a").height();
-        centeredHeightB = $(".centered.b").height();
-        centeredHeightC = $(".centered.c").height();
-        centeredHeightD = $(".centered.d").height();
-        if (centeredHeightA < 31) {$(".centered.a").css('line-height', '27px');}
-        else {$(".centered.a").css('line-height', '16px');}
-        if (centeredHeightB < 31) {$(".centered.b").css('line-height', '27px');}
-        else {$(".centered.b").css('line-height', '16px');}
-        if (centeredHeightC < 31) {$(".centered.c").css('line-height', '27px');}
-        else {$(".centered.c").css('line-height', '16px');}
-        if (centeredHeightD < 31) {$(".centered.d").css('line-height', '27px');}
-        else {$(".centered.d").css('line-height', '16px');}
+        var $charArr = ['a', 'b', 'c', 'd'];
+        
+        for(var $i = 0; $i < $charArr.length; $i++)
+        {
+            if($(".centered." + $charArr[$i]).height() < 31)
+                $(".centered." + $charArr[$i]).css('line-height', '27px');
+            else
+                $(".centered." + $charArr[$i]).css('line-height', '16px');
+        }
     };
 
     setLineHeight();
-
     $(window).resize(setLineHeight);
-
-    //---- end crap code ------
-    
+ 
     $(".next_btn").click(function(){
         $("#remaining_score").html('');
         var $qOrder = parseInt($(this).attr('question_ord'));
@@ -459,32 +430,134 @@ $(document).ready(function () {
     });
     
     $("#submit_btn").click(function(){
-        $("#enter_btn").remove();
-        $("#initial_div").hide();
-        scoreboard();
-    });
+        var $patt = /[a-zA-Z]{3}/;
         
+        if($("#initial").val().match($patt))
+        {
+            $("#enter_btn").remove();
+            $("#initial_div").hide();
+            scoreboard();
+        }
+        else
+        {
+            $(".initial-field").addClass('error');
+        }
+    });
+    
     $("#brag_btn").click(function(){
-        //$("#quiz_results").hide();
-        $('#smst-modal').foundation('reveal',{dismissModalClass: 'close-reveal-modal'});
-        $('#smst-modal').html($('#brag').html());   
+        var $bragForm = '<a class="close-reveal-modal">&#215;</a>' +
+            '<div class="bragDiv bold">Brag to your Boss(es):</div>' + 
+            '<form id="bragForm" action="<?php echo $this->Html->url(array('controller' => 'quizzes', 'action' => 'brag')); ?>">' +
+            '<div id="boss_emails-field" class="input select">' +
+            <?php $cn = 0; ?>
+            <?php foreach($bosses as $m => $b): ?>
+                '<div class="checkbox">' +
+                '<input type="checkbox" name="data[emailboss][]" value="<?php echo $m; ?>" id="boss_<?php echo $cn; ?>" class="boss_checkboxes" >' +
+                '<label for="boss_<?php echo $cn; ?>"><?php echo $b; ?></label>' +
+                '</div>' + 
+            <?php endforeach; ?>
+            '</div>' +
+            '<div id="emailother-field">' +
+            '<label for="emailother">Addition Recipients (email):</label>' +
+            '<input type="email" id="emailother" name="data[emailother]" placeholder="your_email@faa.gov" />' +
+            '</div>' +
+            '<div id="yourname-field">' +
+            '<label for="yourname">Your name:</label>' +
+            '<input type="text" id="yourname" placeholder="Name" name="data[yourname]" required />' +
+            '</div>' +
+            '<input type="button" name="send_brag" value="Send" id="brag_something" class="others_btn" />' +
+            '<input type="hidden" name="data[score]" id="brag_score" value="' + $accumulateScore + '">' + 
+            '<input type="hidden" name="data[level]" id="brag_level" value="' + $level + '">' +
+            '<input type="hidden" name="data[correct]" id="brag_correct" value="' + $bragCorrect  +'">' + 
+            '</form>';
+        
+        $('#smst-modal').html($bragForm);
         $('#smst-modal').foundation('reveal','open');
+        $("#brag_something").bind('click', function(){
+            var $boss_mail = [];
+            var $errors = [];
+            $(".boss_checkboxes").each(function(){
+                if($(this).is(':checked'))
+                    $boss_mail.push($(this).val());
+            });
+    
+            if($boss_mail.length == 0)
+            {
+                $("#boss_emails-field").addClass("error");
+                $errors.push(1);
+            }
+            else
+            {
+                $("#boss_emails-field").removeClass("error");
+            }   
+            
+            var $emailPatt = /^[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/;
+            
+            if($("#emailother").val().length != 0)
+            {
+                if(!$("#emailother").val().match($emailPatt))
+                {    
+                    $("#emailother-field").addClass('error');
+                    $errors.push(1);
+                }
+                else
+                {
+                    $("#boss_emails-field").addClass("error");
+                }
+            }
+            
+            var $alphaPatt = /[a-zA-Z]+/;
+            if(!$("#yourname").val().match($alphaPatt))
+            {    
+                $("#yourname-field").addClass('error');
+                $errors.push(1);
+            }
+            else
+            {
+                $("#yourname-field").addClass("error");
+            }
+            
+            console.log($errors);
+            if($errors.length == 0)
+                $("#bragForm").submit();
+        });
     });
     
     $("#results_btn").click(function(){
-        //$("#quiz_results").hide();
         $('#smst-modal').foundation('reveal',{dismissModalClass: 'close-reveal-modal'});
         $('#smst-modal').html($('#results').html());   
         $('#smst-modal').foundation('reveal','open');
     });
     
-    /*$("#brag_cancel").click(function(){
-        $('#smst-modal').foundation('reveal','close');
-    });
+    function toggleButtons()
+    {
+        $(".smst-hof-btn-div").each(function(){
+            if($(this).attr('level') == $level)
+                $(this).addClass('active');
+            else
+                $(this).removeClass('active');
+        });
+    }
     
-    $("#brag_submit").click(function(){
-        $("#bragForm").submit();
-   });*/
+    function toggleContent()
+    {
+        $(".smst-hof-content").each(function(){
+            if($(this).attr('level') == $level)
+                $(this).show();
+            else
+                $(this).hide();
+        });
+    }
+    
+    function bindHoFBtns()
+    {
+        $(".smst-hof-btn-div").bind('click', function(){
+            var $divLevel = $(this).attr('level');
+            $level = $divLevel;
+            toggleButtons();
+            toggleContent();
+        });
+    }
     
     $("#hall_of_fame").click(function(){
         $.ajax({
@@ -495,8 +568,11 @@ $(document).ready(function () {
             dataType: 'html',
             success: function(response){
                 $('#smst-modal').html(response + '<a class="close-reveal-modal">×</a>');   
-                //$('#smst-modal').css('color', 'black');
                 $('#smst-modal').foundation('reveal','open');
+                
+                bindHoFBtns();
+                toggleButtons();
+                toggleContent();
             }
         });
     });
@@ -510,8 +586,11 @@ $(document).ready(function () {
             dataType: 'html',
             success: function(response){
                 $('#smst-modal').html(response + '<a class="close-reveal-modal">×</a>');  
-                //$('#smst-modal').css('color', 'black');
                 $('#smst-modal').foundation('reveal','open');
+                
+                bindHoFBtns();
+                toggleButtons();
+                toggleContent();
             }
         });
     });

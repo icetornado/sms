@@ -7,23 +7,58 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
 	<?php echo $this->Html->charset(); ?>
-    <title>SMS Training - Are You Smarter Than Your Boss?</title><!--<?php echo $title_for_layout; ?>-->
+        <title>SMS Training - Are You Smarter Than Your Boss?</title>
 	<?php
 		echo $this->Html->meta('icon');
 		//echo $this->Html->css('cake.generic');
-        //echo $this->Html->css('jquery-ui.min');
+                //echo $this->Html->css('jquery-ui.min');
 		echo $this->fetch('meta');
 		echo $this->fetch('css');
 		echo $this->fetch('script');
 	?>
 	<?php echo $this->Html->css('foundation'); ?>
-    <?php echo $this->Html->css('smst'); ?>
+        <?php echo $this->Html->css('smst'); ?>
   	<?php echo $this->Html->script("vendor/custom.modernizr"); ?>    
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-    <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
 </head>
 <body>
+    
+    <?php
+    $menuItems = array(
+        'splash' => array(
+            'title' => 'Home',
+            'url' => $this->webroot
+        ),
+        'quizzes' => array(
+            'title' => 'Are You Smarter?',
+            'url' => $this->Html->url(array('controller' => 'quizzes', 'action' => 'index'))
+        ),
+        'refresher' => array(
+            'title' => 'Refresher',
+            'url' => $this->Html->url(array('controller' => 'refresher', 'action' => 'index'))
+        ),
+    );
+    
+    $this->start('menubar');
+    
+    foreach($menuItems as $id => $item)
+    {
+        if($menuID == $id)
+            $className = 'active';
+        else
+            $className = '';
+        
+        echo '<li class="'. $className . '">';
+        echo '<a href="' . $item['url'] . '">' . $item['title'] . '</a>';
+        echo '</li>';
+    }
+    
+    $this->end();
+    ?>
 
+                               
+    
 	<div class="smst-fixed-sub"></div>
 
 	<div class="fixed">
@@ -37,19 +72,9 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
 				</li> 
 			</ul>
 				<section class="top-bar-section">
+                                
 				<ul class="right">
-					<li class="">
-						<a href="<?php echo $this->webroot; ?>">Home</a>
-					</li>
-                    <li class="">
-						<a href="<?php echo $this->Html->url(array('controller' => 'quizzes', 'action' => 'index')) ; ?>">Are You Smarter?</a>
-					</li>
-					<li class="">
-						<a href="<?php echo $this->Html->url(array('controller' => 'refresher', 'action' => 'index')) ; ?>">Refresher</a>
-					</li>
-					<!-- <li class="">
-						<a href="<?php echo $this->Html->url(array('controller' => 'resources', 'action' => 'index')) ; ?>">Resources</a>
-					</li> -->
+                                    <?php echo $this->fetch('menubar'); ?>
 				</ul>
 			</section> 
 		</nav>

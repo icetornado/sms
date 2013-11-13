@@ -262,12 +262,11 @@ $this->set('title_for_layout', 'SMS Training - Refresher');
              preventDefaultEvents: true
         });
         
-        //window size change
+        //window size changes
         /*$(window).resize(function() {
             console.log('<div>Handler for .resize() called.</div>');
             
         });*/
-        
         
         function floatCircles()
         {
