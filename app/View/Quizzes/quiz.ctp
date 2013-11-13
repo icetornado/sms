@@ -515,7 +515,7 @@ $(document).ready(function () {
                 }
                 else
                 {
-                    $("#boss_emails-field").addClass("error");
+                    $("#boss_emails-field").removeClass("error");
                 }
             }
             
@@ -527,7 +527,7 @@ $(document).ready(function () {
             }
             else
             {
-                $("#yourname-field").addClass("error");
+                $("#yourname-field").removeClass("error");
             }
             
             console.log($errors);
