@@ -9,6 +9,8 @@ class ScoreboardsController extends AppController
         'Boss'
     );
     
+    public $menuID = 'scoreboards';
+    
     public function index()
     {
         if(isset($this->request->query['level']) && is_numeric($this->request->query['level']))

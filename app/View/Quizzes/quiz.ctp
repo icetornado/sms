@@ -60,7 +60,7 @@ echo $this->Html->script('jquery.countdown.min');
 <!-- end of quiz_content -->
 
 <!-- Quiz Finished area -->
-<div id="results_display" style="display:block;">
+<div id="results_display" style="display:none;">
     <div class="smst-top finish">
         <div class="smst-top-sub">
             <div class="smst-top-sub2">
@@ -459,13 +459,13 @@ $(document).ready(function () {
             '</div>' +
             '<div id="emailother-field">' +
             '<label for="emailother">Addition Recipients (email):</label>' +
-            '<input type="email" id="emailother" name="data[emailother]" placeholder="your_email@faa.gov" />' +
+            '<input class="textBox" type="email" id="emailother" name="data[emailother]" placeholder="your_email@faa.gov" />' +
             '</div>' +
             '<div id="yourname-field">' +
             '<label for="yourname">Your name:</label>' +
-            '<input type="text" id="yourname" placeholder="Name" name="data[yourname]" required />' +
+            '<input class="textBox" type="text" id="yourname" placeholder="Name" name="data[yourname]" required />' +
             '</div>' +
-            '<input type="button" name="send_brag" value="Send" id="brag_something" class="others_btn" />' +
+            '<input type="button" name="send_brag" value="Send" id="brag_something" class="next_btn" />' +
             '<input type="hidden" name="data[score]" id="brag_score" value="' + $accumulateScore + '">' + 
             '<input type="hidden" name="data[level]" id="brag_level" value="' + $level + '">' +
             '<input type="hidden" name="data[correct]" id="brag_correct" value="' + $bragCorrect  +'">' + 

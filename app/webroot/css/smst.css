@@ -189,14 +189,24 @@ ul, ol {
     padding:0;
 }
 .smst-hof-btn {
+    font-family: "Segoe WP","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
+    letter-spacing:-0.5px;
     text-align:center;
     font-weight:bold;
     font-size:1em;
     background:transparent url('../img/smst_btn_bg.png') repeat-y scroll center top;
     width:100%;
-    padding:13px 0;
-    float:left;
-    margin-bottom:4px;
+    display:block;
+    margin: 0 auto 4px auto;
+    color:#ffffff;
+    max-width: 320px;
+    padding: 13px 22px;  
+}
+.smst-hof-btn-div.active .smst-hof-btn {
+    color: #99D538;
+}
+.level-buttons {
+    margin:24px 0 22px 0;
 }
 .section-container.tabs > section > .content {
     border:none;
@@ -268,7 +278,7 @@ ul, ol {
     overflow:hidden;
 }
 .smst-quiz-leftSub {
-    line-height:13px;
+    line-height:14px;
     font-size:18px;
     padding:16px 0 0 14px;
 }
@@ -290,7 +300,7 @@ ul, ol {
     overflow:hidden;
 }
 .smst-quiz-rightSub {
-    line-height:13px;
+    line-height:14px;
     font-size:18px;
     padding:16px 14px 0 0;
 }
@@ -376,7 +386,7 @@ ul, ol {
     font-weight:bold;
     border-radius:0;
 }
-.next_btn:hover, .close_modal_btn:hover, .others_btn:hover, #brag_submit:hover {
+.next_btn:hover, .close_modal_btn:hover, .others_btn:hover, #brag_submit:hover, .smst-hof-btn:hover, .smst-hof-btn-div.active .smst-hof-btn:hover {
     color:#85b932;
 }
 .next_btn:disabled {
@@ -413,6 +423,10 @@ input.smst-initials {
     text-transform:uppercase;
     border-radius:3px;
 }
+/*.initial-field.error .smst-initials {
+    background:#f25734;
+    color:#ffffff;
+}*/
 .quiz_answers {
     margin-bottom:22px;
     padding-left:44px;
@@ -428,7 +442,7 @@ input.smst-initials {
     margin-top:20px;
 }
 .smst-results-main .quiz_answers {
-    padding-left:0;
+    padding-left:0; 
     min-height:0;
 }
 .smst-results-title {
@@ -443,13 +457,14 @@ input.smst-initials {
     color:#99D538;
     font-style: italic;
     text-transform:uppercase;
-    margin-bottom:4px;
+    margin-bottom:7px;
 }
 .smst-finished-fail {
     font-size:30px;
+    font-style: italic;
     color:#FF5C37;
     text-transform:uppercase;
-    margin-bottom:14px;
+    margin-bottom:7px;
 }
 .smst-finished-text {
     padding:0 10px 18px 10px;
@@ -463,10 +478,10 @@ input.smst-initials {
     font-size: 1em;
     color:#ffffff;
 }
-#bragForm input {
+#bragForm input.textBox {
     border: 0 none;
     display: block;
-    margin: 0 auto 8px;
+    margin: 0 auto 18px;
     max-width: 100%;
     width: 100%;
     border-radius: 3px;
@@ -494,19 +509,9 @@ input.smst-initials {
     float:left;
     width:100%;
 }
-#bragForm .input.text {
-    margin-bottom: 1.1em;
-    float:left;
-    width:100%;
-}
-#bragForm .input.text label {
-    margin-bottom:0.4em;
-}
-#bragForm .input.text input {
-    margin:0;
-}
 .bragDiv {
     margin-bottom:1.25em;
+    font-size:1.1em;
 }
 #brag_submit {
     background: url('../img/smst_btn_bg.png') repeat-y scroll center top rgba(0, 0, 0, 0);
@@ -520,6 +525,17 @@ input.smst-initials {
     padding: 10px 22px;
     box-shadow:none;
 }
+#brag_something {
+    margin:12px 0 0 0;
+}
+.error input, .error textarea, .error select, .error input:focus, .error textarea:focus, .error select:focus {
+    background-color: #F25734;
+    color:#ffffff;
+}
+.error .checkbox {
+    border-left:5px solid #F25734;
+}
+
 
 /* Retina */
 
@@ -537,19 +553,19 @@ input.smst-initials {
         background-size:40px 40px;
     }
     .centered.a {
-        background:transparent url('../img/smst_icon_a.png') no-repeat scroll left center;
+        background:transparent url('../img/smst_icon_a@2x.png') no-repeat scroll left center;
         background-size:44px 44px;
     }
     .centered.b {
-        background:transparent url('../img/smst_icon_b.png') no-repeat scroll left center;
+        background:transparent url('../img/smst_icon_b@2x.png') no-repeat scroll left center;
         background-size:44px 44px;
     }
     .centered.c {
-        background:transparent url('../img/smst_icon_c.png') no-repeat scroll left center;
+        background:transparent url('../img/smst_icon_c@2x.png') no-repeat scroll left center;
         background-size:44px 44px;
     }
     .centered.d {
-        background:transparent url('../img/smst_icon_d.png') no-repeat scroll left center;
+        background:transparent url('../img/smst_icon_d@2x.png') no-repeat scroll left center;
         background-size:44px 44px;
     }
     .centered.correct {

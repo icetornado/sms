@@ -1,6 +1,9 @@
 <div id="tabs" class="smst-hof-tabs modal">
-    <div id="tabs" class="smst-hof-tabs">
+    <div id="tabs">
             <div class="section-container" >
+                <div class="smst-results-title">
+                    <div class="bold">Hall of Fame:</div>
+                </div>
                 <div class="level-buttons">
                     <?php foreach($data as $level => $d): ?>
                     <div class="smst-hof-btn-div" level="<?php echo $level; ?>">
@@ -13,7 +16,7 @@
                 <?php foreach($data as $level => $d): ?>
                     <div class="smst-hof-content" level="<?php echo $level; ?>">
                         <?php if(isset($d['boss'])): ?>
-                            <div>Bosses</div>
+                            <div class="bold">Bosses</div>
                             <?php $bosses = $d['boss']; ?>
                             <div class="smst-hof-box">
                             <?php foreach ($bosses as $b): ?>
@@ -27,7 +30,7 @@
                         <?php endif; ?>
                             
                         <?php if(isset($d['score'])): ?>
-                            <div>Ranking</div>
+                            <div class="bold">Ranking</div>
                             <?php $sb = $d['score']; ?>
                             <div class="smst-hof-box">
                                 <?php foreach ($sb as $s): ?>
