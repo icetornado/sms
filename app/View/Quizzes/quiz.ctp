@@ -70,10 +70,17 @@ echo $this->Html->script('jquery.countdown.min');
     </div>
     <div class="smst-bottom">
         <div id="results_wrapper" class="smst-finished-main">
-            <div class="smst-results-title"><span class="bold" >Points:</span> <span id="quiz_score_finish"></span></div>
+<!--            <div style="margin-bottom:25px;">
+                <div class="smst-results-title">Correct: <span class="bold" id="quiz_correct_finish"></span></div>
+                <div class="smst-results-title">Points: <span class="bold" id="quiz_score_finish"></span></div>
+            </div>-->
             <div id="results_success">
                 <div id="success_head" class="smst-finished-success"></div>
                 <div id="success_text" class="smst-finished-text"></div>
+                <div class="smst-finished-score">
+                    <div class="smst-results-title"><span class="bold">Correct:</span> <span id="quiz_correct_finish"></span></div>
+                    <div class="smst-results-title"><span class="bold" >Points:</span> <span id="quiz_score_finish"></span></div>
+                </div>
                 <form class="custom" id="hall_of_fame_form">
                 <div class="smst-finished-btns">
                     <div id="initial_div" style="display:none;">
@@ -92,6 +99,10 @@ echo $this->Html->script('jquery.countdown.min');
             <div id="results_failed">
                 <div id="failed_head" class="smst-finished-fail"></div>
                 <div id="failed_text" class="smst-finished-text"></div>
+                <div class="smst-finished-score">
+                    <div class="smst-results-title"><span class="bold">Correct:</span> <span id="quiz_correct_finish2"></span></div>
+                    <div class="smst-results-title"><span class="bold" >Points:</span> <span id="quiz_score_finish2"></span></div>
+                </div>
                 <div class="smst-finished-btns">
                     <input type="button" name="try_again" id="try_again" value="Try Again" class="others_btn" />
                     <input type="button" name="hall_of_fame" value="Hall of Fame" id="hall_of_fame2" class="others_btn" />
@@ -258,7 +269,10 @@ $(document).ready(function () {
         {
             $("#quiz_correct").html($totalCorrect + "/" + $totalQ);
             $("#quiz_score").html($accumulateScore);
+            $("#quiz_correct_finish").html($totalCorrect + "/" + $totalQ);
             $("#quiz_score_finish").html($accumulateScore);
+            $("#quiz_correct_finish2").html($totalCorrect + "/" + $totalQ);
+            $("#quiz_score_finish2").html($accumulateScore);
              
             var $smartResult = isSmarter();
             if($smartResult.isSmarter)
@@ -460,13 +474,13 @@ $(document).ready(function () {
             '</div>' +
             '<div id="emailother-field">' +
             '<label for="emailother">Addition Recipients (email):</label>' +
-            '<input class="textBox" type="email" id="emailother" name="data[emailother]" placeholder="your_email@faa.gov" />' +
+            '<input type="email" id="emailother" name="data[emailother]" placeholder="your_email@faa.gov" />' +
             '</div>' +
             '<div id="yourname-field">' +
             '<label for="yourname">Your name:</label>' +
-            '<input class="textBox" type="text" id="yourname" placeholder="Name" name="data[yourname]" required />' +
+            '<input type="text" id="yourname" placeholder="Name" name="data[yourname]" required />' +
             '</div>' +
-            '<input type="button" name="send_brag" value="Send" id="brag_something" class="next_btn" />' +
+            '<input type="button" name="send_brag" value="Send" id="brag_something" class="others_btn" />' +
             '<input type="hidden" name="data[score]" id="brag_score" value="' + $accumulateScore + '">' + 
             '<input type="hidden" name="data[level]" id="brag_level" value="' + $level + '">' +
             '<input type="hidden" name="data[correct]" id="brag_correct" value="' + $bragCorrect  +'">' + 
@@ -608,8 +622,3 @@ $(document).ready(function () {
     
 });
 </script>
-
-
-
-
-
