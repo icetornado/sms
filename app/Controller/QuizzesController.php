@@ -6,7 +6,7 @@ class QuizzesController extends AppController
         'RequestHandler', 
         //'Security'
         'Session'
-    );
+    ); 
     
     public $uses = array(
         'Quiz',
