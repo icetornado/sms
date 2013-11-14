@@ -517,7 +517,7 @@ $(document).ready(function () {
                 {
                     $("#boss_emails-field").removeClass("error");
                 }
-            }
+            } 
             
             var $alphaPatt = /[a-zA-Z]+/;
             if(!$("#yourname").val().match($alphaPatt))

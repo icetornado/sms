@@ -44,7 +44,8 @@ ul, ol {
     color: #99d538;
 }
 .top-bar-section ul li > a:hover {
-    background:rgba(0,0,0,0.3);
+/*    background:rgba(0,0,0,0.3);*/
+    color: #99d538;
 }
 .top-bar-section ul li > a {
     font-weight:300;
@@ -65,7 +66,7 @@ ul, ol {
 /* General */
 
 .bold {
-    font-family: "Segoe WP","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
+    font-family: "Segoe WP","Roboto","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
     font-weight:bold;
     letter-spacing:-0.5px;
 }
@@ -108,6 +109,9 @@ ul, ol {
 .hof.smst-top {height:63px;}
 .hof .smst-top-sub {width:135px;}
 .hof .smst-top-sub2 {bottom:-27px;}
+.refresher.smst-top {height:63px;}
+.refresher .smst-top-sub {width:209px;}
+.refresher .smst-top-sub2 {bottom:-28px;}
 
 .smst-bottom {
     background:rgba(51,82,102,0.35);
@@ -189,7 +193,7 @@ ul, ol {
     padding:0;
 }
 .smst-hof-btn {
-    font-family: "Segoe WP","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
+    font-family: "Segoe WP","Roboto","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
     letter-spacing:-0.5px;
     text-align:center;
     font-weight:bold;
@@ -255,6 +259,36 @@ ul, ol {
 .section-container.tabs > section > .content.modal {
     padding:0;
 }
+.flex-video {
+    padding-bottom: 44.5%;
+}
+.smst-video {
+    border:10px solid #304554;
+}
+.smst-refresh {
+    padding-top:63px;
+}
+.smst-row {
+    margin-top:15px;
+}
+.smst-row2 {
+    margin:31px 0 21px 0;
+}
+.smst-cff-col {
+    background:rgba(51, 82, 102, 0.3);
+    text-align:center;
+}
+.smst-cff-text {
+    padding:10px 15px 20px 15px;
+}
+.smst-cff-text h4 {
+    font-size:1.6em;
+    padding:8px 0;
+    color:#98d538;
+    font-style:italic;
+}
+.smst-cff-text strong {
+    font-size:1.2em;
 
 
 /* Buttons */
@@ -290,7 +324,6 @@ ul, ol {
     font-size:58px;
     padding:1px 0 0 0;
     color:#edf7f9;
-    /*font-family: 'Orbitron';*/
 }
 .smst-quiz-right {
     float:left;
@@ -372,7 +405,7 @@ ul, ol {
     background:transparent url('../img/smst_icon_x.png') no-repeat scroll left center;
     color:#ff5c37;
 }
-.centered.others {
+.centered.a.others, .centered.b.others, .centered.c.others, .centered.d.others {
     background-image:none;
 }
 .next_btn {
@@ -537,6 +570,10 @@ input.smst-initials {
 }
 .error .checkbox {
     border-left:5px solid #F25734;
+}
+.error .checkbox input {
+    border:none;
+    background:none;
 }
 .smst-note {
     color: #AAAAAA;
